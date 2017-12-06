@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机概念," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="想起当初学习 Java 和 Android 开发的时候最后一个没有迈过去的门槛就是框架了。一开始我还很纳闷什么是框架，后来学习的时间长了才慢慢理解这个概念。同样，我们今天来看看码农翻身公众号的文章，该文章是以一个故事的形式来展开，极其有趣。通过这个故事来深入理解一下什么是框架">
+<meta name="keywords" content="计算机概念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是框架？">
+<meta property="og:url" content="http://barryliu1995.studio/2017/07/24/什么是框架？/index.html">
+<meta property="og:site_name" content="刘志宇的新天地">
+<meta property="og:description" content="想起当初学习 Java 和 Android 开发的时候最后一个没有迈过去的门槛就是框架了。一开始我还很纳闷什么是框架，后来学习的时间长了才慢慢理解这个概念。同样，我们今天来看看码农翻身公众号的文章，该文章是以一个故事的形式来展开，极其有趣。通过这个故事来深入理解一下什么是框架">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i4.piimg.com/1949/973a8f5f0dcaaec7.jpg">
+<meta property="og:image" content="http://i4.piimg.com/1949/7ead6364339368d3.jpg">
+<meta property="og:image" content="http://i4.piimg.com/1949/8f3ff8ea22a7f8a5.jpg">
+<meta property="og:updated_time" content="2017-10-11T13:28:35.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是框架？">
+<meta name="twitter:description" content="想起当初学习 Java 和 Android 开发的时候最后一个没有迈过去的门槛就是框架了。一开始我还很纳闷什么是框架，后来学习的时间长了才慢慢理解这个概念。同样，我们今天来看看码农翻身公众号的文章，该文章是以一个故事的形式来展开，极其有趣。通过这个故事来深入理解一下什么是框架">
+<meta name="twitter:image" content="http://i4.piimg.com/1949/973a8f5f0dcaaec7.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://barryliu1995.studio/2017/07/24/什么是框架？/"/>
+
+
+
+
+
+  <title>什么是框架？ | 刘志宇的新天地</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ceccf121ce6263d67aebf92418b0a2d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">刘志宇的新天地</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">一个爱唱歌的程序猿</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/07/24/什么是框架？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘志宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘志宇的新天地">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">什么是框架？</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T17:15:41+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习总结/" itemprop="url" rel="index">
+                    <span itemprop="name">学习总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>想起当初学习 Java 和 Android 开发的时候最后一个没有迈过去的门槛就是框架了。一开始我还很纳闷什么是框架，后来学习的时间长了才慢慢理解这个概念。同样，我们今天来看看码农翻身公众号的文章，该文章是以一个故事的形式来展开，极其有趣。通过这个故事来深入理解一下什么是框架</p>
+<a id="more"></a>
+<hr>
+<blockquote>
+<p>来源：码农翻身 微信公众号 </p>
+<p>作者：刘欣</p>
+<p>原文地址：<a href="http://mp.weixin.qq.com/s/En7nC2cjVeNI_vLjr4nYTg" target="_blank" rel="noopener">码农翻身-一个故事讲完https</a></p>
+</blockquote>
+<p>码农菜鸟张大胖立志走上Java之路， 听了大神Bill的指点， 先学了Java SE, 把集合、线程、反射、IO、泛型、注解之类的基础知识学了一遍， 在Bill的严厉督促下，写了大量的代码。</p>
+<p>然后开始学Web基础，什么Http, html, javascript , css , servlet, jsp , tomcat …… 又是一大堆知识点。 他在网上找了一个小网站， 自己模拟着做了一下， 虽然不是专业美工， 界面惨不忍睹， 但总算是把功能模仿了七七八八， 很有成就感。</p>
+<p>大胖拿去给Bill 看了， Bill 夸奖道： “嗯，功能实现的还可以， 没有用任何框架能做成这样子， 很不错。 ”</p>
+<p>大胖说： “框架？  什么是框架？”</p>
+<p>Bill 愣了一下： “ 你还突然把我给问住了， 我们整天开口框架，闭口框架， 现在让我给框架下个定义， 我还真说不出来， 让我想想。 ”</p>
+<p>Bill 闭目养神， 大胖虔诚等待。</p>
+<p>不到一炷香功夫， Bill睁开眼睛：“ 我来给你举个例子， 你不是刚刚用servlet和jsp做了小的Web项目吗， 假设有人出钱让你再做一个类似的系统，你会怎么办？”</p>
+<p>“那我就把现在的代码复制一下， 在上面改改， 不就得了？ ”</p>
+<p>“如果有十个八个类似这样的项目呢， 难道你都通过复制粘贴来做吗？” Bill 问</p>
+<p>“十个八个？ 我还是跳楼去吧。  ”</p>
+<p>“那你没有想想把其中重复的一些东西抽取出来， 形成可以复用的东西？”</p>
+<p>张大胖说： “ 听你这么说，还真的有一点可以复用的东西， 比方说URL和业务代码的映射， 我经常会遇到类似这样的 url : www.xxx.com?action=login ， 在后台的servlet 中我就判断，  如果action 的名称是login ,   我就把userName, password 这样的参数从表单中提取出来， 执行登录的代码。  我得写很多的if else 才能支持不同的业务逻辑， 很折磨人。 有时候我就想， 要是有一种方法， 能够直接把URL和Java类直接映射起来就好了 ，  这样就轻松多了！”</p>
+<p>“没错，这是一个很好的想法， 还有吗？ ” Bill 笑着问。</p>
+<p>“嗯。。。 再比如数据验证啊，比如登录时用户名或者密码出错， 我要在浏览器端显示错误提示信息，这个也很难搞啊， 错误提示的字体、颜色、图标、位置太烦人了。”</p>
+<p>“还有吗？”</p>
+<p>“对了，访问数据库也是个大问题， 我写了很多的SQL, 很多的JDBC 代码, 仅仅是为了把数据从数据库取出来， 放到Java 对象中去。 你肯定知道，直接用JDBC编程得处理很多细节问题：一定要记住关闭连接了， 处理异常了 。。。等等， 不瞒你说，很多代码都是我复制粘贴的。”</p>
+<p>“难道你不能写一个通用的类， 传入SQL，返回结果集吗？ ”  Bill 问道。</p>
+<p>“那我肯定是写了， 但是把结果集变成Java 对象还有一段很长的路呢， 没啥技术含量， 纯粹体力活， 怪不得人家叫我们码农！ ”  大胖愤愤的说。</p>
+<p>Bill 说： “我刚才翻了翻你的代码， 我发现很多的地方都让人不爽啊， 比如你几乎把所有的业务逻辑都写到Servlet当中去了， 中间还掺杂者页面控制和跳转， 这么乱七八糟像意大利面条一样的代码过了一个月估计你自己都看不明白了。 ”</p>
+<p>大胖不好意思的笑了： “不用一个月，  这刚过了一个星期我就犯晕了。”</p>
+<p>“所以嘛， 其实你这些问题我们的前辈早就遇到了， 他们也苦苦探索， 不断寻找好的实现方式， 找到以后就把各种经验给固化下来， 称为最佳实践。”</p>
+<p>“最佳实践？  能举个例子嘛！”</p>
+<p>“比如在Web开发中就有一个很好的实践啊，叫做MVC。  就是针对你上面的业务逻辑和页面控制混在一起提出的解决办法。 这个实践会强烈的建议你把数据模型、页面展示、页面跳转控制分开来写， 防止搅成一团。”  </p>
+<p>Bill意犹未尽， 继续举例： “再比如你说的第一个问题， 也早就有解决方案了， 可以利用XML或者Java注解来描述URL和Java 类之间的关系，你只需要声明一下， 背后的操作，都交由框架去处理了。  还有你的Java 对象和数据库表的对应关系， 也只需要声明一下，框架就可以帮你把数据取出来，填充到Java对象中去，这就极大的减轻了你的工作量。”</p>
+<p>“Bill,   你又提到框架这个词了，可不可以这么说， 框架就像一个模板， 里边已经预置了一些公认的最佳实践，我要是想用的话， 把我项目相关的东西填充进去就可以了，是不是这样？ ”</p>
+<p>“可以这么理解， 框架像个半成品， 是无法独立运行的，必须由开发人员按照它定义的规则，把项目的代码放置到指定的地方， 由框架整合起来，这才是一个完整的应用程序。”</p>
+<p>大胖挠着头说： “那框架其实也没什么啊， 我只要理解了那些最佳实践， 掌握了它的规则，可不就学会了吗?”</p>
+<p>“没错， 现在很多Java Web系统都是基于像SpringMVC,  Hibernate, MyBatis这样的流行框架构造起来的，  框架不得不学， 但是如果只会使用框架， 只会填充代码， 那只是一个HTML填空人员。”</p>
+<p>“那我学完了框架，可以用框架做项目了， 接下来学什么？” 大胖心里有点没底。</p>
+<p>“你要是对Java 后端编程感兴趣， 还有很多东西啊， 用框架实现了业务只是很小一块， 还有系统架构设计， 缓存、性能、高可用性、分布式、安全、备份等很多内容啊， 你学的越多，就会发现无知的领域更多， 所谓学无止境啊！”</p>
+<p>张大胖目视远方，沉默了。。。。。</p>
+<p>张大胖听大神Bill讲解了框架的作用，回去思考了两天，茅塞顿开。</p>
+<p>框架只是一个半成品而已， 这个半成品当中固化了很多最佳的实践， 开发人员必须把自己的代码填充到框架当中才能成为一个完整的应用程序。</p>
+<p>说起来简单，  到底怎么“填充”呢 ？  码农们写出来的代码怎么才能让框架知道， 并且调用呢？</p>
+<p>张大胖本来想找Bill 问个明白，  但转眼一想， 自己要是能思考出结果岂不更加印象深刻？ ！</p>
+<p>他的脑子开始热身，迅速进入高速运转状态，  叮的一声， 一个想法跨入他的脑海： 可以用继承啊！</p>
+<p>框架定义一些抽象类(如Java 中的abstract class ) 让具体的应用代码去继承， 抽象类的好处是可以写具体方法， 也可以只声明抽象方法而不实现 – 具体的实现肯定要留给码农们的应用程序了。</p>
+<p>在抽象类的具体方法中，可以处理一些框架公用的逻辑， 然后调用那些子类应该实现的抽象方法， 这不就把框架和应用结合起来了吗？</p>
+<p>嗯， 这不就是我上周看过的一个著名的设计模式： 模板方法吗？ 用在此处挺合适的嘛， 大胖不由的一阵得意， 似乎是自己重新发明了这个设计模式。</p>
+<p><img src="http://i4.piimg.com/1949/973a8f5f0dcaaec7.jpg" alt="模板方法"></p>
+<p>（注： Action 为抽象类，doBusiness 为抽象方法，其他为具体方法）</p>
+<p>张大胖马上向Bill汇报自己的新发明，  Bill 鼓励到： “你小子开窍了啊， 这的确是一个办法， 著名的MVC框架struts1 就是这么干的， 还有JUnit的早期版本,更早的EJB1.x, 2.x 都是这样，  都需要自己的业务类/测试类去继承一个框架的抽象类， 实现抽象方法才可以。”</p>
+<p>张大胖知道Bill的习惯是先扬后抑， 静静的等待着转折。</p>
+<p>“但是，” 转折果然如期而至， “ 这种方法让人感到不爽，业务类比较死板 ， 比如你必须得用框架规定的方法名， 没法自己定制。例如JUnit的早期版本， 测试用例的初始化方法必须得叫Setup,  销毁方法必须是TearDown,    你想换成init/destroy 是肯定不行的， 因为框架根本不知道。 ”</p>
+<p>张大胖说： “这没什么啊， 我觉得还是比较好的编程实践呢， 大家都保持名称一致，可读性很好啊”</p>
+<p>“其实你往深处想想就会明白， 这种方式其实让你的业务类和框架绑定了！ 这是最要命的。 你的例子中抽象类是Action , 如果这个Action 很‘重’ ，依赖HttpServletRequest/HttpServletResponse，   必须得有一个Web容器（Tomcat）才能创建起来， 那你的LoginAction 可就悲催了， 想要做个单元测试必须得把Tomcat跑起来才行。 ”</p>
+<p>张大胖说：“听你这么一解释， 我明白了，这种继承的方式问题很大啊。 是不是可以这么说， 框架和业务类最好是独立变化， 中间用一座桥来连接起来。”</p>
+<p>Bill 赞许道 ： “对，  你想想这个桥用什么‘材料’做比较好？”</p>
+<p>张大胖挠挠头，一脸懵逼。</p>
+<p>“回到原始的问题， 我们不就是试图让框架把我们的业务类创建起来，然后调用特定的方法吗？  完全不用在代码中写死， 可以采用别的声明式的办法啊”   Bill  循循善诱。</p>
+<p>“难道在代码中写注释？  ”  张大胖继续一脸懵逼。</p>
+<p>“注释都是纯文本， 不是结构化的信息啊， 难道你让框架读取文本，然后做个语义分析？ 根本不可能， 更何况注释在编译过的class中间已经不复存在了，无处可寻， 框架怎么读？   再想想”  Bill急得就差自己公布答案了。</p>
+<p>“啊， 我知道了，你刚才说的结构化信息提醒了我，  可以用XML啊， XML来描述结构化东西很擅长！ ”</p>
+<p>张大胖说着还写了个例子出来： “通过用XML来描述， 框架就可以找到相关的类和方法，就可以调用了”</p>
+<p><img src="http://i4.piimg.com/1949/7ead6364339368d3.jpg" alt="Markdown"></p>
+<p>“是的， 你举了一个小例子， 实际上由于XML的扩展性， 能描述极为复杂的语义，很多框架都会制定规则， 让码农们去‘声明’自己的业务类及其方法。 “</p>
+<p>“这种声明的方式真是不错，业务类不用继承框架的抽象类了，我刚想到一个问题，　我们的Java类和XML配置不在一起，  当我们想知道一个类的方法，字段是怎么被框架使用的时候，还得回过头来查看XML， 这实在不爽。 ”　张大胖问道。</p>
+<p>“这是个好问题， 那就把这种‘声明’信息挪到Java 类中去吧！”  Bill 说。</p>
+<p>“你刚才说了不能用注释， 怎么在Java 文件中写‘声明’ 啊？”</p>
+<p>“没有注释， 可以有注解啊！ ”</p>
+<p>“你是说那个@author, @version, @return, @see这样用来生成Java文档的注解吗？ 还有什么@Override，@Deprecated, 我从来都不用。”</p>
+<p>Bill 笑了： “那只是Java内置的一些注解， 现在Java可以自定义注解了， 我们完全可以利用这种注解来声明框架想用的信息， 我给你举个例子：”</p>
+<p><img src="http://i4.piimg.com/1949/8f3ff8ea22a7f8a5.jpg" alt="Markdown"></p>
+<p>张大胖问道： “@Controller, @ReqeustMapping, @RequestParam 都是框架自定义的注解？“</p>
+<p>“是的， 你可以直接在Java 代码中使用， 在运行时框架能读取这些注解， 就知道你想干什么事情了。”</p>
+<p>“ 嗯，所有的信息都在Java 中了， 比XML看起来更简洁一些， 果然是十分酸爽。” 张大胖十分感慨 ，“不过，这样一来声明式的信息又四处分散，维护又不方便了。 ”</p>
+<p>Bill说： “哪有十全十美的东西？　在编程中根据情况选择吧！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机概念/" rel="tag"># 计算机概念</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/21/散列查找-哈希表/" rel="next" title="散列查找(哈希表)基础讲解">
+                <i class="fa fa-chevron-left"></i> 散列查找(哈希表)基础讲解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/25/JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？/" rel="prev" title="JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？">
+                JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTI0Ny81ODE1"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg"
+               alt="刘志宇" />
+          <p class="site-author-name" itemprop="name">刘志宇</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BarryLiu1995" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/jk241995" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/178997821liuzhiyu/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liu-zhi-yu-20/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/pogbaliu/?hl=zh-cn" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:ssdf90771@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘志宇</span>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
