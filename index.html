@@ -419,81 +419,15 @@
 
       
         
-          
-            <p>本文章将记录后面几个月的学习笔记</p>
-<p>&lt;img src=&quot;http://ww1.sinaimg.cn/large/7b6c9535gy1fltf3zvk13j21dg0vmqu2.jpg&quot; width=&quot;600&quot; height=&quot;200&quot; align=center/&gt;</p>
-<p>&lt;!--more--&gt;</p>
-<h2>2017.11.23</h2>
-<h3>节流与防抖</h3>
-<p>他们的出现主要是为了解决一些短时间内连续执行的事件带来性能上的不佳和内存的消耗巨大等问题。</p>
-<ul>
-<li>节流——在一定时间内触发一次</li>
-<li>防抖——在一定时间之后才触发指定函数</li>
-</ul>
-<h3>用途</h3>
-<ol>
-<li>当我们做 keyup 向后台请求检验的时候，可以使用防抖函数，不然我们每按一次键盘就请求一次，请求太频繁，这样当我们结束按键盘的时候再去请求，请求少很多了，性能自然不用说</li>
-<li>resize 窗口大小调整的时候，我们可以采用防抖技术也可以使用节流</li>
-<li>mousemove 鼠标移动事件我们既可以采用防抖也可以使用节流</li>
-<li>scroll 滚动条触发的事件，当然既可以采用防抖也可以采用节流</li>
-<li>连续高频发的事件都可以采用这两种方式去解决，优化页面性能</li>
-</ol>
-<h2>2017.11.25</h2>
-<h3>Three.js 中关于Mesh、Geometry、Material的关系</h3>
-<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mesh = <span class="keyword">new</span> THREE.Mesh(<span class="keyword">new</span> THREE.Geometry(), <span class="keyword">new</span> THREE.Material());</span><br></pre></td></tr></table></figure></p>
-<p>使用几何形状（Geometry）和材质（Material）之后，我们就能使用他们来创建物体了。最常用的一种物体就是网格（Mesh），网格是由顶点、边、面等组成的物体；其他物体包括线段（Line）、骨骼（Bone）、粒子系统（ParticleSystem）等。创建物体需要指定几何形状和材质，其中，几何形状（Geometry）决定了物体的顶点位置等信息，材质（Materia 决定了物体的颜色、纹理等信息。</p>
-<h3>DOM——Document类型</h3>
-<p>JavaScript 通过 Document 类型表示文档，这里文档指的可以是 HTML 页面或者其他基于 XML 的文档。不过最常见的应用还是作为 HTMLDocument （继承自 Document 类型）实例的<code>document</code>对象。而且，<code>document</code>对象是<code>window</code>对象的一个属性，因此可以将其作为全局对象来访问。其子节点可能是一个 DocumentType（&lt;!DOCTYPE&gt;标签，且最多一个）、Element（最多一个）、ProcessingInstruction 或 Comment。</p>
-<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = <span class="built_in">document</span>.documentElement;</span><br><span class="line">alert(html===<span class="built_in">document</span>.childNodes[<span class="number">0</span>]);		<span class="comment">//true</span></span><br><span class="line">alert(html===<span class="built_in">document</span>.firstChild);			<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span><br><span class="line">alert(body === html.firstChild);			<span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<h2>2017.11.28</h2>
-<h3>计算机文件</h3>
-<ul>
-<li>一般来说，计算机文件可以分为两类：文本文件和二进制文件。</li>
-<li>图形文件及文字处理程序等计算机程序都属于二进制文件。这些文件含有特殊的格式及计算机代码。ASCII 则是可以用任何文字处理程序阅读的简单文本文件。</li>
-<li>广义的二进制文件即指文件，由文件在外部设备的存放形式为二进制而得名。狭义的二进制文件即除文本文件以外的文件。文本文件是一种由很多行字符构成的计算机文件。文本文件存在于计算机系统中，通常在文本文件最后一行放置文件结束标志。文本文件的编码基于字符定长，译码相对要容易一些；二进制文件编码是变长的，灵活利用率要高，而译码要难一些，不同的二进制文件译码方式是不同的。</li>
-<li>计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是逻辑上的。这两者只是在编码层次上有差异。简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值（可以看作是自定义编码）。从上面可以看出文本文件基本上是定长编码的(也有非定长的编码如UTF-8)，基于字符，每个字符在具体编码中是固定的，ASCII码是8个比特的编码，UNICODE一般占16个比特。而二进制文件可看成是变长编码的，因为是值编码，多少个比特代表一个值，完全由自己决定。</li>
-<li>ASCII 是计算机最早的文字编码方案，所以对他的支持是全球范围内的，所以使用全球任何一款文字处理程序都可以打开此 ASCII 文件，所以把它称为纯文本文件。而一些特殊的比如 GBK、BIG5、GB18030文字编码方案都不是全球范围内都支持使用的，比如在国内出售的计算机预装的<code>Window</code>操作系统内置的字符编码方式就肯定不会有GB18030这种日文文字编码方案</li>
-<li>文本文件与二进制文件的区别仅仅是编码上不同，所以他们的优缺点就是编码的优缺点。一般认为，文本文件编码基于字符定长，译码容易；二进制文件编码是变长的，所以它灵活，存储利用率要高些，译码难一些（不同的二进制文件格式，有不同的译码方式）。在windows下，文本文件不一定是ASCII来存贮的，因为ASCII码只能表示128的标识，打开一个txt文档，然后另存为，有个选项是编码，可以选择存贮格式，一般来说UTF-8编码格式兼容性要好一些。</li>
-</ul>
-<h2>2017.11.30</h2>
-<h3>HTML5 Geolocation</h3>
-<p>用HTML5 Geolocation API(地理位置应用程序接口)获得的经纬度参数，传入到腾讯地图，并显示出来后，会发现会有一定的偏移，这是因为我国把美国卫星的GPS的地球坐标，进行偏移的算法，计算后，得出了一个火星坐标。为了让火星坐标能正确的显示，又给每部导航软件加入了这个算法，可以在大家的地图上还原位置；而自己写的程序里没有加入此算法，所以出现了偏移问题，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。</p>
-<h2>2017.12.6</h2>
-<h3>URI与URL的区别</h3>
-<p>统一资源标志符 URI 就是在某一规则下能把一个资源独一无二地标识出来。拿人做例子，假设这个世界上所有人的名字都不能重复，那么名字就是 URI 的一个实例，通过名字这个字符串就可以标识出唯一的一个人。现实当中名字当然是会重复的，所以身份证号才是 URI ，通过身份证号能让我们能且仅能确定一个人。那统一资源定位符 URL 是什么呢。也拿人做例子然后跟 HTTP 的 URL 做类比，就可以有：</p>
-<blockquote>
-<p>动物住址协议://地球/中国/浙江省/杭州市/西湖区/某大学/14号宿舍楼/525号寝/张三.人</p>
-</blockquote>
-<p>可以看到，这个字符串同样标识出了唯一的一个人，起到了URI的作用，所以URL是URI的子集。URL 是<strong>以描述人的位置来唯一确定一个人的</strong>。在上文我们用身份证号也可以唯一确定一个人。对于这个在杭州的张三，我们也可以用下面编码来标识他</p>
-<blockquote>
-<p>身份证号：<a href="tel:123456789" target="_blank" rel="noopener">123456789</a></p>
-</blockquote>
-<p>所以不论是用定位的方式还是用编号的方式，我们都可以唯一确定一个人，都是 URl 的一种实现，而 URL 就是用定位的方式实现的 URI 。</p>
-<h2>2017.12.8</h2>
-<h3>CGI(Common Gateway Interface)</h3>
-<p>What is CGI? CGI stands for Common Gateway Interface. This is not to be confused with the other CGI, which stands for Computer Generated Imagery, which is the technology that they use for special effects and explosions and things in major motion pictures. This is CGI, the Common Gateway Interface. This is the technology that allows web browsers to submit forms and interact with programs on a web server. So, when you see a web form like this one here, and you fill it in and you press the button and it goes, what happens from this point is CGI. The web browser submits the data to the server. The server passes that data on to an application. The application responds and it goes back up the chain, back to your web browser, and your web browser gets some kind of result and maybe something happens on the backend, like a database thing or sending an email or something like that. CGI is used for simple interactive applications. More complicated applications like Google Maps or Gmail or something like that, use another technology called Ajax, which sometimes actually uses CGI on the backend to communicate with the applications on the server. But CGI is used for simple interactive applications. CGI applications can be written in any programming language. The most common ones are languages like Perl and PHP and Python and things like that that tend to be simple languages. Because CGI applications tend to be simple applications. For this reason, CGI applications are often called CGI scripts, because the languages that they tend to be written in, tend to be what are called scripting languages. They tend to be very simple languages. And for this reason, they're often called CGI scripts. Of course, they can be written in any language. Sometimes more complex languages like ASP or Java or even C++ can be used, but it's important to note that CGI applications run in the server. They do not run in the web browser. So, the technology that's used by the CGI application must be supported by the web server. And the requirements of running applications on the server and the security restrictions and things like that must all be followed according to the rules of the server and not according to the rules of your local computer or your application. And this is because CGI applications run in the server and not in the web browser. So, we'll cover more of the details as we move along in this course, but in a nutshell, that's what CGI is.</p>
-<h2>2017.12.10</h2>
-<h3>插入标记</h3>
-<p>IE标准的<code>innerHTML</code>、<code>outerHTML</code>、<code>innerText</code>、<code>outerText</code>这四个插入标记，其中前两个已经被列为了HTML5的标准，而后面两个却没有得到这样的待遇。同时还有一个这样的问题需要注意到：设置这四个属性的时候，得到的结果却不是设置时所敲下的字符文本，<strong>原因在于结果返回的字符串是根据原始HTML字符串创建的DOM树经过序列化之后的结果</strong>。</p>
-<h2>2017.12.17</h2>
-<h3>页面大小、视口大小和浏览器窗口大小</h3>
-<ul>
-<li>IE9+、Safari、Firefox中，<code>outerWidth</code>和<code>outerHeight</code>表示浏览器窗口本身的大小。而在Opera中，这两个属性表示的是Opera中单个标签页对应的浏览器窗口</li>
-<li><code>innerWidth</code>和<code>innerHeight</code>在除了Chrome浏览器之外的浏览器中都表示该容器中页面视图区的大小（减去边框宽度）</li>
-<li>Chrome浏览器中，<code>innerWidth</code>、<code>innerHeight</code>、<code>outerWidth</code>、<code>outerHeight</code>都表示视图区大小</li>
-<li>IE8及更早版本没有提供取得当前浏览器窗口尺寸的属性；不过它通过 DOM 提供了页面视图区域的相关信息：在IE、Firefox、Safari、Opera和Chrome中，<code>document.documentElement.clientXXX</code>保存了页面视图区的大小。在IE6 中这些属性必须在标准模式下才有效；如果是混杂模式，就必须通过<code>document.body.clientXXX</code>取得相同信息</li>
-</ul>
-<h2>2017.12.26</h2>
-<h3>Shell</h3>
-<p>Shell 中文翻译为“壳层”。在计算机科学中，Shell 指“为用户提供用户界面”的软件，通常指的是命令行界面的解析器。一般来说，这个词是指操作系统中，提供访问内核所提供的服务的程序。Shell 也用于泛指所有为用户提供操作界面的程序，也就是程序和用户交互的接口。因此与之相对的是程序内核(Core)，内核不提供和用户的交互功能。<strong>通常将 Shell 分为两类：命令行与图形界面。命令行壳层提供一个命令行界面(CLI)；而图形壳层提供要给图形用户界面(GUI)</strong>。相关信息可参考 <a href="https://zh.wikipedia.org/wiki/%E6%AE%BC%E5%B1%A4" target="_blank" rel="noopener">壳层|维基百科</a></p>
-<h3>Node.js 的异步I/O和事件驱动的理解</h3>
-<ul>
-<li>异步I/O——非阻塞的服务器我们可以想象成一个无限 loop 循环，这个 loop 会一直跑下去。一个新请求来了，这个 loop 就接了这个请求，把这个请求传给其他的进程（比如传给一个搞数据库查询的进程），然后响应一个回调（callback）。完事了这 loop 就接着跑，接其他的请求。如果请求处理完成，loop 就把结果传回用户的浏览器，接着继续跑。</li>
-<li>事件驱动——服务器只在用户那边有事件发生的时候才响应</li>
-</ul>
-
-          
+          <p>本文章将记录后面几个月的学习笔记</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fltf3zvk13j21dg0vmqu2.jpg" width="600" height="200" align="center/"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/24/学习日记(四)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1920,7 +1854,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
