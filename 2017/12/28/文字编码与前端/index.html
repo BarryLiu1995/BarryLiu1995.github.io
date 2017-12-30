@@ -105,15 +105,15 @@
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121103.jpg">
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121104.png">
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121116.png">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/11/e8bffc7a630f2f67254c89ef8dccc93e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/11/7d54c9f3089333f9f168b972dbf0537d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/11/13f95dbf17a2cebc931ada10af3b047f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/11/2692ce9fddda5e79b06a3b7862f23170?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1uxb6j20mo05itav.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1v67kj20nj0bb78l.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1w7bsj20n70cpqba.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1vjmsj20k20dpgpj.jpg">
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121106.png">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyjjdg2rrj20ly04xt9l.jpg">
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121119.jpg">
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121120.png">
-<meta property="og:updated_time" content="2017-12-30T02:31:00.543Z">
+<meta property="og:updated_time" content="2017-12-30T02:39:49.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript与文字编码">
 <meta name="twitter:description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
@@ -480,17 +480,17 @@
 <p>we 发 财 🤑</p>
 </blockquote>
 <p>上面的字符对应的十进制编码如下</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/11/11/e8bffc7a630f2f67254c89ef8dccc93e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1uxb6j20mo05itav.jpg" alt=""></p>
 <p>其中 20 是空格的编码，可以看到一个英文还是 1 个字节，一个中文用了 3 个字节，而一个 Emoj 用了 4 个字节。它怎么知道每次应该读取多少个字节呢？如下图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/11/11/7d54c9f3089333f9f168b972dbf0537d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1v67kj20nj0bb78l.jpg" alt=""></p>
 <p>如果一个字节是 0 开头，表示这个字节就表示一个字符，如果是 3 个 1 开头表示这个字符要占 3 个字节，有多少个 1 就表示当前字符占用了多少个字节。这个就是 UTF-8 的存储特点，UTF 规定了每个字符的编号，而 UTF-8 定义了字符应该怎么存储。从 <a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.unicode.org%2F" target="_blank" rel="noopener">Unicode官网</a> 可以查到，“我”的UTF编码是6211，如下图所示：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/11/11/13f95dbf17a2cebc931ada10af3b047f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1w7bsj20n70cpqba.jpg" alt=""></p>
 <p>6211 怎么变成 UTF-8 编码呢？因为 6211 落在下面这个范围：</p>
 <blockquote>
 <p>U+ 0800 ~ U+ FFFF: 1110XXXX 10XXXXXX 10XXXXXX</p>
 </blockquote>
 <p>所以是这么转的：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2017/11/11/2692ce9fddda5e79b06a3b7862f23170?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1vjmsj20k20dpgpj.jpg" alt=""></p>
 <p>“我”的 UTF-8 就是 E6 88 91</p>
 <h4 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h4><p>UTF-16 编码介于 UTF-32 与 UTF-8 之间，同时结合了定长和变长两种编码方法的特点。它的编码规则很简单：基本平面的字符占用 2 个字节，辅助平面的字符占用 4 个字节。<strong>也就是说，UTF-16 的编码长度要么是 2 个字节（U+0000到U+FFFF），要么是 4 个字节（U+010000到U+10FFFF）。</strong> </p>
 <p><img src="http://image.beekka.com/blog/2014/bg2014121106.png" alt=""></p>
