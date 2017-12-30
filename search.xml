@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScript与文字编码]]></title>
+    <url>%2F2017%2F12%2F28%2F%E6%96%87%E5%AD%97%E7%BC%96%E7%A0%81%E4%B8%8E%E5%89%8D%E7%AB%AF%2F</url>
+    <content type="text"><![CDATA[在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码 文字编码在物理层面上，我们存入计算机的所有文件都是以二进制形式保存的。但现实生活中，我们会发现计算机中保存的文件形式各式各样，有音频文件、文本文件、视频文件、还有我们程序员熟悉的源代码文件等等。由此可以看出，不同文件的差别只是我们解读二进制的方式不同。然而即使同为一个类别的文件，解读二进制文件又会有不同。其中我们以网页开发中最常接触到的文本文件的编码方式拿来细说。这里所说的文本文件，一般是指基于字符编码的文件。计算机发展到现在为止，出现的字符编码就有 ASCII、GB2312、Unicode等等。 ASCII使用 8 个二进制位进行编码的方案，最多可以给 256 个字符（包括字母、数字、标点符号、控制字符及其他符号）分配数值。基本的 ASCII 字符集共有 128 （0~127）个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。因为这 128 个基本字符就可以用 7 位二进制表示。所以多出来的最高位设为 0 （在数据传输时可用作奇偶校验位）。剩下的 128 个拿来扩充 ASCII 字符集，为了以后方便加入新的字符。这些扩充字符的编码最高为均为 1 的二进制数字（即十进制 128~255），称为扩展 ASCII 码。由于这些基本 ASCII 字符集字符数目有限，在实际应用中往往无法满足要求。国际标准化组织（ISO）制定了新的标准，该标准是兼容了基本 ASCII 字符集，在不同国家地区有不同具体的方案。 Unicode为了解决不同国家地区间编码方案的不同引起的不便，于是就有了这样一个想法：将全世界所有的字符包含在一个集合里，计算机只要支持这一个字符集，就能显示所有的字符，再也不会乱码了。 Unicode 就是在这种背景下诞生了。Unicode 规定了每个字符的编号，这个编号也叫做“码点”（code point)。它从 0 开始，目前 Unicode 的最新版本一共收入了 109449 个符号，其中的中日韩文字为 74500 个。这么多符号，Unicode 不是一次性定义的，而是分区定义。每个区可以放 65536 （$2^{16}$)个字符，称为一个平面（plane）。目前，一共有 17 （$2^{5}$)个平面，也就是说，整个 Unicode 字符集的大小现在是 $2^{21}$ 个。其中最前面的 65536 个字符位，称为基本平面（缩写BMP），它的码点范围是从 0 ~ $2^{16}-1$，写成十六进制就是从 U+0000 ~ U+FFFF 。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（缩写SMP），码点范围从 U+010000 ~ U+10FFFF。 Unicode 只规定了每个字符的码点，到底用什么样的字节序表示这个码点，就涉及到编码方法。 UTF-32最直观的编码方法就是，每个码点使用 4 个字节表示，字节内容一一对应码点。这种编码方法就叫做 UTF-32。例如码点 597D U+597D = 0x0000 597D UTF-32 的优点在于，转换规则简单直观，查找效率高。缺点在于浪费空间，同样内容的英语文本，它会比 ASCII编码大四倍。这个缺点很致命，导致实际上没有人使用这种编码方法，HTML 5 标准就明文规定，网页不得编码成UTF-32。 UTF-8UTF-32 太过于浪费空间，所以急需一种节省空间的表示方案，这导致了 UTF-8 的诞生。UTF-8 是一种变长的编码方法，字符长度从 1 个字节到 4 个字节不等。越是常用的字符，字节越短，最前面的 128 个字符，只使用 1 个字节表示，与 ASCII 码完全相同。由于 UTF-8 这种节省空间的特性，导致它成为互联网上最常见的网页编码。 字节 编号范围 0x0000 - 0x007F 1 0x0080 - 0x07FF 2 0x0800 - 0xFFFF 3 0x010000 - 0x10FFFF 4 我们来看看 UTF-8 具体是如何存储字符的，如下面的字符 we 发 财 🤑 上面的字符对应的十进制编码如下 其中 20 是空格的编码，可以看到一个英文还是 1 个字节，一个中文用了 3 个字节，而一个 Emoj 用了 4 个字节。它怎么知道每次应该读取多少个字节呢？如下图所示： 如果一个字节是 0 开头，表示这个字节就表示一个字符，如果是 3 个 1 开头表示这个字符要占 3 个字节，有多少个 1 就表示当前字符占用了多少个字节。这个就是 UTF-8 的存储特点，UTF 规定了每个字符的编号，而 UTF-8 定义了字符应该怎么存储。从 Unicode官网 可以查到，“我”的UTF编码是6211，如下图所示： 6211 怎么变成 UTF-8 编码呢？因为 6211 落在下面这个范围： U+ 0800 ~ U+ FFFF: 1110XXXX 10XXXXXX 10XXXXXX 所以是这么转的： “我”的 UTF-8 就是 E6 88 91 UTF-16UTF-16 编码介于 UTF-32 与 UTF-8 之间，同时结合了定长和变长两种编码方法的特点。它的编码规则很简单：基本平面的字符占用 2 个字节，辅助平面的字符占用 4 个字节。也就是说，UTF-16 的编码长度要么是 2 个字节（U+0000到U+FFFF），要么是 4 个字节（U+010000到U+10FFFF）。 但是现在面临一个问题就是：当我们遇到两个字节，怎么看出它本身是一个字符，还是需要跟其他两个字节放在一起解读？然而在基本平面内，从 U+D800 ~ U+DFFF 是一个空段，即这些码点不对应任何字符。因此，这个空段被拿来映射辅助平面的字符。当我们遇到两个字节，发现它的码点在 U+D800 ~ U+DBFF 之间，就可以断定，紧跟在后面的两个字节的码点，应该在U+DC00 ~ U+DFFF之间，这四个字节必须放在一起解读。 到此，我们可以看出，UTF-8 的优点在于 1 个英文只要 1 个字节，但是 1 个中文却是 3 个字节，UTF-16 的优点在于编码长度固定，1 个中文只要 2 个字节，但是 1 个英文也要 2 个字节。所以对于英文网页 UTF-8 编码更加有利，而对于中文网页使用 UTF-16 应该更加有利。因为绝大部分的中文都是落在 U+0000 ~ U+FFFF。 Base64早期电子邮件的 SMTP（Simple Mail Transfer Protocol） 协议仅限于传送 7 位的 ASCII 码。许多其他非英语国家的文字以及多媒体资源就无法传送，所以说早期的电子邮件就只能传送英文文字。或许是早期电子邮件的诞生的时候，美国人民以为只有他们自己会传送文字以取消传统的电报业务。 于是后来就提出了通用互联网邮件扩充（MIME）。MIME 并没有改动或取代 SMTP。MIME 的意图是继续使用原来的邮件格式，但增加了邮件主体的结构，并定义了传送非 ASCII 码的编码规则。因此在这种情况下，Base64 就诞生了。 Base64 可以把原本 ASCII 码的控制字符甚至 ASCII 码之外的字符都转成可打印的 6 bit 字符，也就是说用 6 bit 字符表达了原本 8 bit 字符。我们看看下面的图片： 像表格中那样，8 Bit$\times$3 的字符串可以每 6 个 bit 分成一组，每一组 bit 对应一个十进制的 index，每一个 index 值又对应了 Base64 的字符。由于 6 bit 的二进制代码共有 64 种不同的值，从 0 到 63。用 A 表示 0 ，用 B 表示 1 ，等等。26 个大写字母排列完毕后，接下去再排 26 个小写字母，再后面是 10 个数字，最后用“+”表示 62，而用“/”表示 63。再用两个连在一起的等号 “==” 和一个等号 “=” 分别表示最后一组的代码只有 8 bit 或 16 bit。 JavaScript 与编码JavaScript使用哪种编码JavaScript 语言采用 Unicode 字符集，但是它编码使用的既不是 UTF-16，也不是UTF-8，更不是 UTF-32，而是 UCS-2。他们之间是什么关系呢？我们讲讲一些历史。 互联网还没出现的年代，曾经有两个团队，不约而同想搞统一字符集。一个是 1988 年成立的Unicode 团队，另一个是 1989 年成立的 UCS 团队。等到他们发现了对方的存在，很快就达成一致：世界上不需要两套统一字符集。1991 年 10 月，两个团队决定合并字符集。也就是说，从今以后只发布一套字符集，就是 Unicode，并且修订此前发布的字符集，UCS 的码点将与 Unicode 完全一致。 UCS 的开发进度快于 Unicode，1990 年就公布了第一套编码方法 UCS-2，使用 2 个字节表示已经有码点的字符。（那个时候只有一个平面，就是基本平面，所以 2 个字节就够用了。）UTF-16 编码迟至 1996 年 7 月才公布，明确宣布是 UCS-2 的超集，即基本平面字符沿用 UCS-2 编码，辅助平面字符定义了 4 个字节的表示方法。 两者的关系简单说，就是 UTF-16 取代了 UCS-2 ，或者说 UCS-2 整合进了 UTF-16。所以，现在只有 UTF-16，没有 UCS-2。 ###JavaScript为什么不使用 UTF-16 那么，为什么 JavaScript 不选择更高级的 UTF-16，而用了已经被淘汰的 UCS-2 呢？答案很简单：非不想也，是不能也。因为在 JavaScript 语言出现的时候，还没有 UTF-16 编码。 JavaScript 字符函数的局限由于 JavaScript 只能处理 UCS-2 编码，造成所有字符在这门语言中都是 2 个字节，如果是 4 个字节的字符，会当作两个双字节的字符处理。JavaScript 的字符函数都受到这一点的影响，无法返回正确结果。所以当遍历字符串的时，必须对码点做一个判断，然后手动调整。 String.prototype.replace() String.prototype.substring() String.prototype.slice() … 上面的字符函数都只对 2 字节的码点有效。要正确处理 4 字节的码点要手动处理。 ES6JavaScript 的下一个版本 ECMAScript 6（ES6），大幅增强了 Unicode 支持，基本上解决了上面的问题。新增了以下特点： ES6能够自动识别 4 字节的码点 允许直接用码点表示 Unicode 字符 新增了几个专门处理 4 字节码点的函数 对正则表达式添加了 4 字节码点的支持 Unicode 正规化 参考 字符编码|百度百科 文字编码的那些事|掘金 Unicode 与 JavaScript 详解|阮一峰的网络日志 《计算机网络》谢希仁著（第七版） 漫画：什么是 Base64 算法|算法爱好者]]></content>
+      <categories>
+        <category>学习总结</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[学习日记(四)]]></title>
     <url>%2F2017%2F11%2F24%2F%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0(%E5%9B%9B)%2F</url>
     <content type="text"><![CDATA[本文章将记录后面几个月的学习笔记 2017.11.23节流与防抖他们的出现主要是为了解决一些短时间内连续执行的事件带来性能上的不佳和内存的消耗巨大等问题。 节流——在一定时间内触发一次 防抖——在一定时间之后才触发指定函数 用途 当我们做 keyup 向后台请求检验的时候，可以使用防抖函数，不然我们每按一次键盘就请求一次，请求太频繁，这样当我们结束按键盘的时候再去请求，请求少很多了，性能自然不用说 resize 窗口大小调整的时候，我们可以采用防抖技术也可以使用节流 mousemove 鼠标移动事件我们既可以采用防抖也可以使用节流 scroll 滚动条触发的事件，当然既可以采用防抖也可以采用节流 连续高频发的事件都可以采用这两种方式去解决，优化页面性能 2017.11.25Three.js 中关于Mesh、Geometry、Material的关系1var mesh = new THREE.Mesh(new THREE.Geometry(), new THREE.Material()); 使用几何形状（Geometry）和材质（Material）之后，我们就能使用他们来创建物体了。最常用的一种物体就是网格（Mesh），网格是由顶点、边、面等组成的物体；其他物体包括线段（Line）、骨骼（Bone）、粒子系统（ParticleSystem）等。创建物体需要指定几何形状和材质，其中，几何形状（Geometry）决定了物体的顶点位置等信息，材质（Materia 决定了物体的颜色、纹理等信息。 DOM——Document类型JavaScript 通过 Document 类型表示文档，这里文档指的可以是 HTML 页面或者其他基于 XML 的文档。不过最常见的应用还是作为 HTMLDocument （继承自 Document 类型）实例的document对象。而且，document对象是window对象的一个属性，因此可以将其作为全局对象来访问。其子节点可能是一个 DocumentType（&lt;!DOCTYPE&gt;标签，且最多一个）、Element（最多一个）、ProcessingInstruction 或 Comment。 12345&lt;html&gt; &lt;body&gt; &lt;/body&gt;&lt;/html&gt; 123456var html = document.documentElement;alert(html===document.childNodes[0]); //truealert(html===document.firstChild); //truevar body = document.body;alert(body === html.firstChild); //true 2017.11.28计算机文件 一般来说，计算机文件可以分为两类：文本文件和二进制文件。 图形文件及文字处理程序等计算机程序都属于二进制文件。这些文件含有特殊的格式及计算机代码。ASCII 则是可以用任何文字处理程序阅读的简单文本文件。 广义的二进制文件即指文件，由文件在外部设备的存放形式为二进制而得名。狭义的二进制文件即除文本文件以外的文件。文本文件是一种由很多行字符构成的计算机文件。文本文件存在于计算机系统中，通常在文本文件最后一行放置文件结束标志。文本文件的编码基于字符定长，译码相对要容易一些；二进制文件编码是变长的，灵活利用率要高，而译码要难一些，不同的二进制文件译码方式是不同的。 计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是逻辑上的。这两者只是在编码层次上有差异。简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值（可以看作是自定义编码）。从上面可以看出文本文件基本上是定长编码的(也有非定长的编码如UTF-8)，基于字符，每个字符在具体编码中是固定的，ASCII码是8个比特的编码，UNICODE一般占16个比特。而二进制文件可看成是变长编码的，因为是值编码，多少个比特代表一个值，完全由自己决定。 ASCII 是计算机最早的文字编码方案，所以对他的支持是全球范围内的，所以使用全球任何一款文字处理程序都可以打开此 ASCII 文件，所以把它称为纯文本文件。而一些特殊的比如 GBK、BIG5、GB18030文字编码方案都不是全球范围内都支持使用的，比如在国内出售的计算机预装的Window操作系统内置的字符编码方式就肯定不会有GB18030这种日文文字编码方案 文本文件与二进制文件的区别仅仅是编码上不同，所以他们的优缺点就是编码的优缺点。一般认为，文本文件编码基于字符定长，译码容易；二进制文件编码是变长的，所以它灵活，存储利用率要高些，译码难一些（不同的二进制文件格式，有不同的译码方式）。在windows下，文本文件不一定是ASCII来存贮的，因为ASCII码只能表示128的标识，打开一个txt文档，然后另存为，有个选项是编码，可以选择存贮格式，一般来说UTF-8编码格式兼容性要好一些。 2017.11.30HTML5 Geolocation用HTML5 Geolocation API(地理位置应用程序接口)获得的经纬度参数，传入到腾讯地图，并显示出来后，会发现会有一定的偏移，这是因为我国把美国卫星的GPS的地球坐标，进行偏移的算法，计算后，得出了一个火星坐标。为了让火星坐标能正确的显示，又给每部导航软件加入了这个算法，可以在大家的地图上还原位置；而自己写的程序里没有加入此算法，所以出现了偏移问题，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。 2017.12.6URI与URL的区别统一资源标志符 URI 就是在某一规则下能把一个资源独一无二地标识出来。拿人做例子，假设这个世界上所有人的名字都不能重复，那么名字就是 URI 的一个实例，通过名字这个字符串就可以标识出唯一的一个人。现实当中名字当然是会重复的，所以身份证号才是 URI ，通过身份证号能让我们能且仅能确定一个人。那统一资源定位符 URL 是什么呢。也拿人做例子然后跟 HTTP 的 URL 做类比，就可以有： 动物住址协议://地球/中国/浙江省/杭州市/西湖区/某大学/14号宿舍楼/525号寝/张三.人 可以看到，这个字符串同样标识出了唯一的一个人，起到了URI的作用，所以URL是URI的子集。URL 是以描述人的位置来唯一确定一个人的。在上文我们用身份证号也可以唯一确定一个人。对于这个在杭州的张三，我们也可以用下面编码来标识他 身份证号：123456789 所以不论是用定位的方式还是用编号的方式，我们都可以唯一确定一个人，都是 URl 的一种实现，而 URL 就是用定位的方式实现的 URI 。 2017.12.8CGI(Common Gateway Interface)What is CGI? CGI stands for Common Gateway Interface. This is not to be confused with the other CGI, which stands for Computer Generated Imagery, which is the technology that they use for special effects and explosions and things in major motion pictures. This is CGI, the Common Gateway Interface. This is the technology that allows web browsers to submit forms and interact with programs on a web server. So, when you see a web form like this one here, and you fill it in and you press the button and it goes, what happens from this point is CGI. The web browser submits the data to the server. The server passes that data on to an application. The application responds and it goes back up the chain, back to your web browser, and your web browser gets some kind of result and maybe something happens on the backend, like a database thing or sending an email or something like that. CGI is used for simple interactive applications. More complicated applications like Google Maps or Gmail or something like that, use another technology called Ajax, which sometimes actually uses CGI on the backend to communicate with the applications on the server. But CGI is used for simple interactive applications. CGI applications can be written in any programming language. The most common ones are languages like Perl and PHP and Python and things like that that tend to be simple languages. Because CGI applications tend to be simple applications. For this reason, CGI applications are often called CGI scripts, because the languages that they tend to be written in, tend to be what are called scripting languages. They tend to be very simple languages. And for this reason, they’re often called CGI scripts. Of course, they can be written in any language. Sometimes more complex languages like ASP or Java or even C++ can be used, but it’s important to note that CGI applications run in the server. They do not run in the web browser. So, the technology that’s used by the CGI application must be supported by the web server. And the requirements of running applications on the server and the security restrictions and things like that must all be followed according to the rules of the server and not according to the rules of your local computer or your application. And this is because CGI applications run in the server and not in the web browser. So, we’ll cover more of the details as we move along in this course, but in a nutshell, that’s what CGI is. 2017.12.10插入标记IE标准的innerHTML、outerHTML、innerText、outerText这四个插入标记，其中前两个已经被列为了HTML5的标准，而后面两个却没有得到这样的待遇。同时还有一个这样的问题需要注意到：设置这四个属性的时候，得到的结果却不是设置时所敲下的字符文本，原因在于结果返回的字符串是根据原始HTML字符串创建的DOM树经过序列化之后的结果。 2017.12.17页面大小、视口大小和浏览器窗口大小 IE9+、Safari、Firefox中，outerWidth和outerHeight表示浏览器窗口本身的大小。而在Opera中，这两个属性表示的是Opera中单个标签页对应的浏览器窗口 innerWidth和innerHeight在除了Chrome浏览器之外的浏览器中都表示该容器中页面视图区的大小（减去边框宽度） Chrome浏览器中，innerWidth、innerHeight、outerWidth、outerHeight都表示视图区大小 IE8及更早版本没有提供取得当前浏览器窗口尺寸的属性；不过它通过 DOM 提供了页面视图区域的相关信息：在IE、Firefox、Safari、Opera和Chrome中，document.documentElement.clientXXX保存了页面视图区的大小。在IE6 中这些属性必须在标准模式下才有效；如果是混杂模式，就必须通过document.body.clientXXX取得相同信息 2017.12.26ShellShell 中文翻译为“壳层”。在计算机科学中，Shell 指“为用户提供用户界面”的软件，通常指的是命令行界面的解析器。一般来说，这个词是指操作系统中，提供访问内核所提供的服务的程序。Shell 也用于泛指所有为用户提供操作界面的程序，也就是程序和用户交互的接口。因此与之相对的是程序内核(Core)，内核不提供和用户的交互功能。通常将 Shell 分为两类：命令行与图形界面。命令行壳层提供一个命令行界面(CLI)；而图形壳层提供要给图形用户界面(GUI)。相关信息可参考 壳层|维基百科 Node.js 的异步I/O和事件驱动的理解 异步I/O——非阻塞的服务器我们可以想象成一个无限 loop 循环，这个 loop 会一直跑下去。一个新请求来了，这个 loop 就接了这个请求，把这个请求传给其他的进程（比如传给一个搞数据库查询的进程），然后响应一个回调（callback）。完事了这 loop 就接着跑，接其他的请求。如果请求处理完成，loop 就把结果传回用户的浏览器，接着继续跑。 事件驱动——服务器只在用户那边有事件发生的时候才响应]]></content>
@@ -8,11 +20,11 @@
         <category>学习日记</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
         <tag>计算机网络</tag>
-        <tag>Three.js</tag>
         <tag>HTML</tag>
+        <tag>Three.js</tag>
       </tags>
   </entry>
   <entry>
@@ -23,7 +35,7 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -45,7 +57,7 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -68,12 +80,12 @@
         <category>学习日记</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
         <tag>JavaScript</tag>
-        <tag>计算机网络</tag>
+        <tag>理解计算机</tag>
         <tag>Web前端</tag>
-        <tag>HTML</tag>
+        <tag>计算机网络</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -142,8 +154,8 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-        <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -176,8 +188,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -188,7 +200,7 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
+        <tag>理解计算机</tag>
         <tag>设计模式</tag>
       </tags>
   </entry>
@@ -200,8 +212,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -212,7 +224,7 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -235,7 +247,7 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
+        <tag>理解计算机</tag>
         <tag>计算机网络</tag>
       </tags>
   </entry>
@@ -258,12 +270,12 @@
         <category>学习日记</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
         <tag>JavaScript</tag>
-        <tag>计算机网络</tag>
+        <tag>理解计算机</tag>
         <tag>Web前端</tag>
-        <tag>HTML</tag>
+        <tag>计算机网络</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
         <tag>Git</tag>
       </tags>
   </entry>
@@ -275,7 +287,7 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
+        <tag>理解计算机</tag>
         <tag>Android</tag>
       </tags>
   </entry>
@@ -287,9 +299,9 @@
         <category>学习日记</category>
       </categories>
       <tags>
-        <tag>计算机概念</tag>
-        <tag>计算机网络</tag>
+        <tag>理解计算机</tag>
         <tag>Android</tag>
+        <tag>计算机网络</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
