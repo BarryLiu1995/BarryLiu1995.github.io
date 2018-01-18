@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fltf3zvk13j21dg0vmqu2.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fnbcg4w467j20hq09zdg8.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fncnub587sj20eh0bc75s.jpg">
-<meta property="og:updated_time" content="2018-01-16T08:45:12.572Z">
+<meta property="og:updated_time" content="2018-01-18T11:56:42.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习日记(四)">
 <meta name="twitter:description" content="本文章将记录后面几个月的学习笔记">
@@ -488,7 +488,7 @@
 </ol>
 <h3 id="Node-js-后台程序与传统后台程序的区别"><a href="#Node-js-后台程序与传统后台程序的区别" class="headerlink" title="Node.js 后台程序与传统后台程序的区别"></a>Node.js 后台程序与传统后台程序的区别</h3><p>浏览器给网站发请求的过程一直没怎么变过。当浏览器给网站发了请求。服务器收到了请求，然后开始搜寻被请求的资源。如果有需要，服务器还会查询一下数据库，最后把响应结果传回到浏览器。不过，在传统的 web 服务器中（比如 Apache），每一个请求都会让服务器创建一个新的进程来处理这个请求。</p>
 <p>后来有了 Ajax。有了 Ajax，我们就不用每次都请求一个完整的新页面了，取而代之的是，每次只请求需要的部分页面信息就可以了。这显然是一个进步。但是比如你要建一个类似于人人网的社交网站，你的好友随时随地都可能推送新的状态，然后你的好友消息那个页面会实时自动刷新。要达成这个需求，我们需要让用户一直与服务器保持一个有效连接。目前最简单的实现方法，就是让用户和服务器之间保持<strong>长轮询</strong>。</p>
-<p>而 HTTP 请求不是持续的连接，你请求一次，服务器响应一次，然后就完了。长轮训是一种利用HTTP 模拟持续连接的技巧。具体来说，只要页面载入了，不管你需不需要服务器给你响应信息，你都会给服务器发一个 Ajax 请求。这个请求不同于一般的 Ajax 请求，服务器不会直接给你返回信息，而是它要等着，直到服务器觉得该给你发信息了，它才会响应。比如，你的好友发了一条新鲜事，服务器就会把这个新鲜事当做响应发给你的浏览器，然后你的浏览器就刷新页面了。浏览器收到响应刷新完之后，再发送一条新的请求给服务器，这个请求依然不会立即被响应。于是就开始重复以上步骤。利用这个方法，可以让浏览器始终保持等待响应的状态。虽然以上过程依然只有非持续的 HTTP 参与，但是我们模拟出了一个看似持续的连接状态。</p>
+<p>而 HTTP 请求不是持续的连接（HTTP 是超文本传输协议，而 TCP 是传输控制协议而且连接是持续的）你请求一次，服务器响应一次，然后就完了。长轮训是一种利用HTTP 模拟持续连接的技巧。具体来说，只要页面载入了，不管你需不需要服务器给你响应信息，你都会给服务器发一个 Ajax 请求。这个请求不同于一般的 Ajax 请求，服务器不会直接给你返回信息，而是它要等着，直到服务器觉得该给你发信息了，它才会响应。比如，你的好友发了一条新鲜事，服务器就会把这个新鲜事当做响应发给你的浏览器，然后你的浏览器就刷新页面了。浏览器收到响应刷新完之后，再发送一条新的请求给服务器，这个请求依然不会立即被响应。于是就开始重复以上步骤。利用这个方法，可以让浏览器始终保持等待响应的状态。虽然以上过程依然只有非持续的 HTTP 参与，但是我们模拟出了一个看似持续的连接状态。</p>
 <h2 id="2018-1-6"><a href="#2018-1-6" class="headerlink" title="2018.1.6"></a>2018.1.6</h2><h3 id="mouseenter-VS-mouseover"><a href="#mouseenter-VS-mouseover" class="headerlink" title="mouseenter VS mouseover"></a>mouseenter VS mouseover</h3><ul>
 <li>mouseenter只作用在目标元素上</li>
 <li>mouseOver作用在目标元素上及其子元素上</li>
@@ -525,7 +525,7 @@
 <p>随着新版 Node.js 开始支持 ES6，Express 的团队又基于 ES6 的 generator 重新编写了下一代 web框架 Koa。Koa 1.0 用 generator 实现异步，这比回调简单不少，但是 generator 的本意并不是异步。ES6 的 Promise 才是为异步设计的，但是 Promise 的写法比较复杂。为了再次简化异步代码，ES7 引入了新的关键字 <code>async</code> 和 <code>await</code> 。</p>
 <p>Koa 团队并没有止步于 Koa 1.0，他们非常超前地基于 ES7 开发了 Koa2，和 Koa1 相比，Koa2 完全<strong>使用 Promise 并配合 async 来实现异步</strong>。</p>
 <h2 id="2018-1-16"><a href="#2018-1-16" class="headerlink" title="2018.1.16"></a>2018.1.16</h2><h3 id="发送表单数据"><a href="#发送表单数据" class="headerlink" title="发送表单数据"></a>发送表单数据</h3><p>HTML 标签<code>&lt;form/&gt;</code>是表单元素，表单元素的作用就是让用户在此填上信息，然后点击表单内部的“submit”按钮<strong>自动生成请求</strong>，将表单数据（form-data）一般以 GET 请求的方式形成请求参数附加到请求报文中的 URL 中。此时信息是明文传输。表单数据被附加到 URL 作为一系列的名称/值对。在URL 地址结束之后，我们包括一个问号(?)，后面是名称/值对，每一个都由一个与符号(&amp;)分隔开。例如：<code>http://www.foo.com/?name=BarryLiu&amp;age=23</code>。这一请求也可通过 DevTools Network 面板看见，至于 POST 请求，信息是被保存到请求报文的主体部分。</p>
-<p>然而当 Web 应用功能逐渐丰富后，<code>&lt;form/&gt;</code>的使用就不再纯粹是用户填入信息后提交，提交的内容附加到请求 URL 后面，此时浏览器需要再次加载整个页面以体现用户提交信息后服务器的处理结果。随着 Web 富应用化，开发人员也逐渐更多的控制表单数据的提交，不管在 UI 上还是底层数据传输上都跟以往传统真正意义上的“表单数据”提交有着差别。其中体现在用户填写信息后，在浏览器后台以异步的形式发送表单数据到服务器上，而浏览器也无需完整加载整个页面来体现数据提交后的结果，而是只更新页面上需要更新的部分。这种技术被称为“AJAX”（Asynchronous JavaScript And XML）。</p>
+<p>然而当 Web 应用功能逐渐丰富后，<code>&lt;form/&gt;</code>的使用就不再纯粹是用户填入信息后提交，提交的内容附加到请求 URL 后面，此时浏览器需要再次加载整个页面以体现用户提交信息后服务器的处理结果。随着 Web 富应用化，开发人员也逐渐更多的控制表单数据的提交，不管在 UI 上还是底层数据传输上都跟以往传统真正意义上的“表单数据”提交有着差别。其中体现在用户填写信息后，在浏览器后台以异步的形式发送表单数据到服务器上，而浏览器也无需完整加载整个页面来体现数据提交后的结果，而是只更新页面上需要更新的部分。这种技术被称为“AJAX”（Asynchronous JavaScript And XML）。同时如果使用<code>FormData</code>对象，就可以模仿<code>&lt;form/&gt;</code>标签提交表单数据（form-data）的行为。在服务器端的处理就是一样的。</p>
 
       
     </div>
