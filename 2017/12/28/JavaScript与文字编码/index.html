@@ -98,26 +98,26 @@
 <meta name="keywords" content="JavaScript,理解计算机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript与文字编码">
-<meta property="og:url" content="http://barryliu1995.studio/2017/12/28/文字编码与前端/index.html">
+<meta property="og:url" content="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码/index.html">
 <meta property="og:site_name" content="刘志宇的新天地">
 <meta property="og:description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121103.jpg">
-<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121104.png">
-<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121116.png">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lvwov9hj20jg0ap74v.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lw935dxj20jg0apwey.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1uxb6j20mo05itav.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1v67kj20nj0bb78l.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1w7bsj20n70cpqba.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1vjmsj20k20dpgpj.jpg">
 <meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121106.png">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyjjdg2rrj20ly04xt9l.jpg">
-<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121119.jpg">
-<meta property="og:image" content="http://image.beekka.com/blog/2014/bg2014121120.png">
-<meta property="og:updated_time" content="2017-12-31T07:47:06.172Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lwmci1lj20jg0apmzc.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lx1wdehj20jg0apdgb.jpg">
+<meta property="og:updated_time" content="2018-05-06T08:01:44.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript与文字编码">
 <meta name="twitter:description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
-<meta name="twitter:image" content="http://image.beekka.com/blog/2014/bg2014121103.jpg">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg">
 
 
 
@@ -146,7 +146,7 @@
 
 
 
-  <link rel="canonical" href="http://barryliu1995.studio/2017/12/28/文字编码与前端/"/>
+  <link rel="canonical" href="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码/"/>
 
 
 
@@ -339,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/12/28/文字编码与前端/">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘志宇">
@@ -434,19 +434,19 @@
 
       
         <p>在学习阮一峰的 <a href="http://es6.ruanyifeng.com/#docs/string" target="_blank" rel="noopener">字符串的扩展|ECMAScript 6 入门</a> 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码</p>
-<p><img src="http://image.beekka.com/blog/2014/bg2014121103.jpg" width="600" height="200" align="center/"></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg" width="600" height="200" align="center/"></p>
 <a id="more"></a>
 <h2 id="文字编码"><a href="#文字编码" class="headerlink" title="文字编码"></a>文字编码</h2><p>在物理层面上，我们存入计算机的所有文件都是以二进制形式保存的。但现实生活中，我们会发现计算机中保存的文件形式各式各样，有音频文件、文本文件、视频文件、还有我们程序员熟悉的源代码文件等等。由此可以看出，不同文件的差别只是我们解读二进制的方式不同。然而即使同为一个类别的文件，解读二进制文件又会有不同。其中我们以网页开发中最常接触到的文本文件的编码方式拿来细说。这里所说的文本文件，一般是指基于字符编码的文件。计算机发展到现在为止，出现的字符编码就有 ASCII、GB2312、Unicode等等。</p>
 <h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>使用 8 个二进制位进行编码的方案，最多可以给 256 个字符（包括字母、数字、标点符号、控制字符及其他符号）分配数值。基本的 ASCII 字符集共有 128 （0~127）个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。因为这 128 个基本字符就可以用 7 位二进制表示。所以多出来的最高位设为 0 （在数据传输时可用作奇偶校验位）。剩下的 128 个拿来扩充 ASCII 字符集，为了以后方便加入新的字符。这些扩充字符的编码最高为均为 1 的二进制数字（即十进制 128~255），称为扩展 ASCII 码。由于这些基本 ASCII 字符集字符数目有限，在实际应用中往往无法满足要求。国际标准化组织（ISO）制定了新的标准，该标准是兼容了基本 ASCII 字符集，在不同国家地区有不同具体的方案。</p>
 <h3 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h3><p>为了解决不同国家地区间编码方案的不同引起的不便，于是就有了这样一个想法：将全世界所有的字符包含在一个集合里，计算机只要支持这一个字符集，就能显示所有的字符，再也不会乱码了。</p>
 <p>Unicode 就是在这种背景下诞生了。Unicode 规定了每个字符的编号，这个编号也叫做“码点”（code point)。它从 0 开始，目前 Unicode 的最新版本一共收入了 109449 个符号，其中的中日韩文字为 74500 个。这么多符号，Unicode 不是一次性定义的，而是分区定义。每个区可以放 65536 （$2^{16}$)个字符，称为一个平面（plane）。目前，一共有 17 （$2^{5}$)个平面，也就是说，整个 Unicode 字符集的大小现在是 $2^{21}$ 个。其中最前面的 65536 个字符位，称为基本平面（缩写BMP），它的码点范围是从 0 ~ $2^{16}-1$，写成十六进制就是从 U+0000 ~ U+FFFF 。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（缩写SMP），码点范围从 U+010000 ~ U+10FFFF。</p>
 <p>Unicode 只规定了每个字符的码点，到底用什么样的字节序表示这个码点，就涉及到编码方法。</p>
-<p><img src="http://image.beekka.com/blog/2014/bg2014121104.png" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lvwov9hj20jg0ap74v.jpg" alt=""></p>
 <h4 id="UTF-32"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</h4><p>最直观的编码方法就是，每个码点使用 4 个字节表示，字节内容一一对应码点。这种编码方法就叫做 UTF-32。例如码点 597D </p>
 <blockquote>
 <p>U+597D = 0x0000 597D</p>
 </blockquote>
-<p><img src="http://image.beekka.com/blog/2014/bg2014121116.png" alt="UTF-32"></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lw935dxj20jg0apwey.jpg" alt="UTF-32"></p>
 <p>UTF-32 的优点在于，转换规则简单直观，查找效率高。缺点在于浪费空间，同样内容的英语文本，它会比 ASCII编码大四倍。这个缺点很致命，导致实际上没有人使用这种编码方法，HTML 5 标准就明文规定，网页不得编码成UTF-32。</p>
 <h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h4><p>UTF-32 太过于浪费空间，所以急需一种节省空间的表示方案，这导致了 UTF-8 的诞生。UTF-8 是一种变长的编码方法，字符长度从 1 个字节到 4 个字节不等。越是常用的字符，字节越短，最前面的 128 个字符，只使用 1 个字节表示，与 ASCII 码完全相同。由于 UTF-8 这种节省空间的特性，导致它成为互联网上最常见的网页编码。</p>
 <table>
@@ -503,12 +503,12 @@
 <p>像表格中那样，8 Bit$\times$3 的字符串可以每 6 个 bit 分成一组，每一组 bit 对应一个十进制的 index，每一个 index 值又对应了 Base64 的字符。由于 6 bit 的二进制代码共有 64 种不同的值，从 0 到 63。用 A 表示 0 ，用 B 表示 1 ，等等。26 个大写字母排列完毕后，接下去再排 26 个小写字母，再后面是 10 个数字，最后用“+”表示 62，而用“/”表示 63。再用两个连在一起的等号 “==” 和一个等号 “=” 分别表示最后一组的代码只有 8 bit 或 16 bit。</p>
 <h2 id="JavaScript-与编码"><a href="#JavaScript-与编码" class="headerlink" title="JavaScript 与编码"></a>JavaScript 与编码</h2><h3 id="JavaScript使用哪种编码"><a href="#JavaScript使用哪种编码" class="headerlink" title="JavaScript使用哪种编码"></a>JavaScript使用哪种编码</h3><p>JavaScript 语言采用 Unicode 字符集，但是它编码使用的既不是 UTF-16，也不是UTF-8，更不是 UTF-32，而是 UCS-2。他们之间是什么关系呢？我们讲讲一些历史。</p>
 <p>互联网还没出现的年代，曾经有两个团队，不约而同想搞统一字符集。一个是 1988 年成立的Unicode 团队，另一个是 1989 年成立的 UCS 团队。等到他们发现了对方的存在，很快就达成一致：世界上不需要两套统一字符集。1991 年 10 月，两个团队决定合并字符集。也就是说，从今以后只发布一套字符集，就是 Unicode，并且修订此前发布的字符集，UCS 的码点将与 Unicode 完全一致。</p>
-<p><img src="http://image.beekka.com/blog/2014/bg2014121119.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lwmci1lj20jg0apmzc.jpg" alt="UCS与Unicode"></p>
 <p>UCS 的开发进度快于 Unicode，1990 年就公布了第一套编码方法 UCS-2，使用 2 个字节表示已经有码点的字符。（那个时候只有一个平面，就是基本平面，所以 2 个字节就够用了。）UTF-16 编码迟至 1996 年 7 月才公布，明确宣布是 UCS-2 的超集，即基本平面字符沿用 UCS-2 编码，辅助平面字符定义了 4 个字节的表示方法。</p>
 <p><strong>两者的关系简单说，就是 UTF-16 取代了 UCS-2 ，或者说 UCS-2 整合进了 UTF-16。</strong>所以，现在只有 UTF-16，没有 UCS-2。</p>
 <p>###JavaScript为什么不使用 UTF-16</p>
 <p>那么，为什么 JavaScript 不选择更高级的 UTF-16，而用了已经被淘汰的 UCS-2 呢？答案很简单：非不想也，是不能也。<strong>因为在 JavaScript 语言出现的时候，还没有 UTF-16 编码。</strong></p>
-<p><img src="http://image.beekka.com/blog/2014/bg2014121120.png" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lx1wdehj20jg0apdgb.jpg" alt="JavaScript字符编码历史"></p>
 <h3 id="JavaScript-字符函数的局限"><a href="#JavaScript-字符函数的局限" class="headerlink" title="JavaScript 字符函数的局限"></a>JavaScript 字符函数的局限</h3><p>由于 JavaScript 只能处理 UCS-2 编码，造成所有字符在这门语言中都是 2 个字节，如果是 4 个字节的字符，会当作两个双字节的字符处理。JavaScript 的字符函数都受到这一点的影响，无法返回正确结果。所以当遍历字符串的时，必须对码点做一个判断，然后手动调整。</p>
 <blockquote>
 <ul>
@@ -713,7 +713,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -735,7 +735,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
