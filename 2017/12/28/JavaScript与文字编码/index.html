@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,理解计算机," />
+  <meta name="keywords" content="理解计算机,JavaScript," />
 
 
 
@@ -95,7 +95,7 @@
 
 
 <meta name="description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
-<meta name="keywords" content="JavaScript,理解计算机">
+<meta name="keywords" content="理解计算机,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript与文字编码">
 <meta property="og:url" content="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码/index.html">
@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyjjdg2rrj20ly04xt9l.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lwmci1lj20jg0apmzc.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lx1wdehj20jg0apdgb.jpg">
-<meta property="og:updated_time" content="2018-05-06T08:31:46.056Z">
+<meta property="og:updated_time" content="2018-05-07T14:57:26.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript与文字编码">
 <meta name="twitter:description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
@@ -437,7 +437,12 @@
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg" width="600" height="200" align="center/"></p>
 <a id="more"></a>
 <h2 id="文字编码"><a href="#文字编码" class="headerlink" title="文字编码"></a>文字编码</h2><p>在物理层面上，我们存入计算机的所有文件都是以二进制形式保存的。但现实生活中，我们会发现计算机中保存的文件形式各式各样，有音频文件、文本文件、视频文件、还有我们程序员熟悉的源代码文件等等。由此可以看出，不同文件的差别只是我们解读二进制的方式不同。然而即使同为一个类别的文件，解读二进制文件又会有不同。其中我们以网页开发中最常接触到的文本文件的编码方式拿来细说。这里所说的文本文件，一般是指基于字符编码的文件。计算机发展到现在为止，出现的字符编码就有 ASCII、GB2312、Unicode等等。</p>
-<h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>使用 8 个二进制位进行编码的方案，最多可以给 256 个字符（包括字母、数字、标点符号、控制字符及其他符号）分配数值。基本的 ASCII 字符集共有 128 （0~127）个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。因为这 128 个基本字符就可以用 7 位二进制表示。所以多出来的最高位设为 0 （在数据传输时可用作奇偶校验位）。剩下的 128 个拿来扩充 ASCII 字符集，为了以后方便加入新的字符。这些扩充字符的编码最高为均为 1 的二进制数字（即十进制 128~255），称为扩展 ASCII 码。由于这些基本 ASCII 字符集字符数目有限，在实际应用中往往无法满足要求。国际标准化组织（ISO）制定了新的标准，该标准是兼容了基本 ASCII 字符集，在不同国家地区有不同具体的方案。</p>
+<h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>ASCII（American Standard Code for Information Interchange），中文名称为美国信息交换标准代码。是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语和其他西欧语言。它是现今最通用的单字节编码系统。ASCII码又分为标准ASCII码和扩展ASCII码。</p>
+<p>使用 8 个二进制位进行编码的方案，最多可以给 256 个字符（包括字母、数字、标点符号、控制字符及其他符号）分配数值。基本的 ASCII 字符集共有 128 （0~127）个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。因为这 128 个基本字符就可以用 7 位二进制表示。所以多出来的最高位设为 0 （在数据传输时可用作奇偶校验位）。剩下的 128 个拿来扩充 ASCII 字符集，为了以后方便加入新的字符。这些扩充字符的编码最高为均为 1 的二进制数字（即十进制 128~255），<strong>称为扩展 ASCII 码</strong>，各国为了可以在计算机使用他们自己的文字，于是就在扩展 ASCII 码上各自做文章。虽然剩下的128个扩展 ASCII 码数量有限，但在实际应用中是可以满足部分国家文字编码的需求。因此针对扩展的 ASCII 码，不同的国家有不同的字符集，但它不是国际标准。比如 Latin1 字符集属于扩展ASCII码的一种，国际标准名为 ISO-8859-1，它把位于128-255之间的字符用于拉丁字母表中特殊语言字符的编码，也因此而得名。不过欧洲语言不是地球上的唯一语言，亚洲和非洲语言并不能被Latine1字符集所支持。这些基于基本 ASCII 字符集进行扩展出来的单字节字符集在不同国家地区有不同具体的方案。</p>
+<h3 id="GB2312"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</h3><p>等中国人开始使用计算机时发现如果还是使用扩展 ASCII 码来制定中文的字符集是行不通，因为常用汉字就已超过6000个。于是这时候国人就自主研发，把那些127号之后的奇异符号们直接取消掉。规定：一个小于127的字符的意义与原来相同，但两个大于127的字符连在一起时，就表示一个汉字，前面的一个字节（他称之为高字节）从0xA1用到 0xF7，后面一个字节（低字节）从0xA1到0xFE，这样我们就可以组合出大约7000多个简体汉字了。在这些编码里，我们还把数学符号、罗马希腊的字母、日文的假名们都编进去了，连在 ASCII 里本来就有的数字、标点、字母都统统重新编了两个字节长的编码，这就是常说的”全角”字符，而原来在127号以下的那些就叫”半角”字符了。中国人民看到这样很不错，于是就把这种汉字方案叫做 “GB2312″。GB2312 是对 ASCII 的中文扩展。</p>
+<h3 id="GBK"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</h3><p>但是中国的汉字太多了，后来还是不够用，于是干脆不再要求低字节一定是127之后的内码，只要第一个字节是大于127就固定表示这是一个汉字的开始，不管后面跟的是不是扩展字符集里的内容。结果扩展之后的编码方案被称为 GBK 标准，GBK 包括了 GB2312 的所有内容，同时又增加了近20000个新的汉字（包括繁体字）和符号。</p>
+<h3 id="GB18030"><a href="#GB18030" class="headerlink" title="GB18030"></a>GB18030</h3><p>后来少数民族也要用电脑了，于是我们再扩展，又加了几千个新的少数民族的字，GBK 扩成了 GB18030</p>
+<h3 id="ANSI"><a href="#ANSI" class="headerlink" title="ANSI"></a>ANSI</h3><p>各国在 ASCII 的基础上制定了自己的字符集，这些从 ANSI 标准派生的字符集被习惯的统称为 ANSI 字符集，它们正式的名称应该是 MBCS（Multi-Byte Chactacter System，即多字节字符系统）。这些派生字符集的特点是以 ASCII 127 bits 为基础，兼容 ASCII 127，他们使用大于128的编码作为一个 Leading Byte，紧跟在 Leading Byte 后的第二（甚至第三）个字节与 Leading Byte 一起作为实际的编码，由此产生了 GB2312、GBK、GB18030、Big5、Shift_JIS 等各自的编码标准。但西欧国家也有根据本国文字的数量仅需要 128 个扩展的 ASCII 码就完成制定了单字节字符集。</p>
 <h3 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h3><p>为了解决不同国家地区间编码方案的不同引起的不便，于是就有了这样一个想法：将全世界所有的字符包含在一个集合里，计算机只要支持这一个字符集，就能显示所有的字符，再也不会乱码了。</p>
 <p>Unicode 就是在这种背景下诞生了。Unicode 规定了每个字符的编号，这个编号也叫做“码点”（code point)。它从 0 开始，目前 Unicode 的最新版本一共收入了 109449 个符号，其中的中日韩文字为 74500 个。这么多符号，Unicode 不是一次性定义的，而是分区定义。每个区可以放 65536 （$2^{16}$)个字符，称为一个平面（plane）。目前，一共有 17 （$2^{5}$)个平面，也就是说，整个 Unicode 字符集的大小现在是 $2^{21}$ 个。其中最前面的 65536 个字符位，称为基本平面（缩写BMP），它的码点范围是从 0 ~ $2^{16}-1$，写成十六进制就是从 U+0000 ~ U+FFFF 。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（缩写SMP），码点范围从 U+010000 ~ U+10FFFF。</p>
 <p>Unicode 只规定了每个字符的码点，到底用什么样的字节序表示这个码点，就涉及到编码方法。</p>
@@ -483,7 +488,7 @@
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1uxb6j20mo05itav.jpg" alt=""></p>
 <p>其中 20 是空格的编码，可以看到一个英文还是 1 个字节，一个中文用了 3 个字节，而一个 Emoj 用了 4 个字节。它怎么知道每次应该读取多少个字节呢？如下图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1v67kj20nj0bb78l.jpg" alt=""></p>
-<p>如果一个字节是 0 开头，表示这个字节就表示一个字符，如果是 3 个 1 开头表示这个字符要占 3 个字节，有多少个 1 就表示当前字符占用了多少个字节。这个就是 UTF-8 的存储特点，UTF 规定了每个字符的编号，而 UTF-8 定义了字符应该怎么存储。从 <a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.unicode.org%2F" target="_blank" rel="noopener">Unicode官网</a> 可以查到，“我”的UTF编码是6211，如下图所示：</p>
+<p>如果一个字节是 0 开头，表示这个字节就表示一个字符，如果是 3 个 1 开头表示这个字符要占 3 个字节，有多少个 1 就表示当前字符占用了多少个字节。这个就是 UTF-8 的存储特点，UTF 规定了每个字符的编号，而 UTF-8 定义了字符应该怎么存储。从 <a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.unicode.org%2F" target="_blank" rel="noopener">Unicode官网</a> 可以查到，“我”的UTF 十六进制编码是  \u6211，如下图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fmyle1w7bsj20n70cpqba.jpg" alt=""></p>
 <p>6211 怎么变成 UTF-8 编码呢？因为 6211 落在下面这个范围：</p>
 <blockquote>
@@ -496,6 +501,15 @@
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1pbp16noj20jg0apdg2.jpg" alt=""></p>
 <p>但是现在面临一个问题就是：当我们遇到两个字节，怎么看出它本身是一个字符，还是需要跟其他两个字节放在一起解读？然而在基本平面内，从 U+D800 ~ U+DFFF 是一个空段，即这些码点不对应任何字符。因此，这个空段被拿来映射辅助平面的字符。<strong>当我们遇到两个字节，发现它的码点在 U+D800 ~ U+DBFF 之间，就可以断定，紧跟在后面的两个字节的码点，应该在U+DC00 ~ U+DFFF之间，这四个字节必须放在一起解读。</strong></p>
 <p>到此，我们可以看出，UTF-8 的优点在于 1 个英文只要 1 个字节，但是 1 个中文却是 3 个字节，UTF-16 的优点在于编码长度固定，1 个中文只要 2 个字节，但是 1 个英文也要 2 个字节。所以对于英文网页 UTF-8 编码更加有利，而对于中文网页使用 UTF-16 应该更加有利。因为绝大部分的中文都是落在 U+0000 ~ U+FFFF。</p>
+<h3 id="“联通”两字与Windows记事本"><a href="#“联通”两字与Windows记事本" class="headerlink" title="“联通”两字与Windows记事本"></a>“联通”两字与Windows记事本</h3><p>在简体中文 Windows 操作系统中，ANSI 编码代表 GBK 编码；在繁体中文 Windows 操作系统中，ANSI 编码代表 Big5；在日文 Windows 操作系统中，ANSI 编码代表 Shift_JIS 编码。而记事本程序保存非英文字符时的默认编码方案就是 ANSI，即根据 Windows 语言版本选择编码方式，就如上述中文 Windows 操作系统使用 GBK 字符集。保存后再使用记事本程序打开会发现原来保存的“联通”两字现在变成了不知什么鬼的字符，就是乱码了。因为当一个软件打开一个文本时，它要做的第一件事是决定这个文本究竟是使用哪种字符集的哪种编码保存的。软件有三种途径来决定文本的字符集和编码：</p>
+<blockquote>
+<ol>
+<li>文本文件开头的字符集标记</li>
+<li>询问用户采用哪个字符集</li>
+<li>软件自己猜测</li>
+</ol>
+</blockquote>
+<p>结果因为“联通”两字的 GBK 编码看起来更像UTF-8编码，记事本程序就根据 UTF-8 编码规则解码这两个字，从而导致最后的乱码。</p>
 <h3 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h3><p>早期电子邮件的 SMTP（Simple Mail Transfer Protocol） 协议仅限于传送 7 位的 ASCII 码。许多其他非英语国家的文字以及多媒体资源就无法传送，所以说早期的电子邮件就只能传送英文文字。或许是早期电子邮件的诞生的时候，美国人民以为只有他们自己会传送文字以取消传统的电报业务。</p>
 <p>于是后来就提出了通用互联网邮件扩充（MIME）。MIME 并没有改动或取代 SMTP。MIME 的意图是继续使用原来的邮件格式，但增加了邮件主体的结构，并定义了传送非 ASCII 码的编码规则。因此在这种情况下，Base64 就诞生了。</p>
 <p>Base64 可以把原本 ASCII 码的控制字符甚至 ASCII 码之外的字符都转成可打印的 6 bit 字符，也就是说用 6 bit 字符表达了原本 8 bit 字符。我们看看下面的图片：</p>
@@ -532,6 +546,7 @@
 <li><a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="noopener">Unicode 与 JavaScript 详解|阮一峰的网络日志</a></li>
 <li>《计算机网络》谢希仁著（第七版）</li>
 <li><a href="https://w.wujunze.com/2017/09/26/%E6%BC%AB%E7%94%BB%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF-base64-%E7%AE%97%E6%B3%95%EF%BC%9F/" target="_blank" rel="noopener">漫画：什么是 Base64 算法|算法爱好者</a></li>
+<li><a href="http://bbs.mydigit.cn/read.php?tid=2308767" target="_blank" rel="noopener">关于记事本无法单独保存“联通”两个字说明</a></li>
 </ul>
 
       
@@ -583,9 +598,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
             <a href="/tags/理解计算机/" rel="tag"># 理解计算机</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -837,7 +852,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文字编码"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6587;&#x5B57;&#x7F16;&#x7801;" class="headerlink" title="&#x6587;&#x5B57;&#x7F16;&#x7801;"></a>&#x6587;&#x5B57;&#x7F16;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-32"><span class="nav-number">1.2.1.</span> <span class="nav-text"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-8"><span class="nav-number">1.2.2.</span> <span class="nav-text"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-16"><span class="nav-number">1.2.3.</span> <span class="nav-text"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Base64"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-与编码"><span class="nav-number">2.</span> <span class="nav-text"><a href="#JavaScript-&#x4E0E;&#x7F16;&#x7801;" class="headerlink" title="JavaScript &#x4E0E;&#x7F16;&#x7801;"></a>JavaScript &#x4E0E;&#x7F16;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript使用哪种编码"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;" class="headerlink" title="JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;"></a>JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript为什么不使用-UTF-16"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528;-UTF-16" class="headerlink" title="JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; UTF-16"></a>JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; UTF-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-字符函数的局限"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#JavaScript-&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;" class="headerlink" title="JavaScript &#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;"></a>JavaScript &#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文字编码"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6587;&#x5B57;&#x7F16;&#x7801;" class="headerlink" title="&#x6587;&#x5B57;&#x7F16;&#x7801;"></a>&#x6587;&#x5B57;&#x7F16;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GB2312"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBK"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GB18030"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#GB18030" class="headerlink" title="GB18030"></a>GB18030</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ANSI"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#ANSI" class="headerlink" title="ANSI"></a>ANSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-32"><span class="nav-number">1.6.1.</span> <span class="nav-text"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-8"><span class="nav-number">1.6.2.</span> <span class="nav-text"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-16"><span class="nav-number">1.6.3.</span> <span class="nav-text"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“联通”两字与Windows记事本"><span class="nav-number">1.7.</span> <span class="nav-text"><a href="#&#x201C;&#x8054;&#x901A;&#x201D;&#x4E24;&#x5B57;&#x4E0E;Windows&#x8BB0;&#x4E8B;&#x672C;" class="headerlink" title="&#x201C;&#x8054;&#x901A;&#x201D;&#x4E24;&#x5B57;&#x4E0E;Windows&#x8BB0;&#x4E8B;&#x672C;"></a>&#x201C;&#x8054;&#x901A;&#x201D;&#x4E24;&#x5B57;&#x4E0E;Windows&#x8BB0;&#x4E8B;&#x672C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Base64"><span class="nav-number">1.8.</span> <span class="nav-text"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-与编码"><span class="nav-number">2.</span> <span class="nav-text"><a href="#JavaScript-&#x4E0E;&#x7F16;&#x7801;" class="headerlink" title="JavaScript &#x4E0E;&#x7F16;&#x7801;"></a>JavaScript &#x4E0E;&#x7F16;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript使用哪种编码"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;" class="headerlink" title="JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;"></a>JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript为什么不使用-UTF-16"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528;-UTF-16" class="headerlink" title="JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; UTF-16"></a>JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; UTF-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-字符函数的局限"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#JavaScript-&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;" class="headerlink" title="JavaScript &#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;"></a>JavaScript &#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol></div>
             
 
           </div>
