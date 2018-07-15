@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[什么是React Native]]></title>
+    <url>%2F2018%2F07%2F15%2F%E4%BB%80%E4%B9%88%E6%98%AFReact-Native%2F</url>
+    <content type="text"><![CDATA[最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》 在上一篇文章中，我们探究了 React 是什么以及它的特点。今天我们来了解 React Native：拿来干什么，从哪里来，跟 React 有什么不同以及为什么它会如此重要。 学习目标读完这篇文章后，我会让你回顾这个章节。希望您能够轻松回答这些问题： 什么是 React Native？为什么它的名字包括“Native” ？ 为什么 React Native 很不错？ 我们可以用 React Native 构建什么？ 那 React 呢？ ReactDOM 来自哪里？它有什么作用？ React Renderer 有什么作用？ React Sketch.app 如何运行？ ReactVR 如何运行？ 什么是 ReactJS？React.js？ 在 Web 之外的世界到现在，可能你的脑海了会有这样一幅画面： 你知道，React 是一个针对 Web 构建用户界面的好工具。使用 React，您可以通过描述您想要的内容来构建 UI，而不是如何更新 UI（响应式UI），在可重用组件中组织代码，以及创建高性能 UI 而无需担心 DOM 这个慢性子家伙（因为有虚拟 DOM）。越来越多的 Web 开发人员选择React，因为它允许他们专注于更大的页面而不是低级细节。我们称这种构建 UI 的方式为 React 范式。范式基本上包含了如何思考问题以及如何描述问题及其解决方案的方式[^1]。 这对 Web 应用来说非常棒。那么其他平台呢，比如 iOS 和 Android？如果你可以将相同的React 范式应用于移动应用程序的开发，那不是很好吗？ 在某种程度上，移动平台的工作方式与 Web 相同。有一个 model（一棵树）。有一样东西（艺术家）可以根据 model 创建视觉元素。构建移动 UI 的传统方式是直接操作树状 model 并告诉它如何更新内容（直接操作树状 model）。这与在 Web 浏览器中直接操作 DOM 具有类似的缺点。 React 正好有助于改善此问题。 除了相似之外，移动平台与 Web 是不相同，在各个方面都是彼此不同。过去，开发人员必须学习平台的特定语言和工具链才能为其构建应用程序。 这就像在异国情调的工作室工作，工作人员会说各种不同的语言。您必须学习与这些 UI model进行交互的所有新语言。这听起来不容易，是吗？ 因此，如果您想为 iOS 和 Android 构建原生应用程序，则必须创建两个完全独立的代码库。必须实施两次相同的业务逻辑。创建应用程序既困难又昂贵，从长远来看，维护它更是如此。 这就是 React Native 诞生的原因。让我们看看它如何让事情变得更容易。 React Native渲染器以及新的 React对于 Web 应用程序，React 负责启用 React 范式开发（管理响应式UI，组件和虚拟DOM），以及在浏览器中实际更新 DOM。当 DOM 是唯一需要交互的东西时，React 可以轻松处理这两项任务。 但是，对于移动应用程序，当需要在不同平台上管理各种 UI 树状模型时，事情变得具有挑战性。如果我们继续在 React 的肩膀上增加更多的责任，它将开始变得寸步难行。 为了解决这个问题，React 的创建者将原来的 React 拆分为两部分。第一部分是新的 React，重点是启用 React 开发范式。第二部分称为 ReactDOM，其唯一的工作是在浏览器中与 DOM 交互。因为 ReactDOM 更新了在浏览器上呈现内容的 DOM，所以我们说 ReactDOM 是一个渲染器。 回到我们的故事，想象一下，我们的 React 这个“超级英雄”脱下他的斗篷并撒上一些魔法尘埃。 他的斗篷活跃起来，成为他的帮手。摆脱了与 DOM 打交道的负担，React 现在可以专注于他所做的最好的事情。 这种角色分离是一个非常好的创意。它可以针对不同平台轻松编写适应新平台的新渲染器，同时保持 React 的优点。在 iOS 和 Android 渲染器的支持下，您现在可以使用单一语言和相同的React 范式为这两个平台构建应用程序。 React专注于他的事情（即响应式 UI，组件和虚拟 DOM）。 Renderers负责与具体的 UI 树交互。 一个完整平台React 的官方定义是：用于构建用户界面的 JavaScript 库。它的意义是双重的：首先它是 UI 构建的一个很好的工具，其次它不包括任何其他东西。 实际上，单独使用 React 还无法构建完整的应用程序。您需要用于样式的 CSS 示例，用于预处理和捆绑代码的 webpack，用于保存数据的 Firebase 以及许多其他内容。 Web浏览器这一“工作室”实际上比你看到的要繁忙得多。 这在 Web 开发环境中使用很友好，因为作为一个 JavaScript 库，React 自然适用于与其他库一起工作，这些其他库既可以是 JavaScript 库，也可以与 JavaScript 库配合使用的第三方库。毕竟，JavaScript 是 Web 的语言。 但是，对于使用各种语言和技术的移动平台而言，情况有所不同。在 JavaScript 中包含一整套工具变得非常重要，这些工具可以像 React 一样使用。因此，React Native诞生了。 与 Web 开发的 React 库相比，React Native 包含更多内容 ： React 作为其核心，负责响应式 UI，组件以及虚拟 DOM（我们的无斗篷的超级英雄） 针对特定平台例如 iOS 以及 Android 的渲染器 将代码转换并捆绑到可安装应用程序中的工具 原生 UI 组件（状态栏，ListView等）和动画 用于样式化和布局UI（flexbox）的工具包 构成大多数应用程序的基本部分（如网络） 提供原生功能的部分，如剪贴板，加速度计和存储 … 我们说 React Native 本身就是一个完整的平台，因为它包含了构建完整应用程序所需的一切。相比之下，最初的 React 只负责 Web UI，您需要自己包含其他部分来创建 Web 应用程序。 原生 UI你有没有想过为什么 React Native 被标记为 Native？这实际上是它的品牌特征：使用 React Native 构建的 UI 包含软件运行平台原生 UI 组件，这些 UI 组件性能良好且交互体验一致，而不是嵌入到 WebView 中运行的一些模拟原生 app 的垃圾界面。使用 React Native 构建的应用程序通常与使用 Swift 和 Java 等移动平台原生语言编写的应用程序无法区分。 你知道，滚动加速，动画，键盘行为和阴影这些小东西实际上在你的应用程序的用户体验中起着重要作用。如果这些与手机上的其他应用程序不一致，用户很快就会感到沮丧。 我原本打算在这里解释一下“native”的真正意义以及为什么 React Native 表现更好。但经过几次头脑风暴会议之后，我的笔记很快就变成了整页。让我们把它作为自己的未来帖子吧。 现在，我希望你能记住，原生用户界面是让 React Native 大放异彩的好事之一。 所以，在这里，React Native是一个完整的平台，允许您在 JavaScript 中使用 React 范式构建真正的原生应用程序。 React Sketch.app, ReactVR, React XYZ…最近 Airbnb 发布了一个名为 React Sketch.app 的工具，它将 React 代码转换为 Sketch 中的图像层。你能猜出它是如何工作的吗？ 对！它本质上是 React Native，在 Sketch 中某个渲染器与 UI 树模型进行交互！ 因为 React Sketch.app 是基于 React Native，它是一个完整的包，我们可以做一些惊喜的事情，比如从真实的 API 中获取数据并在 Sketch 中呈现它。 与此同时，React Native 的许多其他变体被创建用于支持构建 Windows，macOS，VR 等平台[^2]的应用程序。 这意味着，只要您掌握了 React 的精髓，就可以使用相同的思维模式在 JavaScript 中为数以千计的平台构建应用程序。正如 React Native 的创作者所说，“学习一次，随处开发”。 上手时间到目前为止说了这么多！你想在手机上试试吗？ 我也很兴奋！抓住你的手机跟着我吧！ 在手机上，下载Expo应用程序。您可以从这里下载：iOS，Android，或在App Store中搜索“Expo” 在您的计算机上，打开此页面：https://snack.expo.io/ 在你的手机运行 Expo app 并且点击“Scan QR Code” 扫描计算机上显示的QR码。如果一切正常，您应该看到绿色的“设备已连接”消息。 如果QR码不会自动消失，请单击页面右上角的小十字将其关闭。你应该看到一个代码编辑器 删除编辑器中的所有内容，粘贴此代码 你在手机上看到了什么？ 如果需要，您可以在编辑器中更改代码，并立即在手机上查看结果！ 我将来会详细解释这个环境。现在，请记住它就像 React Native 的 Codepen。 如果将 React Native 版本的代码与 React（Web）版本进行比较，您会发现它们看起来非常相似。它们都是这样的： 12345678910111213141516const Hat = ...const Thinker = ...// Below is the React Native version// For Web version, replace "View" with "div"const ThinkerWithHat = (&#123;hat&#125;) =&gt; ( &lt;View&gt; &lt;Thinker /&gt; &lt;Hat type=&#123;hat&#125;/&gt; &lt;/View&gt;);const HatSwitcher = ...... “一次学习，多平台开发”！记得？ 至于 ReachJS 和 React.js您可能已经听过很多人称呼为 ReactJS（或React.js）——我也使用过这个名字。事实上它从来都不是官方名称[^3]。从第一天起，官方名称一直是“React”。 因为 JavaScript 库往往被命名为“XyzJS”或“Xyz.js”而 React 是一个 JavaScript 库，所以人们可能会自愿将“JS”或“.js”附加到其名称中。由于 React 最初是一个Web库，很多人使用 ReactJS 或React.js 来引用 Web 上的 React，React和ReactDOM的组合。 遵循事实上的惯例，当我说 ReactJS 时，我的意思是 React ，在网上也是如此。 总结真棒！到目前为止，我们已经完成了很多事情。我们已经了解了 React 的一些历史以及 React Native 如何组合在一起。作为一个完整的平台，React Native 包含了在 JavaScript 和 React 范式中构建原生应用程序所需的一切。 React Native 现在支持许多平台，包括iOS，Android，Windows，macOS，Sketch.app 甚至 VR。 “一次学习，多平台开发”！ 在下一篇文章中，我们将了解原生应用程序的真正含义以及为什么 React Native 是构建原生应用程序的最佳方式之一。 我鼓励你回到学习目标，看看你是否能回答所有问题。如果您有任何问题或意见，请与我们联系！ [^1]: 还记得声明式和命令式编程吗？它们都是范式。 React 范式是关于如何将 UI 界面分解为组件，如何传递数据等等，我们将在后面详细研究[^2]: React Renderers 的想法非常强大。这里有一个很酷的渲染器列表可以使用React构建许多不同的东西。[^3]: 如果您正在寻找React Native和React Web之间的深入技术比较，请查看此文章 原文链接：What Is React Native? 作者：Linton Ye(a full-stack developer in BC Canada)]]></content>
+      <categories>
+        <category>学习总结</category>
+      </categories>
+      <tags>
+        <tag>React Native</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript运行机制]]></title>
     <url>%2F2018%2F05%2F06%2FJavaScript%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%2F</url>
     <content type="text"><![CDATA[在 Medium 中看到了一篇讲解 JavaScript 运行机制的文章，里面讲述了解释引擎、运行时以及调用栈的概念，对于 JavaScript 学习者来说我觉得有必要了解一下…… 随着JavaScript越来越受欢迎，开发团队正在将其用在技术栈的各个方面，包括 - 前端、后端、混合应用、嵌入式设备等等。 如 GitHut统计 所示，JavaScript在GitHub中的活动存储库和总推送方面位于前列，在其他方面也不差。 如果项目越来越依赖于JavaScript，这意味着开发人员必须更深入地了解内部机制，才能利用语言和生态系统提供的所有技术，构建出惊艳的软件。 事实证明，虽然有很多开发人员每天都在使用JavaScript，但并不知道它的工作机制。 概述几乎所有人都已经听说过V8引擎的概念，大多数人都知道JavaScript是单线程的，或者是使用回调队列。 在这篇文章中，我们将详细介绍所有这些概念，并解释JavaScript的工作机制。通过了解这些细节，您将能够正确利用提供的API，编写更好的非阻塞应用程序。 如果您是一个JavaScript新手，此博文将帮助您了解为什么JavaScript与其他语言相比是如此“怪异”。 而如果您是一位经验丰富的JavaScript开发人员，希望能够提供与您每天使用的JavaScript运行时有关的一些新鲜见解。 JavaScript引擎JavaScript引擎的一个流行示例是Google的V8引擎。例如，V8引擎在Chrome和Node.js中使用。如下是它看起来像什么的一个简单视图： 引擎由两个主要组成部分组成： 内存堆 - 这是内存分配发生的地方 调用栈 - 这是您的代码执行所在的栈帧 运行时浏览器中已经有几个几乎所有JavaScript开发人员都会使用的API（比如 setTimeout）。不过，这些API不是由引擎提供的。 那么，它们是来自哪里呢？ 事实证明，现实有点复杂。 所以，除了引擎以外，实际上还有更多东西。有一些由浏览器提供的，称为Web API的东西，比如DOM、AJAX、setTimeout等等。还有超受欢迎的事件循环和回调队列。 调用栈JavaScript是一种单线程编程语言，这意味着它只有一个调用栈。因此，它一次只能做一件事。 调用栈是一种数据结构，它基本上是记录了我们处于程序中哪个地方。如果单步执行进一个函数，就把该函数放在栈顶。如果从函数返回，就把它从栈顶弹出。这就是栈所做的事情。 下面我们来看一个示例。看看下面的代码： 12345678910function multiply(x, y) &#123; return x * y;&#125;function printSquare(x) &#123; var s = multiply(x, x); console.log(s);&#125;printSquare(5); 引擎开始执行这段代码时，调用栈是空的。之后，步骤将是如下这样： 调用栈中的每个条目称为栈帧。 而这正是在异常被抛出时，栈跟踪被构造的方式 - 当异常发生时，它基本上是调用栈的状态。看看下面的代码： 12345678910111213function foo() &#123; throw new Error('SessionStack will help you resolve crashes :)');&#125;function bar() &#123; foo();&#125;function start() &#123; bar();&#125;start(); 如果是在Chrome中执行这段代码（假设此代码位于一个名为foo.js的文件中），则会产生以下栈跟踪信息： “爆栈” - 当达到最大调用栈大小时，就会发生这种情况。并且这非常容易发生，特别是如果使用递归而不充分测试代码时。请看如下示例代码： 12345function foo() &#123; foo();&#125;foo(); 当引擎开始执行这段代码时，它首先调用函数“foo”。不过，这个函数是递归的，并且开始调用自身而没有任何终止条件。所以在执行的每个步骤中，相同的函数都被一次又一次地添加到调用栈中。看起来像这样： 然而，在某些时候，如果调用栈中的函数调用量超过了调用栈的实际大小，浏览器就会决定采取行动，抛出一个错误，看起来像这样： 在单个线程上运行代码可能很容易，因为您不必处理在多线程环境中出现的复杂场景，例如死锁。 但在单线程上运行也有很大限制。由于JavaScript有一个调用栈，当事情缓慢时会发生什么？ 并发和事件循环当在调用栈中有函数调用需要大量时间才能处理完时，会发生什么？例如，假设想在浏览器中使用JavaScript进行一些复杂的图像转换。 你可能会问 - 这怎么就成了一个问题呢？原因是，在调用堆有函数要执行的同时，浏览器实际上不能做任何事情 - 它被阻塞了。这意味着浏览器无法渲染，它不能运行任何其他代码，它只是卡住了。如果想在应用中有流畅的UI，这会出问题。 而这不是唯一的问题。一旦浏览器开始处理调用栈中的许多任务，它可能会停止响应很长时间。大多数浏览器通过引发一个错误来采取行动，询问您是否要终止网页。 现在，这不是最好的用户体验，对吧？ 那么，如何执行繁重的代码，而不阻塞UI并且不会使浏览器无响应呢？好吧，解决方案是异步回调。 我将在教程的第2部分中详细介绍。 作者：Alexander Zlatkov 原文地址：How JavaScript works: an overview of the engine, the runtime, and the call stack]]></content>
@@ -98,8 +109,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -168,8 +179,8 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-        <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -249,8 +260,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>算法</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="理解计算机,JavaScript," />
+  <meta name="keywords" content="React Native," />
 
 
 
@@ -94,28 +94,30 @@
 
 
 
-<meta name="description" content="在 Medium 中看到了一篇讲解 JavaScript 运行机制的文章，里面讲述了解释引擎、运行时以及调用栈的概念，对于 JavaScript 学习者来说我觉得有必要了解一下……">
-<meta name="keywords" content="理解计算机,JavaScript">
+<meta name="description" content="最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》">
+<meta name="keywords" content="React Native">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript运行机制">
-<meta property="og:url" content="http://barryliu1995.studio/2018/05/06/JavaScript运行机制/index.html">
+<meta property="og:title" content="什么是React Native">
+<meta property="og:url" content="http://barryliu1995.studio/2018/07/15/什么是React-Native/index.html">
 <meta property="og:site_name" content="刘志宇的新天地">
-<meta property="og:description" content="在 Medium 中看到了一篇讲解 JavaScript 运行机制的文章，里面讲述了解释引擎、运行时以及调用栈的概念，对于 JavaScript 学习者来说我觉得有必要了解一下……">
+<meta property="og:description" content="最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1pm3rvo3j20ku0bqaav.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjen5iiytj21660lfakh.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjeobodajj20sg0lcgm5.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjep2h9ogj20sg0lc761.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjepx01ocj20sg0lc3yz.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjeqqym48j20e3021wee.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjerar164j20sg0lcgmb.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjertzup2j20aq00lwea.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjesynua4j20cu080mxl.jpg">
-<meta property="og:updated_time" content="2018-05-06T08:57:38.865Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ftaks3i2rbj22gb0ocgp9.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9i75lxj0j20ku0b4jrq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9is58towj20ol0do3zi.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9izrqc3ij20mx0ci3yz.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9j97f1r2j20fa0b4q2w.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9jb8j6iij20fa0b4glt.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9jdgw5stj20mx0go0tg.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9jhcf9g6j20n20gywfe.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9k6hpg6gj20ol0hwgms.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9ke7kxmwj20fa0b4mxg.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9kjan0vxj20fa09qglr.jpg">
+<meta property="og:updated_time" content="2018-07-15T07:33:10.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript运行机制">
-<meta name="twitter:description" content="在 Medium 中看到了一篇讲解 JavaScript 运行机制的文章，里面讲述了解释引擎、运行时以及调用栈的概念，对于 JavaScript 学习者来说我觉得有必要了解一下……">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1pm3rvo3j20ku0bqaav.jpg">
+<meta name="twitter:title" content="什么是React Native">
+<meta name="twitter:description" content="最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ftaks3i2rbj22gb0ocgp9.jpg">
 
 
 
@@ -144,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://barryliu1995.studio/2018/05/06/JavaScript运行机制/"/>
+  <link rel="canonical" href="http://barryliu1995.studio/2018/07/15/什么是React-Native/"/>
 
 
 
 
 
-  <title>JavaScript运行机制 | 刘志宇的新天地</title>
+  <title>什么是React Native | 刘志宇的新天地</title>
   
 
 
@@ -337,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2018/05/06/JavaScript运行机制/">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2018/07/15/什么是React-Native/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘志宇">
@@ -354,7 +356,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JavaScript运行机制</h2>
+          <h2 class="post-title" itemprop="name headline">什么是React Native</h2>
         
 
         <div class="post-meta">
@@ -366,8 +368,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T16:36:07+08:00">
-                2018-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T15:10:28+08:00">
+                2018-07-15
               </time>
             
 
@@ -431,59 +433,97 @@
       
 
       
-        <p>在 Medium 中看到了一篇讲解 JavaScript 运行机制的文章，里面讲述了解释引擎、运行时以及调用栈的概念，对于 JavaScript 学习者来说我觉得有必要了解一下……</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1pm3rvo3j20ku0bqaav.jpg" width="600" height="200" align="center/"></p>
+        <p>最近在网络上看到<a href="https://juejin.im/post/5b481f6b51882519ad6175c2" target="_blank" rel="noopener">(译)图解 React</a>这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ftaks3i2rbj22gb0ocgp9.jpg" width="600" height="200" align="center/"></p>
 <a id="more"></a>
-<p>随着JavaScript越来越受欢迎，开发团队正在将其用在技术栈的各个方面，包括 - 前端、后端、混合应用、嵌入式设备等等。</p>
-<p>如 <a href="http://githut.info/" target="_blank" rel="noopener">GitHut统计</a> 所示，JavaScript在GitHub中的活动存储库和总推送方面位于前列，在其他方面也不差。</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjen5iiytj21660lfakh.jpg" alt=""></p>
-<p>如果项目越来越依赖于JavaScript，这意味着开发人员必须更深入地了解内部机制，才能利用语言和生态系统提供的所有技术，构建出惊艳的软件。</p>
-<p>事实证明，虽然有很多开发人员每天都在使用JavaScript，但并不知道它的工作机制。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>几乎所有人都已经听说过V8引擎的概念，大多数人都知道JavaScript是单线程的，或者是使用回调队列。</p>
-<p>在这篇文章中，我们将详细介绍所有这些概念，并解释JavaScript的工作机制。通过了解这些细节，您将能够正确利用提供的API，编写更好的非阻塞应用程序。</p>
-<p>如果您是一个JavaScript新手，此博文将帮助您了解为什么JavaScript与其他语言相比是如此“怪异”。</p>
-<p>而如果您是一位经验丰富的JavaScript开发人员，希望能够提供与您每天使用的JavaScript运行时有关的一些新鲜见解。</p>
-<h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><p>JavaScript引擎的一个流行示例是Google的V8引擎。例如，V8引擎在Chrome和Node.js中使用。如下是它看起来像什么的一个简单视图：</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjeobodajj20sg0lcgm5.jpg" alt=""></p>
-<p>引擎由两个主要组成部分组成：</p>
+<p>在<a href="https://learnreact.design/2017/06/08/what-is-react/" target="_blank" rel="noopener">上一篇文章</a>中，我们探究了 React 是什么以及它的特点。今天我们来了解 React Native：拿来干什么，从哪里来，跟 React 有什么不同以及为什么它会如此重要。</p>
+<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p>读完这篇文章后，我会让你回顾这个章节。希望您能够轻松回答这些问题：</p>
 <ul>
-<li>内存堆 - 这是内存分配发生的地方</li>
-<li>调用栈 - 这是您的代码执行所在的栈帧</li>
+<li>什么是 React Native？为什么它的名字包括“Native” ？</li>
+<li>为什么 React Native 很不错？</li>
+<li>我们可以用 React Native 构建什么？ 那 React 呢？ </li>
+<li>ReactDOM 来自哪里？它有什么作用？ </li>
+<li>React Renderer 有什么作用？</li>
+<li>React Sketch.app 如何运行？ </li>
+<li>ReactVR 如何运行？</li>
+<li>什么是 ReactJS？React.js？</li>
 </ul>
-<h2 id="运行时"><a href="#运行时" class="headerlink" title="运行时"></a>运行时</h2><p>浏览器中已经有几个几乎所有JavaScript开发人员都会使用的API（比如 <code>setTimeout</code>）。不过，这些API不是由引擎提供的。</p>
-<p>那么，它们是来自哪里呢？</p>
-<p>事实证明，现实有点复杂。</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjep2h9ogj20sg0lc761.jpg" alt=""></p>
-<p>所以，除了引擎以外，实际上还有更多东西。有一些由浏览器提供的，称为Web API的东西，比如DOM、AJAX、setTimeout等等。还有超受欢迎的<strong>事件循环</strong>和<strong>回调队列</strong>。</p>
-<h2 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h2><p>JavaScript是一种单线程编程语言，这意味着它只有一个调用栈。因此，它一次只能做一件事。</p>
-<p>调用栈是一种数据结构，它基本上是记录了我们处于程序中哪个地方。如果单步执行进一个函数，就把该函数放在栈顶。如果从函数返回，就把它从栈顶弹出。这就是栈所做的事情。</p>
-<p>下面我们来看一个示例。看看下面的代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printSquare</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s = multiply(x, x);</span><br><span class="line">    <span class="built_in">console</span>.log(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printSquare(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
-<p>引擎开始执行这段代码时，调用栈是空的。之后，步骤将是如下这样：</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjepx01ocj20sg0lc3yz.jpg" alt=""></p>
-<p>调用栈中的每个条目称为栈帧。</p>
-<p>而这正是在异常被抛出时，栈跟踪被构造的方式 - 当异常发生时，它基本上是调用栈的状态。看看下面的代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SessionStack will help you resolve crashes :)'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">start();</span><br></pre></td></tr></table></figure>
-<p>如果是在Chrome中执行这段代码（假设此代码位于一个名为foo.js的文件中），则会产生以下栈跟踪信息：</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjeqqym48j20e3021wee.jpg" alt=""></p>
-<p>“<strong>爆栈</strong>” - 当达到最大调用栈大小时，就会发生这种情况。并且这非常容易发生，特别是如果使用递归而不充分测试代码时。请看如下示例代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-<p>当引擎开始执行这段代码时，它首先调用函数“foo”。不过，这个函数是递归的，并且开始调用自身而没有任何终止条件。所以在执行的每个步骤中，相同的函数都被一次又一次地添加到调用栈中。看起来像这样：</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjerar164j20sg0lcgmb.jpg" alt=""></p>
-<p>然而，在某些时候，如果调用栈中的函数调用量超过了调用栈的实际大小，浏览器就会决定采取行动，抛出一个错误，看起来像这样：</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjertzup2j20aq00lwea.jpg" alt=""></p>
-<p>在单个线程上运行代码可能很容易，因为您不必处理在多线程环境中出现的复杂场景，例如死锁。</p>
-<p>但在单线程上运行也有很大限制。由于JavaScript有一个调用栈，<strong>当事情缓慢时会发生什么</strong>？</p>
-<h2 id="并发和事件循环"><a href="#并发和事件循环" class="headerlink" title="并发和事件循环"></a>并发和事件循环</h2><p>当在调用栈中有函数调用需要大量时间才能处理完时，会发生什么？例如，假设想在浏览器中使用JavaScript进行一些复杂的图像转换。</p>
-<p>你可能会问 - 这怎么就成了一个问题呢？原因是，在调用堆有函数要执行的同时，浏览器实际上不能做任何事情 - 它被阻塞了。这意味着浏览器无法渲染，它不能运行任何其他代码，它只是卡住了。如果想在应用中有流畅的UI，这会出问题。</p>
-<p>而这不是唯一的问题。一旦浏览器开始处理调用栈中的许多任务，它可能会停止响应很长时间。大多数浏览器通过引发一个错误来采取行动，询问您是否要终止网页。</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fpjesynua4j20cu080mxl.jpg" alt=""></p>
-<p>现在，这不是最好的用户体验，对吧？</p>
-<p>那么，如何执行繁重的代码，而不阻塞UI并且不会使浏览器无响应呢？好吧，解决方案是<strong>异步回调</strong>。</p>
-<p>我将在教程的<a href="http://www.zcfy.cc/article/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code" target="_blank" rel="noopener">第2部分</a>中详细介绍。</p>
+<h2 id="在-Web-之外的世界"><a href="#在-Web-之外的世界" class="headerlink" title="在 Web 之外的世界"></a>在 Web 之外的世界</h2><p>到现在，可能你的脑海了会有这样一幅画面：</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9i75lxj0j20ku0b4jrq.jpg" alt="React summary"></p>
+<p>你知道，React 是一个针对 Web 构建用户界面的好工具。使用 React，您可以通过描述您想要的内容来构建 UI，而不是如何更新 UI（响应式UI），在可重用组件中组织代码，以及创建高性能 UI 而无需担心 DOM 这个慢性子家伙（因为有虚拟 DOM）。越来越多的 Web 开发人员选择React，因为它允许他们专注于更大的页面而不是低级细节。我们称这种构建 UI 的方式为 React 范式。范式基本上包含了如何思考问题以及如何描述问题及其解决方案的方式[^1]。</p>
+<p>这对 Web 应用来说非常棒。那么其他平台呢，比如 iOS 和 Android？如果你可以将相同的React 范式应用于移动应用程序的开发，那不是很好吗？</p>
+<p> 在某种程度上，移动平台的工作方式与 Web 相同。有一个 model（一棵树）。有一样东西（艺术家）可以根据 model 创建视觉元素。构建移动 UI 的传统方式是直接操作树状 model 并告诉它如何更新内容（直接操作树状 model）。这与在 Web 浏览器中直接操作 DOM 具有类似的缺点。 React 正好有助于改善此问题。</p>
+<p>除了相似之外，移动平台与 Web 是不相同，在各个方面都是彼此不同。过去，开发人员必须学习平台的特定语言和工具链才能为其构建应用程序。</p>
+<p>这就像在异国情调的工作室工作，工作人员会说各种不同的语言。您必须学习与这些 UI model进行交互的所有新语言。这听起来不容易，是吗？</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9is58towj20ol0do3zi.jpg" alt="IOS &amp; Android"></p>
+<p>因此，如果您想为 iOS 和 Android 构建原生应用程序，则必须创建两个完全独立的代码库。必须实施两次相同的业务逻辑。创建应用程序既困难又昂贵，从长远来看，维护它更是如此。</p>
+<p>这就是 React Native 诞生的原因。让我们看看它如何让事情变得更容易。  </p>
+<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><h3 id="渲染器以及新的-React"><a href="#渲染器以及新的-React" class="headerlink" title="渲染器以及新的 React"></a>渲染器以及新的 React</h3><p>对于 Web 应用程序，React 负责启用 React 范式开发（管理响应式UI，组件和虚拟DOM），以及在浏览器中实际更新 DOM。当 DOM 是唯一需要交互的东西时，React 可以轻松处理这两项任务。</p>
+<p>但是，对于移动应用程序，当需要在不同平台上管理各种 UI 树状模型时，事情变得具有挑战性。如果我们继续在 React 的肩膀上增加更多的责任，它将开始变得寸步难行。</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9izrqc3ij20mx0ci3yz.jpg" alt=""></p>
+<p>为了解决这个问题，React 的创建者将原来的 React 拆分为两部分。第一部分是新的 React，重点是启用 React 开发范式。第二部分称为 ReactDOM，其唯一的工作是在浏览器中与 DOM 交互。因为 ReactDOM 更新了在浏览器上呈现内容的 DOM，所以我们说 ReactDOM 是一个渲染器。</p>
+<p>回到我们的故事，想象一下，我们的 React 这个“超级英雄”脱下他的斗篷并撒上一些魔法尘埃。 </p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9j97f1r2j20fa0b4q2w.jpg" alt="cloak and magic dust"></p>
+<p>他的斗篷活跃起来，成为他的帮手。摆脱了与 DOM 打交道的负担，React 现在可以专注于他所做的最好的事情。 </p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9jb8j6iij20fa0b4glt.jpg" alt=""></p>
+<p>这种角色分离是一个非常好的创意。它可以针对不同平台轻松编写适应新平台的新渲染器，同时保持 React 的优点。在 iOS 和 Android 渲染器的支持下，您现在可以使用单一语言和相同的React 范式为这两个平台构建应用程序。 </p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9jdgw5stj20mx0go0tg.jpg" alt="renders"></p>
+<p>React专注于他的事情（即响应式 UI，组件和虚拟 DOM）。 Renderers负责与具体的 UI 树交互。 </p>
+<h3 id="一个完整平台"><a href="#一个完整平台" class="headerlink" title="一个完整平台"></a>一个完整平台</h3><p>React 的官方定义是：用于构建用户界面的 JavaScript 库。它的意义是双重的：首先它是 UI 构建的一个很好的工具，其次它不包括任何其他东西。 </p>
+<p>实际上，单独使用 React 还无法构建完整的应用程序。您需要用于样式的 CSS 示例，用于预处理和捆绑代码的 webpack，用于保存数据的 Firebase 以及许多其他内容。</p>
+<p> <img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9jhcf9g6j20n20gywfe.jpg" alt=""></p>
+<p>Web浏览器这一“工作室”实际上比你看到的要繁忙得多。</p>
+<p>这在 Web 开发环境中使用很友好，因为作为一个 JavaScript 库，React 自然适用于与其他库一起工作，这些其他库既可以是 JavaScript 库，也可以与 JavaScript 库配合使用的第三方库。毕竟，JavaScript 是 Web 的语言。 </p>
+<p>但是，对于使用各种语言和技术的移动平台而言，情况有所不同。在 JavaScript 中包含一整套工具变得非常重要，这些工具可以像 React 一样使用。因此，React Native诞生了。 </p>
+<p>与 Web 开发的 React 库相比，React Native 包含更多内容 ：</p>
+<ul>
+<li>React 作为其核心，负责响应式 UI，组件以及虚拟 DOM（我们的无斗篷的超级英雄） </li>
+<li>针对特定平台例如 iOS 以及 Android 的渲染器</li>
+<li>将代码转换并捆绑到可安装应用程序中的工具 </li>
+<li>原生 UI 组件（状态栏，ListView等）和动画</li>
+<li>用于样式化和布局UI（flexbox）的工具包</li>
+<li>构成大多数应用程序的基本部分（如网络）</li>
+<li>提供原生功能的部分，如剪贴板，加速度计和存储</li>
+<li>…</li>
+</ul>
+<p>我们说 React Native 本身就是一个完整的平台，因为它包含了构建完整应用程序所需的一切。相比之下，最初的 React 只负责 Web UI，您需要自己包含其他部分来创建 Web 应用程序。</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9k6hpg6gj20ol0hwgms.jpg" alt="React Native组成"></p>
+<h3 id="原生-UI"><a href="#原生-UI" class="headerlink" title="原生 UI"></a>原生 UI</h3><p>你有没有想过为什么 React Native 被标记为 Native？这实际上是它的品牌特征：使用 React Native 构建的 UI 包含软件运行平台原生 UI 组件，这些 UI 组件性能良好且交互体验一致，而不是嵌入到 WebView 中运行的一些模拟原生 app 的垃圾界面。使用 React Native 构建的应用程序通常与使用 Swift 和 Java 等移动平台原生语言编写的应用程序无法区分。</p>
+<p>你知道，滚动加速，动画，键盘行为和阴影这些小东西实际上在你的应用程序的用户体验中起着重要作用。如果这些与手机上的其他应用程序不一致，用户很快就会感到沮丧。 </p>
+<p>我原本打算在这里解释一下“native”的真正意义以及为什么 React Native 表现更好。但经过几次头脑风暴会议之后，我的笔记很快就变成了整页。让我们把它作为自己的未来帖子吧。</p>
+<p>现在，我希望你能记住，原生用户界面是让 React Native 大放异彩的好事之一。 </p>
+<p>所以，在这里，React Native是一个完整的平台，允许您在 JavaScript 中使用 React 范式构建真正的原生应用程序。</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9ke7kxmwj20fa0b4mxg.jpg" alt="react native summary"></p>
+<h2 id="React-Sketch-app-ReactVR-React-XYZ…"><a href="#React-Sketch-app-ReactVR-React-XYZ…" class="headerlink" title="React Sketch.app, ReactVR, React XYZ…"></a>React Sketch.app, ReactVR, React XYZ…</h2><p>最近 Airbnb 发布了一个名为 React Sketch.app 的工具，它将 React 代码转换为 Sketch 中的图像层。你能猜出它是如何工作的吗？ </p>
+<p>对！它本质上是 React Native，在 Sketch 中某个渲染器与 UI 树模型进行交互！ </p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9kjan0vxj20fa09qglr.jpg" alt=""></p>
+<p>因为 React Sketch.app 是基于 React Native，它是一个完整的包，我们可以做一些惊喜的事情，比如从真实的 API 中获取数据并在 Sketch 中呈现它。</p>
+<p> 与此同时，React Native 的许多其他变体被创建用于支持构建 Windows，macOS，VR 等平台[^2]的应用程序。</p>
+<p>这意味着，只要您掌握了 React 的精髓，就可以使用相同的思维模式在 JavaScript 中为数以千计的平台构建应用程序。正如 React Native 的创作者所说，“学习一次，随处开发”。 </p>
+<h2 id="上手时间"><a href="#上手时间" class="headerlink" title="上手时间"></a>上手时间</h2><p>到目前为止说了这么多！你想在手机上试试吗？ </p>
+<p>我也很兴奋！抓住你的手机跟着我吧！ </p>
+<ol>
+<li>在手机上，下载Expo应用程序。您可以从这里下载：<a href="https://itunes.apple.com/app/apple-store/id982107779?pt=17102800&amp;ct=www&amp;mt=8" target="_blank" rel="noopener">iOS</a>，<a href="https://play.google.com/store/apps/details?id=host.exp.exponent" target="_blank" rel="noopener">Android</a>，或在App Store中搜索“Expo”</li>
+<li>在您的计算机上，打开此页面：<a href="https://snack.expo.io/" target="_blank" rel="noopener">https://snack.expo.io/</a></li>
+<li>在你的手机运行 Expo app 并且点击“Scan QR Code”</li>
+<li>扫描计算机上显示的QR码。如果一切正常，您应该看到绿色的“设备已连接”消息。 </li>
+<li>如果QR码不会自动消失，请单击页面右上角的小十字将其关闭。你应该看到一个代码编辑器 </li>
+<li>删除编辑器中的所有内容，粘贴此<a href="https://gist.githubusercontent.com/lintonye/5cb3c11349591bf475b91573682fe688/raw/4ea0d4562ce45c1ba3867a1759359e1f86bb590a/domohat.jsx" target="_blank" rel="noopener">代码 </a></li>
+<li>你在手机上看到了什么？ </li>
+<li>如果需要，您可以在编辑器中更改代码，并立即在手机上查看结果！ </li>
+</ol>
+<p>我将来会详细解释这个环境。现在，请记住它就像 React Native 的 Codepen。</p>
+<p>如果将 <a href="https://gist.github.com/lintonye/5cb3c11349591bf475b91573682fe688" target="_blank" rel="noopener">React Native 版本</a>的代码与 <a href="https://codepen.io/focuser/pen/gROrXx" target="_blank" rel="noopener">React（Web）版本</a>进行比较，您会发现它们看起来非常相似。它们都是这样的： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Hat = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Thinker = ...</span><br><span class="line"></span><br><span class="line"><span class="comment">// Below is the React Native version</span></span><br><span class="line"><span class="comment">// For Web version, replace "View" with "div"</span></span><br><span class="line"><span class="keyword">const</span> ThinkerWithHat = <span class="function">(<span class="params">&#123;hat&#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;View&gt;</span><br><span class="line">    &lt;Thinker /&gt;</span><br><span class="line">    &lt;Hat type=&#123;hat&#125;/&gt;</span><br><span class="line">  &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const HatSwitcher = ...</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">...</span></span><br></pre></td></tr></table></figure>
+<p>“一次学习，多平台开发”！记得？ </p>
+<h2 id="至于-ReachJS-和-React-js"><a href="#至于-ReachJS-和-React-js" class="headerlink" title="至于 ReachJS 和 React.js"></a>至于 ReachJS 和 React.js</h2><p>您可能已经听过很多人称呼为 ReactJS（或React.js）——我也使用过这个名字。事实上它从来都不是官方名称[^3]。从第一天起，官方名称一直是“React”。 </p>
+<p>因为 JavaScript 库往往被命名为“XyzJS”或“Xyz.js”而 React 是一个 JavaScript 库，所以人们可能会自愿将“JS”或“.js”附加到其名称中。由于 React 最初是一个Web库，很多人使用 ReactJS 或React.js 来引用 Web 上的 React，React和ReactDOM的组合。</p>
+<p> 遵循事实上的惯例，当我说 ReactJS 时，我的意思是 React ，在网上也是如此。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>真棒！到目前为止，我们已经完成了很多事情。我们已经了解了 React 的一些历史以及 React  Native 如何组合在一起。作为一个完整的平台，React  Native 包含了在 JavaScript 和 React 范式中构建原生应用程序所需的一切。 React  Native 现在支持许多平台，包括iOS，Android，Windows，macOS，Sketch.app 甚至 VR。  “一次学习，多平台开发”！  在下一篇文章中，我们将了解原生应用程序的真正含义以及为什么 React Native 是构建原生应用程序的最佳方式之一。  我鼓励你回到学习目标，看看你是否能回答所有问题。如果您有任何问题或意见，请与我们联系！ </p>
+<p>[^1]: 还记得声明式和命令式编程吗？它们都是范式。 React 范式是关于如何将 UI 界面分解为组件，如何传递数据等等，我们将在后面详细研究<br>[^2]: React Renderers 的想法非常强大。这里有一个很酷的渲染器<a href="https://github.com/chentsulin/awesome-react-renderer" target="_blank" rel="noopener">列表</a>可以使用React构建许多不同的东西。<br>[^3]: 如果您正在寻找React Native和React Web之间的深入技术比较，请查看<a href="https://medium.com/@alexmngn/from-reactjs-to-react-native-what-are-the-main-differences-between-both-d6e8e88ebf24" target="_blank" rel="noopener">此文章</a> </p>
 <blockquote>
-<p>作者：<a href="https://blog.sessionstack.com/@zlatkov?source=post_header_lockup" target="_blank" rel="noopener">Alexander Zlatkov</a> </p>
-<p>原文地址：<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">How JavaScript works: an overview of the engine, the runtime, and the call stack</a></p>
+<p>原文链接：<a href="https://learnreact.design/2017/06/20/what-is-react-native#fn-3" target="_blank" rel="noopener">What Is React Native?</a></p>
+<p>作者：<strong>Linton Ye</strong>(a full-stack developer in BC Canada)</p>
 </blockquote>
 
       
@@ -498,6 +538,34 @@
       <div>
         
 
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="刘志宇 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="刘志宇 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+
+
       </div>
     
 
@@ -507,9 +575,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/理解计算机/" rel="tag"># 理解计算机</a>
-          
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/React-Native/" rel="tag"># React Native</a>
           
         </div>
       
@@ -522,8 +588,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/02/关于callback函数我所知道的一切/" rel="next" title="关于callback函数我所知道的一切">
-                <i class="fa fa-chevron-left"></i> 关于callback函数我所知道的一切
+              <a href="/2018/05/06/JavaScript运行机制/" rel="next" title="JavaScript运行机制">
+                <i class="fa fa-chevron-left"></i> JavaScript运行机制
               </a>
             
           </div>
@@ -531,10 +597,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/15/什么是React-Native/" rel="prev" title="什么是React Native">
-                什么是React Native <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -761,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript引擎"><span class="nav-number">2.</span> <span class="nav-text"><a href="#JavaScript&#x5F15;&#x64CE;" class="headerlink" title="JavaScript&#x5F15;&#x64CE;"></a>JavaScript&#x5F15;&#x64CE;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x8FD0;&#x884C;&#x65F6;" class="headerlink" title="&#x8FD0;&#x884C;&#x65F6;"></a>&#x8FD0;&#x884C;&#x65F6;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x8C03;&#x7528;&#x6808;" class="headerlink" title="&#x8C03;&#x7528;&#x6808;"></a>&#x8C03;&#x7528;&#x6808;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x5E76;&#x53D1;&#x548C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;" class="headerlink" title="&#x5E76;&#x53D1;&#x548C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;"></a>&#x5E76;&#x53D1;&#x548C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#学习目标"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5B66;&#x4E60;&#x76EE;&#x6807;" class="headerlink" title="&#x5B66;&#x4E60;&#x76EE;&#x6807;"></a>&#x5B66;&#x4E60;&#x76EE;&#x6807;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Web-之外的世界"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5728;-Web-&#x4E4B;&#x5916;&#x7684;&#x4E16;&#x754C;" class="headerlink" title="&#x5728; Web &#x4E4B;&#x5916;&#x7684;&#x4E16;&#x754C;"></a>&#x5728; Web &#x4E4B;&#x5916;&#x7684;&#x4E16;&#x754C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native"><span class="nav-number">3.</span> <span class="nav-text"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染器以及新的-React"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x6E32;&#x67D3;&#x5668;&#x4EE5;&#x53CA;&#x65B0;&#x7684;-React" class="headerlink" title="&#x6E32;&#x67D3;&#x5668;&#x4EE5;&#x53CA;&#x65B0;&#x7684; React"></a>&#x6E32;&#x67D3;&#x5668;&#x4EE5;&#x53CA;&#x65B0;&#x7684; React</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个完整平台"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x5E73;&#x53F0;" class="headerlink" title="&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x5E73;&#x53F0;"></a>&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x5E73;&#x53F0;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生-UI"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x539F;&#x751F;-UI" class="headerlink" title="&#x539F;&#x751F; UI"></a>&#x539F;&#x751F; UI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Sketch-app-ReactVR-React-XYZ…"><span class="nav-number">4.</span> <span class="nav-text"><a href="#React-Sketch-app-ReactVR-React-XYZ&#x2026;" class="headerlink" title="React Sketch.app, ReactVR, React XYZ&#x2026;"></a>React Sketch.app, ReactVR, React XYZ&#x2026;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上手时间"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x4E0A;&#x624B;&#x65F6;&#x95F4;" class="headerlink" title="&#x4E0A;&#x624B;&#x65F6;&#x95F4;"></a>&#x4E0A;&#x624B;&#x65F6;&#x95F4;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#至于-ReachJS-和-React-js"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x81F3;&#x4E8E;-ReachJS-&#x548C;-React-js" class="headerlink" title="&#x81F3;&#x4E8E; ReachJS &#x548C; React.js"></a>&#x81F3;&#x4E8E; ReachJS &#x548C; React.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
             
 
           </div>
