@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentOS 7 安装与配置Git、Node、Python3、Docker]]></title>
+    <url>%2F2018%2F10%2F10%2FCentOS-7-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEgit-node-python3-docker%2F</url>
+    <content type="text"><![CDATA[在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。 概述我的习惯：将软件源代码压缩包放在/usr/local/download目录下，软件源码放在 /usr/local/src 目录下，软件装在 /usr/local/software 目录下 安装Git安装必要的依赖1yum install -y gcc-c++ perl-devel zlib-devel gcc-c++ perl-devel zlib-devel 安装 Git 需要的依赖1yum install -y curl-devel curl-devel （ Git 使用中与 http 或 https 相关操作需要） 使用 wget 下载源码 ，此示例为 2.17.0 版本1wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.19.0.tar.gz -P /usr/local/download 解压下载好的压缩文件到源码目录 /usr/local/src1tar -zxvf /usr/local/download/git-2.19.0.tar.gz -C /usr/local/src 切换到源码目录1cd /usr/local/src/git-2.19.0 检测、编译、安装12./configure --prefix=/usr/local/software/gitmake &amp;&amp; make install 配置环境变量1vim /root/.bashrc 添加如下代码 export PATH=/usr/local/software/git/bin:$PATH 使环境变量立马生效1source /root/.bashrc 验证1git --version 安装Node使用wget 获取源代码压缩包到/usr/local/download1wget https://nodejs.org/dist/v8.11.1/node-v8.11.1-linux-x64.tar.xz -P /usr/local/download 解压压缩包到 /usr/local/src1tar -zxvf /usr/local/download/node-v8.12.0.tar.gz -C /usr/local/src 切换到源代码目录1cd /usr/local/src/node 编译安装到 usr/local/software12./configure --prefix=/usr/local/software/nodemake &amp;&amp; make install 配置环境变量要想 node 能够在全局能够使用，需要添加软链接 12ln -s /usr/local/software/node/bin/node /usr/local/bin/node ln -s /usr/local/software/node/bin/npm /usr/local/bin/npm 验证1node -v 安装并使用pm2管理Node项目安装pm21npm install pm2 -g 配置软链接1ln -s /usr/local/software/node/bin/pm2 /usr/local/bin/ 其中第一个地址为pm2的安装地址，在本机中为usr/local/software/node/bin/pm2，安装的时候命令行也会提示安装地址 使用pm2管理Node项目pm2 start app.js -i 4 --name myApp 部署项目的时候，先cd 进入到项目的app.js文件所在路径，然后执行上述命令 这里我使用pm2部署了一个项目，并取名为myApp，-i 是设置4个进程来运行项目，注意不要乱设置，请结合自己服务器的cpu来使用，并不是越多越好，pm2实现了cluster可以简单的实现负载均衡，4个进程如果其中一个挂了，pm2会自动重启该进程来保持程序的运行。如果不设置或者设置-i 为1，则是单进程程序(fork)。 相关命令1pm2 list 该命令能查看pm2所有部署的项目状态，可以看到如下图所示的项目列表 还有其他命令 1234pm2 stop app #停止指定项目pm2 stop all #停止所有项目pm2 restart app #重启指定项目pm2 restart all #重启所有项目 安装 Python3，pip3安装依赖1yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel 使用 wget 获取源代码压缩包到 /usr/local/download/1wget https://nodejs.org/dist/v8.11.1/node-v8.11.1-linux-x64.tar.xz -P /usr/local/download 解压压缩包到 /usr/local/src1tar -xvf /usr/local/download/Python-3.7.0.tar.xz -C /usr/local/src 切换到源代码目录1cd /usr/local/src/python 编译安装到 usr/local/software12./configure --prefix=/usr/local/software/python3make &amp;&amp; make install 错误： ModuleNotFoundError: No module named ‘_ctypes’ make install安装遇到ModuleNotFoundError: No module named ‘_ctypes’问题，执行如下命令： 1234# Python3.7中缺少libffi-devel依赖$ yum install libffi-devel -y# 然后再执行即可$ make install 创建python3、pip3 的软链接12ln -s /usr/local/software/python3/bin/python3 /usr/bin/python3ln -s /usr/local/software/python3/bin/pip3 /usr/bin/pip3 验证12python3 --versionpip3 --version 安装Docker从 2017 年 3 月开始 docker 在原来的基础上分为两个分支版本: Docker CE 和 Docker EE。 Docker CE 即社区免费版，Docker EE 即企业版，强调安全，但需付费使用。 本文介绍 Docker CE 的安装使用。 移除旧的版本：12345678910$ sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine 安装一些必要的系统工具：1sudo yum install -y yum-utils device-mapper-persistent-data lvm2 添加软件源信息：1sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo 更新 yum 缓存：1sudo yum makecache fast 安装 Docker-ce：1sudo yum -y install docker-ce 启动 Docker 后台服务1sudo systemctl start docker 验证测试运行 hello-world 1[root@runoob ~]# docker run hello-world]]></content>
+      <categories>
+        <category>学习总结</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Angular中入口组件（entryComponents）与声明式组件的区别]]></title>
+    <url>%2F2018%2F10%2F10%2FAngular%E4%B8%AD%E5%85%A5%E5%8F%A3%E7%BB%84%E4%BB%B6%EF%BC%88entryComponents%EF%BC%89%E4%B8%8E%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[在阅读 Angular 官方文档的过程中，其中 Angular 自定义元素|Angular章节的内容晦涩难懂，幸好现在互联网资料丰富，现在总结一下Angular加载组件的种类和不同。 概述Angular的声明式组件和入口组件的区别体现在两者的加载方式不同。 声明式组件是通过组件声明的selector加载 入口组件（entry component）是通过组件的类型动态加载 声明式组件声明式组件会在模板里通过组件声明的selector加载组件。 示例： 1234567@Component(&#123; selector: 'a-cmp', template: ` &lt;p&gt;这是A组件&lt;/p&gt; `&#125;)export class AComponent&#123;&#125; 12345678@Component(&#123; selector: 'b-cmp', template: ` &lt;p&gt;在B组件里内嵌A组件&lt;/p&gt; &lt;a-cmp&gt;&lt;/a-cmp&gt; `&#125;)export class BComponent&#123;&#125; 在BComponent的模板里，使用selector&lt;a-cmp&gt;&lt;/a-cmp&gt;声明加载AComponent。 入口组件（entryComponents)入口组件是通过指定的组件类加载组件。 主要分为三类： 在@NgModule.bootstrap里声明的启动组件，如AppComponent。 在路由配置里引用的组件 其他通过编程使用组件类型加载的动态组件 启动组件app.components.ts 123456@Component(&#123; selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss']&#125;)export class AppComponent&#123;&#125; app.module.ts 12345678910111213@NgModule(&#123; declarations: [ AppComponent ], imports: [ BrowserModule, BrowserAnimationsModule, AppRoutingModule ], providers: [], bootstrap: [AppComponent]&#125;)export class AppModule &#123; &#125; 在bootstrap里声明的AppComponent为启动组件。虽然我们会在index.html里使用组件的selector&lt;app-root&gt;&lt;/app-root&gt;的位置，但是 Angular 并不是根据此 selector 来加载 AppComponent。这是容易让人误解的地方。因为 index.html 不属于任何组件模板，Angular 需要通过编程使用bootstrap里声明的AppComponent类型加载组件，而不是使用 selector。 由于 Angular 动态加载 AppComponent，所以AppComponent是一个入口组件。 路由配置引用的组件1234567891011@Component(&#123; selector: 'app-nav', template: ` &lt;nav&gt; &lt;a routerLink="/home" routerLinkActive #rla="routerLinkActive" selected="#rla.isActive"&gt;首页&lt;/a&gt; &lt;a routerLink="/users" routerLinkActive #rla="routerLinkActive" selected="#rla.isActive"&gt;用户&lt;/a&gt; &lt;/nav&gt; &lt;router-outlet&gt;&lt;/router-outlet&gt; `&#125;)export class NavComponent &#123;&#125; 我们需要配置一个路由 12345678910111213141516const routes: Routes = [ &#123; path: "home", component: HomeComponent &#125;, &#123; path: "user", component: UserComponent &#125;];@NgModule(&#123; imports: [RouterModule.forRoot(routes)], exports: [RouterModule]&#125;)export class AppRoutingModule &#123; &#125; Angular根据配置的路由，根据路由指定的组件类来加载组件，而不是通过组件的selector加载。 配置入口组件在 Angular 里，对于入库组件需要在@NgModule.entryComponents里配置。 由于启动组件和路由配置里引用的组件都为入口组件，Angular会在编译时自动把这两种组件添加到@NgModule.entryComponents里。对于我们自己编写的动态组件需要手动添加到@NgModule.entryComponents里。 1234567891011121314151617@NgModule(&#123; declarations: [ AppComponent ], imports: [ BrowserModule, BrowserAnimationsModule, AppRoutingModule ], providers: [], entryComponents: [ DialogComponent ], bootstrap: [ AppComponent ] &#125;) export class AppModule &#123; &#125; 引自 Angular入口组件（entry component）和声明式组件的区别]]></content>
+      <categories>
+        <category>学习总结</category>
+      </categories>
+      <tags>
+        <tag>Angular</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[React Native vs. Cordova, PhoneGap, Ionic etc]]></title>
     <url>%2F2018%2F07%2F15%2FReact-Native-vs-Cordova-PhoneGap-Ionic-etc%2F</url>
     <content type="text"><![CDATA[最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》。本篇为《React Native vs. Cordova, PhoneGap, Ionic etc.》的译文，有翻译不对的地方欢迎指正！ 在上一篇文章中，我告诉过你，React Native 很棒，因为它允许我们使用原生 UI 构建应用程序。 React Native 应用程序的用户体验比使用 WebView UI 的用户体验要好得多。但“native”究竟意味着什么？什么是 WebView UI？为什么原生 UI 比 WebView UI 更好？React Native 如何与其他移动框架（如 PhoneGap，Cordova 和 Ionic）进行比较？ 让我们现在深入研究这些问题。坐稳，出发啦！ 学习目标 看完这篇文章后，我会让你回到这里。希望您能够轻松回答这些问题： 什么是原生app？ 什么是 WebView UI？ 更原生的框架有哪些好处和缺点？那原生性较少的框架怎么样 ？ React Native与 Cordova 相比如何？ 总之，什么是“native”app？要了解这种“native”实际意味着什么，我们现在来讨论一下： 我是黑客帝国的忠实粉丝，你也是吗？你知道，我们所见的现实实际上是一种模拟。有人提到，即使在电影里的 Zion 城市，一个人类曾经认为自己也是自由的最后一个城市，也是一个模拟。多层模拟现实的想法一直让我着迷——一个虚拟世界在另一个虚拟世界中作为模拟运行在第三世界里面 。 这很像我们的计算机（或手机）中的软件架构 。 软件是如何操作大量晶体管和电路的指令的安排，统称为硬件。直接在硬件上运行的原始指令对我们人类来说是难以理解的，特别是考虑到当今计算机的复杂性和规模。 为了使软件易于理解和可操作，计算机科学家将其分为多个层，这些层由运行在另一个框架之上的框架（让我们在这篇文章中简单地使用术语“框架”来指代具有某种结构的软件 ）组成。在所有这些框架中，框架越接近硬件，我们就说它更“native”。 因此，应用程序的“原生性”实际上是一个相对术语。严格地说，我们不能说应用程序本身是否是原生的。我们只能说，与其他应用相比，这款应用更具原生性。例如，您可以使用C ++，Java（或Kotlin）或 Cordova 构建 Android 应用程序。 C ++ 应用程序是最原生的，Cordova 应用程序是最少原生的。 Java / Kotlin 应用程序介于两者之间。 更具原生性的app有什么优势app有更多原生性或着较少的原生性都有各自的好处。更接近硬件意味着更多的自由，而更多的模拟（指较少的原生性）让您更舒适 。 使用更原生框架的程序通常可以更多地访问硬件功能，并且可以更自由地使用它们。它通常运行效率更高，因为不同语言之间的模拟和转换开销较低。但是现实中学习起来也会比较困难 - 代码通常更难以编写和理解。 另一方面，我们人类通常更容易在较少的原生性框架中编写代码。编码语言更容易理解，更简洁（需要更少的输入）。它的词汇量更接近我们的自然语言。它需要较少了解硬件的构成以及它内部的工作方式。还有一个好处就是，较少原生性框架中的程序通常更具可移植性 - 程序可以在完全不同的硬件平台上运行而无需修改，因为它的词汇和内部概念不包含任何特定于原始硬件的内容。然而，所有这些便利的代价是你通常会牺牲一些效率和自由。 移动开发框架集中营在React Native之前，移动框架通常为两个阵营中的一个。 第一个是原生阵营，例如 Android 的 Java/Kotlin 和 iOS 的 Objective-C/Swift。在原生阵营中，应用程序速度快，可以访问丰富的硬件功能。用户界面是针对目标平台（Android 或 iOS）的定制，因此非常流畅且使用愉快。然而，所有这些优点仅限于一个平台。要构建应用程序，必须学习两种不同的框架，这使得学习曲线陡峭两倍。这尤其会让数百万网络开发人员落伍。 然后是另一个移动框架阵营，例如 Cordova/PhoneGap 和 Ionic。这些框架允许 Web 开发人员使用其现有的 HTML，CSS 和 JavaScript 技能构建移动应用程序。这些应用可以在Android和iOS（以及更多）上运行。但是，它们更加缓慢，并且对硬件功能的访问受限。最重要的是，这些应用程序的用户界面很糟糕！由于这些框架使用一个名为 WebView 的关键组件来呈现 UI，因此我们将它们称为 WebView 框架。 WebView 框架构建在原生框架之上。我们可以看到前者是在后者内部运行的模拟世界。这就是为什么他们有上述的好处和限制。 为什么我们不能从中获益并避免两者的陷阱？这就是 React Native 要做的事情。 React Native 代表了移动框架的第三阵营。它的 UI 层比 WebView 框架更原生，而其余部分则处于相同的模拟级别，以实现其易用性。 React Native UI 比 WebView UI 更加原生像 Cordova 这样的框架可以使用 Web 技术构建移动UI。他们是如何做到的呢？他们在每个应用程序中嵌入了一个名为 WebView 的网络浏览器！您在UI中看到的所有内容，按钮，菜单和动画都在浏览器的网页中运行。在模拟方面，Cordova 应用程序的 UI 是在 Web 浏览器中运行的模拟世界，Web 浏览器又是一个在原生系统内运行的模拟世界。 相比之下，React Native的 UI 是比 WebView 框架更接近原生的一层——它直接在原生系统内运行。 此结构确定了 React Native UI 的优点。 React Native 直接使用原生 UI 组件，而 WebView 框架尝试使用 HTML / CSS 中的 Web UI 模仿原生 UI 的外观。真实的东西或假的东西，你更喜欢哪一个？ 根据经验，识别出使用 WebView 框架构建的应用程序并不困难。那些小东西，比如滚动加速，键盘行为，导航和UI的一般平滑度。如果他们没有完全本地化的行为，复杂性就会增加并导致用户感到沮丧。 React Native 使用 JavaScript 来使过程更加简单另一方面，React Native 仍然允许我们用 JavaScript 编写应用程序，并使用类似于 HTML 和CSS 的语法来构建 UI。这无疑降低了网页设计师和 Web 开发人员的入门门槛。 必要时，React Native 提供了一种渗透到原生框架的方法，以实现我们希望在应用程序中实现的任何原生功能。这有点像在黑客帝国中拨打电话。 那么 WebView 框架一文不值？ 不，绝对不是。例如，如果您已经拥有一个 Web 应用程序，并希望尽快将其发布到应用程序商店。您愿意以最短的上市时间牺牲用户体验。 另一种情况是，如果应用程序中显示的内容主要是内容没有太多的交互性，那么将它放在WebView中并不是太糟糕。 但是，如果您的应用程序的用户体验很重要，如果应用程序中存在某些交互性，例如接受用户输入，拖放，滑动屏幕等，请务必考虑 React Native。因为你最不想要做的一件事就是使用 WebView UI 模拟原生 UI。 总结好吧，我们已经看过“native”的真正含义，WebView UI 是什么以及为何 React Native UI 更好，React Native 如何与其他 WebView 框架（如 Cordova/PhoneGap 和 Ionic）进行比较。 你怎么看？您将使用哪个框架来构建您的下一个应用程序？ 原文链接：React Native vs. Cordova, PhoneGap, Ionic etc. 作者： Linton Ye(a full-stack developer in BC Canada)]]></content>
@@ -30,8 +52,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>理解计算机</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -42,8 +64,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>理解计算机</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
         <tag>Node.js</tag>
       </tags>
   </entry>
@@ -75,8 +97,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>理解计算机</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -224,8 +246,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>理解计算机</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -248,8 +270,8 @@
         <category>学习总结</category>
       </categories>
       <tags>
-        <tag>理解计算机</tag>
         <tag>JavaScript</tag>
+        <tag>理解计算机</tag>
       </tags>
   </entry>
   <entry>
