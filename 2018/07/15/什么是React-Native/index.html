@@ -450,7 +450,7 @@
 </ul>
 <h2 id="在-Web-之外的世界"><a href="#在-Web-之外的世界" class="headerlink" title="在 Web 之外的世界"></a>在 Web 之外的世界</h2><p>到现在，可能你的脑海了会有这样一幅画面：</p>
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9i75lxj0j20ku0b4jrq.jpg" alt="React summary"></p>
-<p>你知道，React 是一个针对 Web 构建用户界面的好工具。使用 React，您可以通过描述您想要的内容来构建 UI，而不是如何更新 UI（响应式UI），在可重用组件中组织代码，以及创建高性能 UI 而无需担心 DOM 这个慢性子家伙（因为有虚拟 DOM）。越来越多的 Web 开发人员选择React，因为它允许他们专注于更大的页面而不是低级细节。我们称这种构建 UI 的方式为 React 范式。范式基本上包含了如何思考问题以及如何描述问题及其解决方案的方式<sup><a href="#fn_1" id="reffn_1">1</a></sup>。</p>
+<p>你知道，React 是一个针对 Web 构建用户界面的好工具。使用 React，您可以通过描述您想要的内容来构建 UI，而不是如何更新 UI（响应式UI），在可重用组件中组织代码，以及创建高性能 UI 而无需担心 DOM 这个慢性子家伙（因为有虚拟 DOM）。越来越多的 Web 开发人员选择React，因为它允许他们专注于更大的页面而不是低级细节。我们称这种构建 UI 的方式为 React 范式。范式基本上包含了如何思考问题以及如何描述问题及其解决方案的方式[^1]。</p>
 <p>这对 Web 应用来说非常棒。那么其他平台呢，比如 iOS 和 Android？如果你可以将相同的React 范式应用于移动应用程序的开发，那不是很好吗？</p>
 <p> 在某种程度上，移动平台的工作方式与 Web 相同。有一个 model（一棵树）。有一样东西（艺术家）可以根据 model 创建视觉元素。构建移动 UI 的传统方式是直接操作树状 model 并告诉它如何更新内容（直接操作树状 model）。这与在 Web 浏览器中直接操作 DOM 具有类似的缺点。 React 正好有助于改善此问题。</p>
 <p>除了相似之外，移动平台与 Web 是不相同，在各个方面都是彼此不同。过去，开发人员必须学习平台的特定语言和工具链才能为其构建应用程序。</p>
@@ -498,7 +498,7 @@
 <p>对！它本质上是 React Native，在 Sketch 中某个渲染器与 UI 树模型进行交互！ </p>
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ft9kjan0vxj20fa09qglr.jpg" alt=""></p>
 <p>因为 React Sketch.app 是基于 React Native，它是一个完整的包，我们可以做一些惊喜的事情，比如从真实的 API 中获取数据并在 Sketch 中呈现它。</p>
-<p> 与此同时，React Native 的许多其他变体被创建用于支持构建 Windows，macOS，VR 等平台<sup><a href="#fn_2" id="reffn_2">2</a></sup>的应用程序。</p>
+<p> 与此同时，React Native 的许多其他变体被创建用于支持构建 Windows，macOS，VR 等平台[^2]的应用程序。</p>
 <p>这意味着，只要您掌握了 React 的精髓，就可以使用相同的思维模式在 JavaScript 中为数以千计的平台构建应用程序。正如 React Native 的创作者所说，“学习一次，随处开发”。 </p>
 <h2 id="上手时间"><a href="#上手时间" class="headerlink" title="上手时间"></a>上手时间</h2><p>到目前为止说了这么多！你想在手机上试试吗？ </p>
 <p>我也很兴奋！抓住你的手机跟着我吧！ </p>
@@ -516,19 +516,11 @@
 <p>如果将 <a href="https://gist.github.com/lintonye/5cb3c11349591bf475b91573682fe688" target="_blank" rel="noopener">React Native 版本</a>的代码与 <a href="https://codepen.io/focuser/pen/gROrXx" target="_blank" rel="noopener">React（Web）版本</a>进行比较，您会发现它们看起来非常相似。它们都是这样的： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Hat = ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Thinker = ...</span><br><span class="line"></span><br><span class="line"><span class="comment">// Below is the React Native version</span></span><br><span class="line"><span class="comment">// For Web version, replace "View" with "div"</span></span><br><span class="line"><span class="keyword">const</span> ThinkerWithHat = <span class="function">(<span class="params">&#123;hat&#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;View&gt;</span><br><span class="line">    &lt;Thinker /&gt;</span><br><span class="line">    &lt;Hat type=&#123;hat&#125;/&gt;</span><br><span class="line">  &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const HatSwitcher = ...</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">...</span></span><br></pre></td></tr></table></figure>
 <p>“一次学习，多平台开发”！记得？ </p>
-<h2 id="至于-ReachJS-和-React-js"><a href="#至于-ReachJS-和-React-js" class="headerlink" title="至于 ReachJS 和 React.js"></a>至于 ReachJS 和 React.js</h2><p>您可能已经听过很多人称呼为 ReactJS（或React.js）——我也使用过这个名字。事实上它从来都不是官方名称<sup><a href="#fn_3" id="reffn_3">3</a></sup>。从第一天起，官方名称一直是“React”。 </p>
+<h2 id="至于-ReachJS-和-React-js"><a href="#至于-ReachJS-和-React-js" class="headerlink" title="至于 ReachJS 和 React.js"></a>至于 ReachJS 和 React.js</h2><p>您可能已经听过很多人称呼为 ReactJS（或React.js）——我也使用过这个名字。事实上它从来都不是官方名称[^3]。从第一天起，官方名称一直是“React”。 </p>
 <p>因为 JavaScript 库往往被命名为“XyzJS”或“Xyz.js”而 React 是一个 JavaScript 库，所以人们可能会自愿将“JS”或“.js”附加到其名称中。由于 React 最初是一个Web库，很多人使用 ReactJS 或React.js 来引用 Web 上的 React，React和ReactDOM的组合。</p>
 <p> 遵循事实上的惯例，当我说 ReactJS 时，我的意思是 React ，在网上也是如此。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>真棒！到目前为止，我们已经完成了很多事情。我们已经了解了 React 的一些历史以及 React  Native 如何组合在一起。作为一个完整的平台，React  Native 包含了在 JavaScript 和 React 范式中构建原生应用程序所需的一切。 React  Native 现在支持许多平台，包括iOS，Android，Windows，macOS，Sketch.app 甚至 VR。  “一次学习，多平台开发”！  在下一篇文章中，我们将了解原生应用程序的真正含义以及为什么 React Native 是构建原生应用程序的最佳方式之一。  我鼓励你回到学习目标，看看你是否能回答所有问题。如果您有任何问题或意见，请与我们联系！ </p>
-<blockquote id="fn_1">
-<sup>1</sup>. 还记得声明式和命令式编程吗？它们都是范式。 React 范式是关于如何将 UI 界面分解为组件，如何传递数据等等，我们将在后面详细研究<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. React Renderers 的想法非常强大。这里有一个很酷的渲染器<a href="https://github.com/chentsulin/awesome-react-renderer" target="_blank" rel="noopener">列表</a>可以使用React构建许多不同的东西。 <a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. 如果您正在寻找React Native和React Web之间的深入技术比较，请查看<a href="https://medium.com/@alexmngn/from-reactjs-to-react-native-what-are-the-main-differences-between-both-d6e8e88ebf24" target="_blank" rel="noopener">此文章</a> <a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
-</blockquote>
+<p>[^1]: 还记得声明式和命令式编程吗？它们都是范式。 React 范式是关于如何将 UI 界面分解为组件，如何传递数据等等，我们将在后面详细研究<br>[^2]: React Renderers 的想法非常强大。这里有一个很酷的渲染器<a href="https://github.com/chentsulin/awesome-react-renderer" target="_blank" rel="noopener">列表</a>可以使用React构建许多不同的东西。<br>[^3]: 如果您正在寻找React Native和React Web之间的深入技术比较，请查看<a href="https://medium.com/@alexmngn/from-reactjs-to-react-native-what-are-the-main-differences-between-both-d6e8e88ebf24" target="_blank" rel="noopener">此文章</a> </p>
 <blockquote>
 <p>原文链接：<a href="https://learnreact.design/2017/06/20/what-is-react-native#fn-3" target="_blank" rel="noopener">What Is React Native?</a></p>
 <p>作者：<strong>Linton Ye</strong>(a full-stack developer in BC Canada)</p>

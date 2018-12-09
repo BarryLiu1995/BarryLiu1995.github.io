@@ -94,20 +94,20 @@
 
 
 
-<meta name="description" content="在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。">
+<meta name="description" content="在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla（效果不好，目前已停止运行）。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 7 安装与配置Git、Node、Python3、Docker、Jenkins">
 <meta property="og:url" content="http://barryliu1995.studio/2018/10/10/CentOS-7-安装与配置git-node-python3-docker-jenkins/index.html">
 <meta property="og:site_name" content="刘志宇的新天地">
-<meta property="og:description" content="在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。">
+<meta property="og:description" content="在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla（效果不好，目前已停止运行）。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fw30ewqor9j20zk0c0jro.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fvo9vmfjclj20de06276t.jpg">
-<meta property="og:updated_time" content="2018-12-09T09:39:47.252Z">
+<meta property="og:updated_time" content="2018-12-09T09:45:53.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7 安装与配置Git、Node、Python3、Docker、Jenkins">
-<meta name="twitter:description" content="在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。">
+<meta name="twitter:description" content="在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目DoubanSpider。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务Scylla（效果不好，目前已停止运行）。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fw30ewqor9j20zk0c0jro.jpg">
 
 
@@ -424,7 +424,7 @@
       
 
       
-        <p>在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目<a href="http://111.230.72.118:8200/" target="_blank" rel="noopener">DoubanSpider</a>。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务<a href="http://111.230.72.118:8899/#/" target="_blank" rel="noopener">Scylla</a>。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。</p>
+        <p>在今年六月份毕业前正好以学生价购买了腾讯云的基础配置的云主机，恰好可以拿来玩玩Linux命令。目前机子上运行了两个服务，一个是自己六月份空闲时间写的node前后台项目，豆瓣租房论坛的爬虫项目<a href="http://funhouse.barryliu1995.studio/" target="_blank" rel="noopener">DoubanSpider</a>。第二个就是GitHub上一个挺有名的免费代理ip爬虫服务<a href="http://111.230.72.118:8899/#/" target="_blank" rel="noopener">Scylla</a>（效果不好，目前已停止运行）。这些服务都需要对应的依赖环境，所以记录一下相关依赖的安装和配置命令。</p>
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fw30ewqor9j20zk0c0jro.jpg" width="600" height="200" align="center/"></p>
 <a id="more"></a>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我的习惯：将软件源代码压缩包放在<code>/usr/local/download</code>目录下，软件源码放在 <code>/usr/local/src</code> 目录下，软件装在 <code>/usr/local/software</code> 目录下</p>
