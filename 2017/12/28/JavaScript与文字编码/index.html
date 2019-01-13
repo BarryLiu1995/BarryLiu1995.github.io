@@ -454,6 +454,7 @@
 <p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lw935dxj20jg0apwey.jpg" alt="UTF-32"></p>
 <p>UTF-32 的优点在于，转换规则简单直观，查找效率高。缺点在于浪费空间，同样内容的英语文本，它会比 ASCII编码大四倍。这个缺点很致命，导致实际上没有人使用这种编码方法，HTML 5 标准就明文规定，网页不得编码成UTF-32。</p>
 <h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h4><p>UTF-32 太过于浪费空间，所以急需一种节省空间的表示方案，这导致了 UTF-8 的诞生。UTF-8 是一种变长的编码方法，字符长度从 1 个字节到 4 个字节不等。越是常用的字符，字节越短，最前面的 128 个字符，只使用 1 个字节表示，与 ASCII 码完全相同。由于 UTF-8 这种节省空间的特性，导致它成为互联网上最常见的网页编码。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -480,6 +481,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>我们来看看 UTF-8 具体是如何存储字符的，如下面的字符</p>
 <blockquote>
 <p>we 发 财 🤑</p>
@@ -875,7 +877,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

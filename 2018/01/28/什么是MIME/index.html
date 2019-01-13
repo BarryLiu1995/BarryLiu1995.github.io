@@ -452,6 +452,7 @@
 <p>其中第一个方案时缺省值，即不用转化的 ASCII 字符。真正常用的是 quoted-printable 和 Base64 ，而 Base64 编码方案上篇博文 <a href="http://barryliu1995.studio/2017/12/28/%E6%96%87%E5%AD%97%E7%BC%96%E7%A0%81%E4%B8%8E%E5%89%8D%E7%AB%AF/">JavaScript与文字编码</a> 有详细介绍，而 quoted-printable 限于篇幅有限，这里就不细说，各位童鞋可以谷歌或者翻阅教科书。这里我们重点说说第五项：Content-Type</p>
 <h3 id="最重要的-Content-Type-字段"><a href="#最重要的-Content-Type-字段" class="headerlink" title="最重要的 Content-Type 字段"></a>最重要的 Content-Type 字段</h3><p>这一邮件首部及其重要，它表明传递的信息类型和采用的编码。</p>
 <p>MIME 标准规定该首部值为：内容类型/子类型。下面表格列举了部分基本内容类型及其子类型：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -493,10 +494,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>其中如果内容主体的类型为“text”，那么还必须指明编码类型“charset”，缺省值是 ASCII，其他可能值有 UTF-8、GB2312、GBK 等。还有 MIME 允许自定义内容类型。但为了避免可能出现名字冲突，标准要求自定义的内容类型的名称要以字符串<code>x-</code>开始。例如 HTML form 标签的 enctype 属性值之一：<code>x-www-form-urlencode</code></p>
 <p>同时还要注意到 MIME 中的 multipart 内容类型，该内容类型很有用，因为它使邮件增加了相当大的灵活性，其子类型主要有：</p>
 <ol>
-<li>mixed——该子类型允许单个报文含有多个相互独立的子报文，每个子报文可有自己的类型和编码，可以是文本、图像或声音。在 mixed 后面还要用到一个关键字，即<code>Boundary=</code>，此关键字定义了分割报文各部分所用的字符串，只要在邮件的内容中不会出现这样的字符串即可，可以把它理解为分割标识符。当某一行以两个连字符“–”开始，后面紧跟上述的字符串，就表示下面开始了另一个子报文。</li>
+<li>mixed——该子类型允许单个报文含有多个相互独立的子报文，每个子报文可有自己的类型和编码，可以是文本、图像或声音。在 mixed 后面还要用到一个关键字，即<code>Boundary=</code>，此关键字定义了分割报文各部分所用的字符串，只要在邮件的内容中不会出现这样的字符串即可，可以把它理解为分割标识符。当某一行以两个连字符“—”开始，后面紧跟上述的字符串，就表示下面开始了另一个子报文。</li>
 <li>alternative——该子类型允许单个报文含有同一数据的多种表示。当给多个使用不同硬件平台或软件平台的收件人发送文本时就很有用。比如，用户可同时用普通的 ASCII 文本和格式化的形式发送文本，从而允许拥有图形功能的计算机用户在察看图形时选择格式化的形式。</li>
 <li>parallel——该子类型允许单个报文含有可同时显示的各个子部分。例如，图像和声音同时播放。</li>
 <li>digest——该子类型允许单个报文含有一组其他报文。</li>
@@ -845,7 +847,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
