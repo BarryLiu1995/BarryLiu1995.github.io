@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://barryliu1995.studio/2019/01/13/%E5%9B%9E%E8%BD%A6%E4%B8%8E%E6%8D%A2%E8%A1%8C%E7%9A%84%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2019-01-13T09:52:30.140Z</lastmod>
+    <data>
+        <display>
+        <title>回车与换行的故事</title>
+        <pubTime>2019-01-13T09:12:17.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://barryliu1995.studio/2018/12/30/%E8%AF%B7%E5%9B%9E%E7%AD%942018/</loc>
@@ -30,9 +50,9 @@
         <title>控制反转和依赖注入</title>
         <pubTime>2018-12-17T15:20:52.000Z</pubTime>
         
-        <tag>理解计算机</tag>
-         
         <tag>Angular</tag>
+         
+        <tag>理解计算机</tag>
          
          
            
