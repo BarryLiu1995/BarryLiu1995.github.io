@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://barryliu1995.studio/2018/11/21/%E5%9C%A8%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E4%BD%BF%E7%94%A8Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%A4%9A%E5%AD%90%E5%9F%9F%E5%90%8D%E4%B8%8B%E7%9A%84web%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2019-02-02T11:48:17.008Z</lastmod>
+    <data>
+        <display>
+        <title>在一台服务器上使用Nginx反向代理来部署多子域名下的web服务</title>
+        <pubTime>2018-11-21T14:24:32.000Z</pubTime>
+        
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2018/10/10/CentOS-7-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEgit-node-python3-docker-jenkins/</loc>
+    <lastmod>2019-02-02T11:38:43.440Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS 7 安装与配置Git、Node、Python3、Docker、Jenkins</title>
+        <pubTime>2018-10-10T04:12:44.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://barryliu1995.studio/2019/01/28/HTTP-%E7%AE%80%E5%8F%B2/</loc>
     <lastmod>2019-01-28T12:26:39.276Z</lastmod>
     <data>
@@ -73,46 +113,6 @@
         <tag>Angular</tag>
          
         <tag>理解计算机</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2018/10/10/CentOS-7-%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEgit-node-python3-docker-jenkins/</loc>
-    <lastmod>2018-12-09T09:45:53.131Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS 7 安装与配置Git、Node、Python3、Docker、Jenkins</title>
-        <pubTime>2018-10-10T04:12:44.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2018/11/21/%E5%9C%A8%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E4%BD%BF%E7%94%A8Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%A4%9A%E5%AD%90%E5%9F%9F%E5%90%8D%E4%B8%8B%E7%9A%84web%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2018-12-09T09:20:00.264Z</lastmod>
-    <data>
-        <display>
-        <title>在一台服务器上使用Nginx反向代理来部署多子域名下的web服务</title>
-        <pubTime>2018-11-21T14:24:32.000Z</pubTime>
-        
-        <tag>Nginx</tag>
          
          
            
