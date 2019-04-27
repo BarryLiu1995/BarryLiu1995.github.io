@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React Native," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》。本篇为《React Native vs. Cord">
+<meta name="keywords" content="React Native">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native vs. Cordova, PhoneGap, Ionic etc">
+<meta property="og:url" content="http://barryliu1995.studio/2018/07/15/React-Native-vs-Cordova-PhoneGap-Ionic-etc_new/index.html">
+<meta property="og:site_name" content="六只鱼的环游记">
+<meta property="og:description" content="最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》。本篇为《React Native vs. Cord">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ftalmu0ddtj20hq0db75i.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftaczy947yj20b40g975w.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftad7ezktlj20gw0h6my2.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftadbotmdqj20im07v0tf.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftadxhtbv6j20k90h3t9m.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftae2425s6j20ol0fe75o.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftae7j4qnbj20b4066t9a.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftaeg4a3k2j20g405kabp.jpg">
+<meta property="og:updated_time" content="2019-04-27T08:15:47.735Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native vs. Cordova, PhoneGap, Ionic etc">
+<meta name="twitter:description" content="最近在网络上看到(译)图解 React这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》。本篇为《React Native vs. Cord">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1ftalmu0ddtj20hq0db75i.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://barryliu1995.studio/2018/07/15/React-Native-vs-Cordova-PhoneGap-Ionic-etc_new/"/>
+
+
+
+
+
+  <title>React Native vs. Cordova, PhoneGap, Ionic etc | 六只鱼的环游记</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ceccf121ce6263d67aebf92418b0a2d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六只鱼的环游记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">电影重度骨灰级爱好者、尤克里里初学者、前端coder</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2018/07/15/React-Native-vs-Cordova-PhoneGap-Ionic-etc_new/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="六只鱼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六只鱼的环游记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">React Native vs. Cordova, PhoneGap, Ionic etc</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T15:47:35+08:00">
+                2018-07-15
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T16:15:47+08:00">
+                2019-04-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习总结/" itemprop="url" rel="index">
+                    <span itemprop="name">学习总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近在网络上看到<a href="https://juejin.im/post/5b481f6b51882519ad6175c2" target="_blank" rel="noopener">(译)图解 React</a>这篇介绍 React 的文章。用比喻以及插画的形式科普 React 的相关术语还是蛮有趣的。于是乎自己就翻译了文章原作者讲述 React 术语系列文章中的其余两篇——《What is React Native？》和《React Native vs. Cordova, PhoneGap, Ionic etc.》。本篇为《React Native vs. Cordova, PhoneGap, Ionic etc.》的译文，有翻译不对的地方欢迎指正！</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1ftalmu0ddtj20hq0db75i.jpg" width="600" height="200" align="center/"></p>
+<a id="more"></a>
+<p>在<a href="https://learnreact.design/2017/06/20/what-is-react-native" target="_blank" rel="noopener">上一篇文章</a>中，我告诉过你，React Native 很棒，因为它允许我们使用原生 UI 构建应用程序。 React  Native 应用程序的用户体验比使用 WebView UI 的用户体验要好得多。但“native”究竟意味着什么？什么是 WebView  UI？为什么原生 UI 比 WebView UI 更好？React  Native 如何与其他移动框架（如 PhoneGap，Cordova 和 Ionic）进行比较？</p>
+<p>让我们现在深入研究这些问题。坐稳，出发啦！</p>
+<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p> 看完这篇文章后，我会让你回到这里。希望您能够轻松回答这些问题：</p>
+<ul>
+<li>什么是原生app？</li>
+<li>什么是 WebView UI？</li>
+<li>更原生的框架有哪些好处和缺点？那原生性较少的框架怎么样 ？</li>
+<li>React Native与 Cordova 相比如何？ </li>
+</ul>
+<h2 id="总之，什么是“native”app？"><a href="#总之，什么是“native”app？" class="headerlink" title="总之，什么是“native”app？"></a>总之，什么是“native”app？</h2><p>要了解这种“native”实际意味着什么，我们现在来讨论一下： </p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftaczy947yj20b40g975w.jpg" alt="黑客帝国"></p>
+<p>我是黑客帝国的忠实粉丝，你也是吗？你知道，我们所见的现实实际上是一种模拟。有人提到，即使在电影里的 Zion 城市，一个人类曾经认为自己也是自由的最后一个城市，也是一个模拟。多层模拟现实的想法一直让我着迷——一个虚拟世界在另一个虚拟世界中作为模拟运行在第三世界里面 。</p>
+<p>这很像我们的计算机（或手机）中的软件架构 。</p>
+<p>软件是如何操作大量晶体管和电路的指令的安排，统称为硬件。直接在硬件上运行的原始指令对我们人类来说是难以理解的，特别是考虑到当今计算机的复杂性和规模。</p>
+<p>为了使软件易于理解和可操作，计算机科学家将其分为多个层，这些层由运行在另一个框架之上的框架（让我们在这篇文章中简单地使用术语“框架”来指代具有某种结构的软件 ）组成。在所有这些框架中，框架越接近硬件，我们就说它更“native”。  </p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftad7ezktlj20gw0h6my2.jpg" alt="计算机中的原生含义"></p>
+<p>因此，应用程序的“原生性”实际上是一个相对术语。严格地说，我们不能说应用程序本身是否是原生的。我们只能说，与其他应用相比，这款应用更具原生性。例如，您可以使用C ++，Java（或Kotlin）或 Cordova 构建 Android 应用程序。 C ++ 应用程序是最原生的，Cordova 应用程序是最少原生的。 Java / Kotlin 应用程序介于两者之间。</p>
+<h2 id="更具原生性的app有什么优势"><a href="#更具原生性的app有什么优势" class="headerlink" title="更具原生性的app有什么优势"></a>更具原生性的app有什么优势</h2><p>app有更多原生性或着较少的原生性都有各自的好处。更接近硬件意味着更多的自由，而更多的模拟（指较少的原生性）让您更舒适 。</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftadbotmdqj20im07v0tf.jpg" alt=""></p>
+<p>使用更原生框架的程序通常可以更多地访问硬件功能，并且可以更自由地使用它们。它通常运行效率更高，因为不同语言之间的模拟和转换开销较低。但是现实中学习起来也会比较困难 - 代码通常更难以编写和理解。</p>
+<p> 另一方面，我们人类通常更容易在较少的原生性框架中编写代码。编码语言更容易理解，更简洁（需要更少的输入）。它的词汇量更接近我们的自然语言。它需要较少了解硬件的构成以及它内部的工作方式。还有一个好处就是，较少原生性框架中的程序通常更具可移植性 -  程序可以在完全不同的硬件平台上运行而无需修改，因为它的词汇和内部概念不包含任何特定于原始硬件的内容。然而，所有这些便利的代价是你通常会牺牲一些效率和自由。 </p>
+<h2 id="移动开发框架集中营"><a href="#移动开发框架集中营" class="headerlink" title="移动开发框架集中营"></a>移动开发框架集中营</h2><p>在React Native之前，移动框架通常为两个阵营中的一个。 </p>
+<p>第一个是原生阵营，例如 Android 的 Java/Kotlin 和 iOS 的 Objective-C/Swift。在原生阵营中，应用程序速度快，可以访问丰富的硬件功能。用户界面是针对目标平台（Android 或 iOS）的定制，因此非常流畅且使用愉快。然而，所有这些优点仅限于一个平台。要构建应用程序，必须学习两种不同的框架，这使得学习曲线陡峭两倍。这尤其会让数百万网络开发人员落伍。</p>
+<p>然后是另一个移动框架阵营，例如 Cordova/PhoneGap 和 Ionic。这些框架允许 Web 开发人员使用其现有的 HTML，CSS 和 JavaScript 技能构建移动应用程序。这些应用可以在Android和iOS（以及更多）上运行。但是，它们更加缓慢，并且对硬件功能的访问受限。最重要的是，这些应用程序的用户界面很糟糕！由于这些框架使用一个名为 WebView 的关键组件来呈现 UI，因此我们将它们称为 WebView 框架。</p>
+<p>WebView 框架构建在原生框架之上。我们可以看到前者是在后者内部运行的模拟世界。这就是为什么他们有上述的好处和限制。</p>
+<p> <img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftadxhtbv6j20k90h3t9m.jpg" alt="webview"></p>
+<p>为什么我们不能从中获益并避免两者的陷阱？这就是 React Native 要做的事情。</p>
+<p> React Native 代表了移动框架的第三阵营。它的 UI 层比 WebView 框架更原生，而其余部分则处于相同的模拟级别，以实现其易用性。</p>
+<h3 id="React-Native-UI-比-WebView-UI-更加原生"><a href="#React-Native-UI-比-WebView-UI-更加原生" class="headerlink" title="React Native UI 比 WebView UI 更加原生"></a>React Native UI 比 WebView UI 更加原生</h3><p>像 Cordova 这样的框架可以使用 Web 技术构建移动UI。他们是如何做到的呢？他们在每个应用程序中嵌入了一个名为 WebView 的网络浏览器！您在UI中看到的所有内容，按钮，菜单和动画都在浏览器的网页中运行。在模拟方面，Cordova 应用程序的 UI 是在 Web 浏览器中运行的模拟世界，Web 浏览器又是一个在原生系统内运行的模拟世界。</p>
+<p>相比之下，React Native的 UI 是比 WebView 框架更接近原生的一层——它直接在原生系统内运行。</p>
+<p> <img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftae2425s6j20ol0fe75o.jpg" alt=""></p>
+<p>此结构确定了 React Native UI 的优点。 React Native 直接使用原生 UI 组件，而 WebView 框架尝试使用 HTML / CSS 中的 Web UI 模仿原生 UI 的外观。真实的东西或假的东西，你更喜欢哪一个？</p>
+<p>根据经验，识别出使用 WebView 框架构建的应用程序并不困难。那些小东西，比如滚动加速，键盘行为，导航和UI的一般平滑度。如果他们没有完全本地化的行为，复杂性就会增加并导致用户感到沮丧。</p>
+<h3 id="React-Native-使用-JavaScript-来使过程更加简单"><a href="#React-Native-使用-JavaScript-来使过程更加简单" class="headerlink" title="React Native 使用 JavaScript 来使过程更加简单"></a>React Native 使用 JavaScript 来使过程更加简单</h3><p>另一方面，React Native 仍然允许我们用 JavaScript 编写应用程序，并使用类似于 HTML 和CSS 的语法来构建 UI。这无疑降低了网页设计师和 Web 开发人员的入门门槛。</p>
+<p>必要时，React Native 提供了一种渗透到原生框架的方法，以实现我们希望在应用程序中实现的任何原生功能。这有点像在黑客帝国中拨打电话。</p>
+<p> <img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftae7j4qnbj20b4066t9a.jpg" alt="黑客帝国"></p>
+<h2 id="那么-WebView-框架一文不值？"><a href="#那么-WebView-框架一文不值？" class="headerlink" title="那么 WebView 框架一文不值？"></a>那么 WebView 框架一文不值？</h2><p> 不，绝对不是。例如，如果您已经拥有一个 Web 应用程序，并希望尽快将其发布到应用程序商店。您愿意以最短的上市时间牺牲用户体验。</p>
+<p>另一种情况是，如果应用程序中显示的内容主要是内容没有太多的交互性，那么将它放在WebView中并不是太糟糕。  </p>
+<p>但是，如果您的应用程序的用户体验很重要，如果应用程序中存在某些交互性，例如接受用户输入，拖放，滑动屏幕等，请务必考虑 React Native。因为你最不想要做的一件事就是使用 WebView UI 模拟原生 UI。 </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好吧，我们已经看过“native”的真正含义，WebView UI 是什么以及为何 React Native UI 更好，React Native 如何与其他 WebView 框架（如 Cordova/PhoneGap 和 Ionic）进行比较。  你怎么看？您将使用哪个框架来构建您的下一个应用程序？ </p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1ftaeg4a3k2j20g405kabp.jpg" alt=""></p>
+<blockquote>
+<p>原文链接：<a href="https://learnreact.design/2018/02/14/react-native-vs-cordova-phone-gap-ionic-etc/#fnref-3" target="_blank" rel="noopener">React Native vs. Cordova, PhoneGap, Ionic etc.</a></p>
+<p>作者： <strong>Linton Ye</strong>(a full-stack developer in BC Canada)</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React-Native/" rel="tag"># React Native</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/15/什么是React-Native_new/" rel="next" title="什么是React Native">
+                <i class="fa fa-chevron-left"></i> 什么是React Native
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/10/Angular中入口组件（entryComponents）与声明式组件的区别/" rel="prev" title="Angular中入口组件（entryComponents）与声明式组件的区别">
+                Angular中入口组件（entryComponents）与声明式组件的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg"
+               alt="六只鱼" />
+          <p class="site-author-name" itemprop="name">六只鱼</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BarryLiu1995" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/BarryLiu1995/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#学习目标"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5B66;&#x4E60;&#x76EE;&#x6807;" class="headerlink" title="&#x5B66;&#x4E60;&#x76EE;&#x6807;"></a>&#x5B66;&#x4E60;&#x76EE;&#x6807;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总之，什么是“native”app？"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x603B;&#x4E4B;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x201C;native&#x201D;app&#xFF1F;" class="headerlink" title="&#x603B;&#x4E4B;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x201C;native&#x201D;app&#xFF1F;"></a>&#x603B;&#x4E4B;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;&#x201C;native&#x201D;app&#xFF1F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更具原生性的app有什么优势"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x66F4;&#x5177;&#x539F;&#x751F;&#x6027;&#x7684;app&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x52BF;" class="headerlink" title="&#x66F4;&#x5177;&#x539F;&#x751F;&#x6027;&#x7684;app&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x52BF;"></a>&#x66F4;&#x5177;&#x539F;&#x751F;&#x6027;&#x7684;app&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x52BF;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动开发框架集中营"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x96C6;&#x4E2D;&#x8425;" class="headerlink" title="&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x96C6;&#x4E2D;&#x8425;"></a>&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x96C6;&#x4E2D;&#x8425;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native-UI-比-WebView-UI-更加原生"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#React-Native-UI-&#x6BD4;-WebView-UI-&#x66F4;&#x52A0;&#x539F;&#x751F;" class="headerlink" title="React Native UI &#x6BD4; WebView UI &#x66F4;&#x52A0;&#x539F;&#x751F;"></a>React Native UI &#x6BD4; WebView UI &#x66F4;&#x52A0;&#x539F;&#x751F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native-使用-JavaScript-来使过程更加简单"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#React-Native-&#x4F7F;&#x7528;-JavaScript-&#x6765;&#x4F7F;&#x8FC7;&#x7A0B;&#x66F4;&#x52A0;&#x7B80;&#x5355;" class="headerlink" title="React Native &#x4F7F;&#x7528; JavaScript &#x6765;&#x4F7F;&#x8FC7;&#x7A0B;&#x66F4;&#x52A0;&#x7B80;&#x5355;"></a>React Native &#x4F7F;&#x7528; JavaScript &#x6765;&#x4F7F;&#x8FC7;&#x7A0B;&#x66F4;&#x52A0;&#x7B80;&#x5355;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么-WebView-框架一文不值？"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x90A3;&#x4E48;-WebView-&#x6846;&#x67B6;&#x4E00;&#x6587;&#x4E0D;&#x503C;&#xFF1F;" class="headerlink" title="&#x90A3;&#x4E48; WebView &#x6846;&#x67B6;&#x4E00;&#x6587;&#x4E0D;&#x503C;&#xFF1F;"></a>&#x90A3;&#x4E48; WebView &#x6846;&#x67B6;&#x4E00;&#x6587;&#x4E0D;&#x503C;&#xFF1F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">六只鱼</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

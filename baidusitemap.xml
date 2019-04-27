@@ -4,6 +4,464 @@
 
     
   <url>
+    <loc>http://barryliu1995.studio/2017/08/04/%E8%B0%88%E8%B0%88JavaScript%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE_new/</loc>
+    <lastmod>2019-04-27T08:16:53.953Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript的原型及原型链</title>
+        <pubTime>2017-08-04T03:17:10.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/10/11/%E8%B0%88%E8%B0%88cookie_new/</loc>
+    <lastmod>2019-04-27T08:16:53.246Z</lastmod>
+    <data>
+        <display>
+        <title>谈谈cookie</title>
+        <pubTime>2017-10-11T13:23:03.000Z</pubTime>
+        
+        <tag>Web前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/07/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8_new/</loc>
+    <lastmod>2019-04-27T08:16:50.797Z</lastmod>
+    <data>
+        <display>
+        <title>神经网络入门</title>
+        <pubTime>2017-07-19T14:19:32.000Z</pubTime>
+        
+        <tag>人工智能</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/07/21/%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE-%E5%93%88%E5%B8%8C%E8%A1%A8_new/</loc>
+    <lastmod>2019-04-27T08:16:24.693Z</lastmod>
+    <data>
+        <display>
+        <title>散列查找(哈希表)基础讲解</title>
+        <pubTime>2017-07-21T03:09:53.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/09/21/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%A4%A7%E6%9D%82%E7%83%A9_new/</loc>
+    <lastmod>2019-04-27T08:16:23.204Z</lastmod>
+    <data>
+        <display>
+        <title>排序算法大杂烩</title>
+        <pubTime>2017-09-21T07:14:06.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/12/31/%E6%88%91%E7%9A%842017_new/</loc>
+    <lastmod>2019-04-27T08:16:20.346Z</lastmod>
+    <data>
+        <display>
+        <title>我的2017</title>
+        <pubTime>2017-12-31T07:40:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="生活日常" url="http://barryliu1995.studio/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/09/30/%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0_new/</loc>
+    <lastmod>2019-04-27T08:16:16.521Z</lastmod>
+    <data>
+        <display>
+        <title>我是一个函数</title>
+        <pubTime>2017-09-30T06:28:09.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/08/28/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GitHub-Pages%E5%9C%A8%E7%BA%BF%E5%8A%A0%E8%BD%BD%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5_new/</loc>
+    <lastmod>2019-04-27T08:16:15.551Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 GitHub Pages 在线加载静态网页</title>
+        <pubTime>2017-08-28T10:15:58.000Z</pubTime>
+        
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://barryliu1995.studio/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/09/12/%E5%B8%B8%E7%94%A8-Git-%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95_new/</loc>
+    <lastmod>2019-04-27T08:16:12.377Z</lastmod>
+    <data>
+        <display>
+        <title>常用 Git 命令清单</title>
+        <pubTime>2017-09-12T10:55:02.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/07/28/%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F_new/</loc>
+    <lastmod>2019-04-27T08:16:07.894Z</lastmod>
+    <data>
+        <display>
+        <title>大话设计模式之简单工厂模式</title>
+        <pubTime>2017-07-28T11:46:45.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2019/01/13/%E5%9B%9E%E8%BD%A6%E4%B8%8E%E6%8D%A2%E8%A1%8C%E7%9A%84%E6%95%85%E4%BA%8B_new/</loc>
+    <lastmod>2019-04-27T08:16:07.325Z</lastmod>
+    <data>
+        <display>
+        <title>回车与换行的故事</title>
+        <pubTime>2019-01-13T09:12:17.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2018/11/21/%E5%9C%A8%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E4%BD%BF%E7%94%A8Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%A4%9A%E5%AD%90%E5%9F%9F%E5%90%8D%E4%B8%8B%E7%9A%84web%E6%9C%8D%E5%8A%A1_new/</loc>
+    <lastmod>2019-04-27T08:16:06.553Z</lastmod>
+    <data>
+        <display>
+        <title>在一台服务器上使用Nginx反向代理来部署多子域名下的web服务</title>
+        <pubTime>2018-11-21T14:24:32.000Z</pubTime>
+        
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/09/03/%E5%89%8D%E7%AB%AF%E5%A4%A7%E8%AE%B2%E5%BA%A7_new/</loc>
+    <lastmod>2019-04-27T08:16:05.675Z</lastmod>
+    <data>
+        <display>
+        <title>前端大讲座</title>
+        <pubTime>2017-09-03T04:01:58.000Z</pubTime>
+        
+        <tag>Web前端</tag>
+         
+        <tag>预处理器</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2018/05/02/%E5%85%B3%E4%BA%8Ecallback%E5%87%BD%E6%95%B0%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87_new/</loc>
+    <lastmod>2019-04-27T08:15:55.676Z</lastmod>
+    <data>
+        <display>
+        <title>关于callback函数我所知道的一切</title>
+        <pubTime>2018-05-02T12:50:02.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+        <tag>JavaScript</tag>
+         
+        <tag>Node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2018/07/15/%E4%BB%80%E4%B9%88%E6%98%AFReact-Native_new/</loc>
+    <lastmod>2019-04-27T08:15:54.779Z</lastmod>
+    <data>
+        <display>
+        <title>什么是React Native</title>
+        <pubTime>2018-07-15T07:10:28.000Z</pubTime>
+        
+        <tag>React Native</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2018/07/15/React-Native-vs-Cordova-PhoneGap-Ionic-etc_new/</loc>
+    <lastmod>2019-04-27T08:15:47.735Z</lastmod>
+    <data>
+        <display>
+        <title>React Native vs. Cordova, PhoneGap, Ionic etc</title>
+        <pubTime>2018-07-15T07:47:35.000Z</pubTime>
+        
+        <tag>React Native</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/10/14/MVC-MVP%E5%92%8CMVVM%E7%9A%84%E5%9B%BE%E7%A4%BA_new/</loc>
+    <lastmod>2019-04-27T08:15:44.267Z</lastmod>
+    <data>
+        <display>
+        <title>MVC,MVP和MVVM的图示</title>
+        <pubTime>2017-10-14T01:21:42.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2018/05/06/JavaScript%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6_new/</loc>
+    <lastmod>2019-04-27T08:15:41.328Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript运行机制</title>
+        <pubTime>2018-05-06T08:36:07.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/07/25/JavaScript%E7%8E%8B%E5%9B%BD%E7%9A%84%E4%B8%80%E6%AC%A1%E6%97%85%E8%A1%8C%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%B2%A1%E6%9C%89%E7%B1%BB%E7%9A%84%E4%B8%96%E7%95%8C%E6%80%8E%E4%B9%88%E7%8E%A9%E8%BD%AC%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9F_new/</loc>
+    <lastmod>2019-04-27T08:15:38.490Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？</title>
+        <pubTime>2017-07-25T14:13:12.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/07/30/JavaScript%E7%8E%8B%E5%9B%BD%E4%B9%8B%E5%87%BD%E6%95%B0%E6%95%99%E4%B8%BB_new/</loc>
+    <lastmod>2019-04-27T08:15:35.691Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript王国之函数教主</title>
+        <pubTime>2017-07-30T07:13:36.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/12/28/JavaScript%E4%B8%8E%E6%96%87%E5%AD%97%E7%BC%96%E7%A0%81_new/</loc>
+    <lastmod>2019-04-27T08:15:32.318Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript与文字编码</title>
+        <pubTime>2017-12-28T07:44:23.000Z</pubTime>
+        
+        <tag>理解计算机</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://barryliu1995.studio/2017/09/01/JavaScript-%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6%EF%BC%9A%E7%90%86%E8%A7%A3-JavaScript-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE_new/</loc>
+    <lastmod>2019-04-27T08:15:28.829Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 开发进阶：理解 JavaScript 作用域和作用域链</title>
+        <pubTime>2017-09-01T03:58:12.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://barryliu1995.studio/2019/03/09/%E3%80%8A%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E3%80%8B%E6%8E%98%E9%87%91%E5%B0%8F%E5%86%8C%E7%9F%A5%E8%AF%86%E7%82%B9%E8%84%91%E5%9B%BE/</loc>
     <lastmod>2019-04-27T08:09:28.331Z</lastmod>
     <data>
@@ -27,26 +485,6 @@
     
     
   <url>
-    <loc>http://barryliu1995.studio/2018/11/21/%E5%9C%A8%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E4%BD%BF%E7%94%A8Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%A4%9A%E5%AD%90%E5%9F%9F%E5%90%8D%E4%B8%8B%E7%9A%84web%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2019-02-02T11:48:17.008Z</lastmod>
-    <data>
-        <display>
-        <title>在一台服务器上使用Nginx反向代理来部署多子域名下的web服务</title>
-        <pubTime>2018-11-21T14:24:32.000Z</pubTime>
-        
-        <tag>Nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://barryliu1995.studio/2019/01/28/HTTP-%E7%AE%80%E5%8F%B2/</loc>
     <lastmod>2019-01-28T12:26:39.276Z</lastmod>
     <data>
@@ -55,26 +493,6 @@
         <pubTime>2019-01-28T12:17:49.000Z</pubTime>
         
         <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2019/01/13/%E5%9B%9E%E8%BD%A6%E4%B8%8E%E6%8D%A2%E8%A1%8C%E7%9A%84%E6%95%85%E4%BA%8B/</loc>
-    <lastmod>2019-01-13T09:52:30.140Z</lastmod>
-    <data>
-        <display>
-        <title>回车与换行的故事</title>
-        <pubTime>2019-01-13T09:12:17.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
          
          
            
@@ -147,130 +565,6 @@
 
     
   <url>
-    <loc>http://barryliu1995.studio/2018/07/15/%E4%BB%80%E4%B9%88%E6%98%AFReact-Native/</loc>
-    <lastmod>2018-07-15T07:57:39.849Z</lastmod>
-    <data>
-        <display>
-        <title>什么是React Native</title>
-        <pubTime>2018-07-15T07:10:28.000Z</pubTime>
-        
-        <tag>React Native</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2018/07/15/React-Native-vs-Cordova-PhoneGap-Ionic-etc/</loc>
-    <lastmod>2018-07-15T07:56:40.464Z</lastmod>
-    <data>
-        <display>
-        <title>React Native vs. Cordova, PhoneGap, Ionic etc</title>
-        <pubTime>2018-07-15T07:47:35.000Z</pubTime>
-        
-        <tag>React Native</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/12/28/JavaScript%E4%B8%8E%E6%96%87%E5%AD%97%E7%BC%96%E7%A0%81/</loc>
-    <lastmod>2018-05-07T14:57:26.885Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript与文字编码</title>
-        <pubTime>2017-12-28T07:44:23.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2018/05/06/JavaScript%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-05-06T08:57:38.865Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript运行机制</title>
-        <pubTime>2018-05-06T08:36:07.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/07/19/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2018-05-06T08:13:00.332Z</lastmod>
-    <data>
-        <display>
-        <title>神经网络入门</title>
-        <pubTime>2017-07-19T14:19:32.000Z</pubTime>
-        
-        <tag>人工智能</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/08/28/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8GitHub-Pages%E5%9C%A8%E7%BA%BF%E5%8A%A0%E8%BD%BD%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</loc>
-    <lastmod>2018-05-06T08:12:52.424Z</lastmod>
-    <data>
-        <display>
-        <title>如何使用 GitHub Pages 在线加载静态网页</title>
-        <pubTime>2017-08-28T10:15:58.000Z</pubTime>
-        
-        <tag>GitHub</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具使用" url="http://barryliu1995.studio/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://barryliu1995.studio/2017/08/03/%E8%B0%88%E8%B0%88JavaScript%E4%B8%AD%E7%9A%84this%E5%85%B3%E9%94%AE%E5%AD%97/</loc>
     <lastmod>2018-05-06T08:12:45.021Z</lastmod>
     <data>
@@ -279,48 +573,6 @@
         <pubTime>2017-08-03T07:45:37.000Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/07/21/%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE-%E5%93%88%E5%B8%8C%E8%A1%A8/</loc>
-    <lastmod>2018-05-06T08:12:36.853Z</lastmod>
-    <data>
-        <display>
-        <title>散列查找(哈希表)基础讲解</title>
-        <pubTime>2017-07-21T03:09:53.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/09/12/%E5%B8%B8%E7%94%A8-Git-%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/</loc>
-    <lastmod>2018-05-06T08:12:29.317Z</lastmod>
-    <data>
-        <display>
-        <title>常用 Git 命令清单</title>
-        <pubTime>2017-09-12T10:55:02.000Z</pubTime>
-        
-        <tag>Git</tag>
          
          
            
@@ -355,90 +607,6 @@
 
     
   <url>
-    <loc>http://barryliu1995.studio/2017/09/03/%E5%89%8D%E7%AB%AF%E5%A4%A7%E8%AE%B2%E5%BA%A7/</loc>
-    <lastmod>2018-05-06T08:12:01.494Z</lastmod>
-    <data>
-        <display>
-        <title>前端大讲座</title>
-        <pubTime>2017-09-03T04:01:58.000Z</pubTime>
-        
-        <tag>Web前端</tag>
-         
-        <tag>预处理器</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/09/21/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%A4%A7%E6%9D%82%E7%83%A9/</loc>
-    <lastmod>2018-05-06T08:11:52.997Z</lastmod>
-    <data>
-        <display>
-        <title>排序算法大杂烩</title>
-        <pubTime>2017-09-21T07:14:06.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/08/04/%E8%B0%88%E8%B0%88JavaScript%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
-    <lastmod>2018-05-06T08:11:44.954Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript的原型及原型链</title>
-        <pubTime>2017-08-04T03:17:10.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/09/01/JavaScript-%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6%EF%BC%9A%E7%90%86%E8%A7%A3-JavaScript-%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/</loc>
-    <lastmod>2018-05-06T08:11:37.531Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 开发进阶：理解 JavaScript 作用域和作用域链</title>
-        <pubTime>2017-09-01T03:58:12.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://barryliu1995.studio/2017/06/28/%E5%8D%9A%E6%96%87%E6%90%AC%E8%BF%90/</loc>
     <lastmod>2018-05-06T08:11:20.723Z</lastmod>
     <data>
@@ -459,26 +627,6 @@
 
     
   <url>
-    <loc>http://barryliu1995.studio/2017/10/11/%E8%B0%88%E8%B0%88cookie/</loc>
-    <lastmod>2018-05-06T08:11:13.231Z</lastmod>
-    <data>
-        <display>
-        <title>谈谈cookie</title>
-        <pubTime>2017-10-11T13:23:03.000Z</pubTime>
-        
-        <tag>Web前端</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://barryliu1995.studio/2017/07/20/%E4%B8%80%E4%B8%AA%E6%95%85%E4%BA%8B%E8%AE%B2%E5%AE%8Chttps/</loc>
     <lastmod>2018-05-06T08:11:03.879Z</lastmod>
     <data>
@@ -489,68 +637,6 @@
         <tag>理解计算机</tag>
          
         <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/09/30/%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2018-05-06T08:10:35.972Z</lastmod>
-    <data>
-        <display>
-        <title>我是一个函数</title>
-        <pubTime>2017-09-30T06:28:09.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/07/24/%E4%BB%80%E4%B9%88%E6%98%AF%E6%A1%86%E6%9E%B6%EF%BC%9F/</loc>
-    <lastmod>2018-05-06T08:10:12.385Z</lastmod>
-    <data>
-        <display>
-        <title>什么是框架？</title>
-        <pubTime>2017-07-24T09:15:41.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/07/28/%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-05-06T08:10:02.992Z</lastmod>
-    <data>
-        <display>
-        <title>大话设计模式之简单工厂模式</title>
-        <pubTime>2017-07-28T11:46:45.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-        <tag>设计模式</tag>
          
          
            
@@ -585,88 +671,6 @@
 
     
   <url>
-    <loc>http://barryliu1995.studio/2017/10/14/MVC-MVP%E5%92%8CMVVM%E7%9A%84%E5%9B%BE%E7%A4%BA/</loc>
-    <lastmod>2018-05-06T08:09:41.684Z</lastmod>
-    <data>
-        <display>
-        <title>MVC,MVP和MVVM的图示</title>
-        <pubTime>2017-10-14T01:21:42.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/07/30/JavaScript%E7%8E%8B%E5%9B%BD%E4%B9%8B%E5%87%BD%E6%95%B0%E6%95%99%E4%B8%BB/</loc>
-    <lastmod>2018-05-06T08:04:53.506Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript王国之函数教主</title>
-        <pubTime>2017-07-30T07:13:36.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/07/25/JavaScript%E7%8E%8B%E5%9B%BD%E7%9A%84%E4%B8%80%E6%AC%A1%E6%97%85%E8%A1%8C%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%B2%A1%E6%9C%89%E7%B1%BB%E7%9A%84%E4%B8%96%E7%95%8C%E6%80%8E%E4%B9%88%E7%8E%A9%E8%BD%AC%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9F/</loc>
-    <lastmod>2018-05-06T08:04:43.761Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？</title>
-        <pubTime>2017-07-25T14:13:12.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://barryliu1995.studio/2017/12/31/%E6%88%91%E7%9A%842017/</loc>
-    <lastmod>2018-05-06T08:02:15.760Z</lastmod>
-    <data>
-        <display>
-        <title>我的2017</title>
-        <pubTime>2017-12-31T07:40:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="生活日常" url="http://barryliu1995.studio/categories/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://barryliu1995.studio/2018/01/28/%E4%BB%80%E4%B9%88%E6%98%AFMIME/</loc>
     <lastmod>2018-05-06T08:02:04.708Z</lastmod>
     <data>
@@ -688,34 +692,10 @@
     </url>
 
     
-  <url>
-    <loc>http://barryliu1995.studio/2018/05/02/%E5%85%B3%E4%BA%8Ecallback%E5%87%BD%E6%95%B0%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
-    <lastmod>2018-05-06T08:00:42.276Z</lastmod>
-    <data>
-        <display>
-        <title>关于callback函数我所知道的一切</title>
-        <pubTime>2018-05-02T12:50:02.000Z</pubTime>
-        
-        <tag>理解计算机</tag>
-         
-        <tag>JavaScript</tag>
-         
-        <tag>Node.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习总结" url="http://barryliu1995.studio/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
   <url>
-    <loc>http://barryliu1995.studio/2017/06/27/%E6%88%91%E7%9A%84%E6%96%B0%E5%A4%A9%E5%9C%B0/</loc>
+    <loc>http://barryliu1995.studio/2017/06/27/%E6%88%91%E7%9A%84%E6%96%B0%E5%A4%A9%E5%9C%B0_new/</loc>
     <lastmod>2017-06-28T02:02:10.000Z</lastmod>
     <data>
         <display>

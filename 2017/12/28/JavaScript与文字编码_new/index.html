@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="理解计算机,JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
+<meta name="keywords" content="理解计算机,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript与文字编码">
+<meta property="og:url" content="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码_new/index.html">
+<meta property="og:site_name" content="六只鱼的环游记">
+<meta property="og:description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lvwov9hj20jg0ap74v.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lw935dxj20jg0apwey.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1uxb6j20mo05itav.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1v67kj20nj0bb78l.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1w7bsj20n70cpqba.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1vjmsj20k20dpgpj.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1pbp16noj20jg0apdg2.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyjjdg2rrj20ly04xt9l.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lwmci1lj20jg0apmzc.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lx1wdehj20jg0apdgb.jpg">
+<meta property="og:updated_time" content="2019-04-27T08:15:32.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript与文字编码">
+<meta name="twitter:description" content="在学习阮一峰的 字符串的扩展|ECMAScript 6 入门 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码_new/"/>
+
+
+
+
+
+  <title>JavaScript与文字编码 | 六只鱼的环游记</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ceccf121ce6263d67aebf92418b0a2d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六只鱼的环游记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">电影重度骨灰级爱好者、尤克里里初学者、前端coder</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/12/28/JavaScript与文字编码_new/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="六只鱼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六只鱼的环游记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript与文字编码</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T15:44:23+08:00">
+                2017-12-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T16:15:32+08:00">
+                2019-04-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习总结/" itemprop="url" rel="index">
+                    <span itemprop="name">学习总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在学习阮一峰的 <a href="http://es6.ruanyifeng.com/#docs/string" target="_blank" rel="noopener">字符串的扩展|ECMAScript 6 入门</a> 章节的时候其中有一处“JavaScript 共有 6 种方法可以表示一个字符”。然后想起之前看的一篇关于文字编码的文章，所以现在打算重新复习一下文字编码</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fr1lv8y975j20jg0ap75b.jpg" width="600" height="200" align="center/"></p>
+<a id="more"></a>
+<h2 id="文字编码"><a href="#文字编码" class="headerlink" title="文字编码"></a>文字编码</h2><p>在物理层面上，我们存入计算机的所有文件都是以二进制形式保存的。但现实生活中，我们会发现计算机中保存的文件形式各式各样，有音频文件、文本文件、视频文件、还有我们程序员熟悉的源代码文件等等。由此可以看出，不同文件的差别只是我们解读二进制的方式不同。然而即使同为一个类别的文件，解读二进制文件又会有不同。其中我们以网页开发中最常接触到的文本文件的编码方式拿来细说。这里所说的文本文件，一般是指基于字符编码的文件。计算机发展到现在为止，出现的字符编码就有 ASCII、GB2312、Unicode等等。</p>
+<h3 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h3><p>ASCII（American Standard Code for Information Interchange），中文名称为美国信息交换标准代码。是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语和其他西欧语言。它是现今最通用的单字节编码系统。ASCII码又分为标准ASCII码和扩展ASCII码。</p>
+<p>使用 8 个二进制位进行编码的方案，最多可以给 256 个字符（包括字母、数字、标点符号、控制字符及其他符号）分配数值。基本的 ASCII 字符集共有 128 （0~127）个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等，另外还有 32 个控制字符。因为这 128 个基本字符就可以用 7 位二进制表示。所以多出来的最高位设为 0 （在数据传输时可用作奇偶校验位）。剩下的 128 个拿来扩充 ASCII 字符集，为了以后方便加入新的字符。这些扩充字符的编码最高为均为 1 的二进制数字（即十进制 128~255），<strong>称为扩展 ASCII 码</strong>，各国为了可以在计算机使用他们自己的文字，于是就在扩展 ASCII 码上各自做文章。虽然剩下的128个扩展 ASCII 码数量有限，但在实际应用中是可以满足部分国家文字编码的需求。因此针对扩展的 ASCII 码，不同的国家有不同的字符集，但它不是国际标准。比如 Latin1 字符集属于扩展ASCII码的一种，国际标准名为 ISO-8859-1，它把位于128-255之间的字符用于拉丁字母表中特殊语言字符的编码，也因此而得名。不过欧洲语言不是地球上的唯一语言，亚洲和非洲语言并不能被Latine1字符集所支持。这些基于基本 ASCII 字符集进行扩展出来的单字节字符集在不同国家地区有不同具体的方案。</p>
+<h3 id="GB2312"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</h3><p>等中国人开始使用计算机时发现如果还是使用扩展 ASCII 码来制定中文的字符集是行不通，因为常用汉字就已超过6000个。于是这时候国人就自主研发，把那些127号之后的奇异符号们直接取消掉。规定：一个小于127的字符的意义与原来相同，但两个大于127的字符连在一起时，就表示一个汉字，前面的一个字节（他称之为高字节）从0xA1用到 0xF7，后面一个字节（低字节）从0xA1到0xFE，这样我们就可以组合出大约7000多个简体汉字了。在这些编码里，我们还把数学符号、罗马希腊的字母、日文的假名们都编进去了，连在 ASCII 里本来就有的数字、标点、字母都统统重新编了两个字节长的编码，这就是常说的”全角”字符，而原来在127号以下的那些就叫”半角”字符了。中国人民看到这样很不错，于是就把这种汉字方案叫做 “GB2312″。GB2312 是对 ASCII 的中文扩展。</p>
+<h3 id="GBK"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</h3><p>但是中国的汉字太多了，后来还是不够用，于是干脆不再要求低字节一定是127之后的内码，只要第一个字节是大于127就固定表示这是一个汉字的开始，不管后面跟的是不是扩展字符集里的内容。结果扩展之后的编码方案被称为 GBK 标准，GBK 包括了 GB2312 的所有内容，同时又增加了近20000个新的汉字（包括繁体字）和符号。</p>
+<h3 id="GB18030"><a href="#GB18030" class="headerlink" title="GB18030"></a>GB18030</h3><p>后来少数民族也要用电脑了，于是我们再扩展，又加了几千个新的少数民族的字，GBK 扩成了 GB18030</p>
+<h3 id="ANSI"><a href="#ANSI" class="headerlink" title="ANSI"></a>ANSI</h3><p>各国在 ASCII 的基础上制定了自己的字符集，这些从 ANSI 标准派生的字符集被习惯的统称为 ANSI 字符集，它们正式的名称应该是 MBCS（Multi-Byte Chactacter System，即多字节字符系统）。这些派生字符集的特点是以 ASCII 127 bits 为基础，兼容 ASCII 127，他们使用大于128的编码作为一个 Leading Byte，紧跟在 Leading Byte 后的第二（甚至第三）个字节与 Leading Byte 一起作为实际的编码，由此产生了 GB2312、GBK、GB18030、Big5、Shift_JIS 等各自的编码标准。但西欧国家也有根据本国文字的数量仅需要 128 个扩展的 ASCII 码就完成制定了单字节字符集。</p>
+<h3 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h3><p>为了解决不同国家地区间编码方案的不同引起的不便，于是就有了这样一个想法：将全世界所有的字符包含在一个集合里，计算机只要支持这一个字符集，就能显示所有的字符，再也不会乱码了。</p>
+<p>Unicode 就是在这种背景下诞生了。Unicode 规定了每个字符的编号，这个编号也叫做“码点”（code point)。它从 0 开始，目前 Unicode 的最新版本一共收入了 109449 个符号，其中的中日韩文字为 74500 个。这么多符号，Unicode 不是一次性定义的，而是分区定义。每个区可以放 65536 （$2^{16}$)个字符，称为一个平面（plane）。目前，一共有 17 （$2^{5}$)个平面，也就是说，整个 Unicode 字符集的大小现在是 $2^{21}$ 个。其中最前面的 65536 个字符位，称为基本平面（缩写BMP），它的码点范围是从 0 ~ $2^{16}-1$，写成十六进制就是从 U+0000 ~ U+FFFF 。所有最常见的字符都放在这个平面，这是 Unicode 最先定义和公布的一个平面。剩下的字符都放在辅助平面（缩写SMP），码点范围从 U+010000 ~ U+10FFFF。</p>
+<p>Unicode 只规定了每个字符的码点，到底用什么样的字节序表示这个码点，就涉及到编码方法。</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lvwov9hj20jg0ap74v.jpg" alt=""></p>
+<h4 id="UTF-32"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</h4><p>最直观的编码方法就是，每个码点使用 4 个字节表示，字节内容一一对应码点。这种编码方法就叫做 UTF-32。例如码点 597D </p>
+<blockquote>
+<p>U+597D = 0x0000 597D</p>
+</blockquote>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lw935dxj20jg0apwey.jpg" alt="UTF-32"></p>
+<p>UTF-32 的优点在于，转换规则简单直观，查找效率高。缺点在于浪费空间，同样内容的英语文本，它会比 ASCII编码大四倍。这个缺点很致命，导致实际上没有人使用这种编码方法，HTML 5 标准就明文规定，网页不得编码成UTF-32。</p>
+<h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h4><p>UTF-32 太过于浪费空间，所以急需一种节省空间的表示方案，这导致了 UTF-8 的诞生。UTF-8 是一种变长的编码方法，字符长度从 1 个字节到 4 个字节不等。越是常用的字符，字节越短，最前面的 128 个字符，只使用 1 个字节表示，与 ASCII 码完全相同。由于 UTF-8 这种节省空间的特性，导致它成为互联网上最常见的网页编码。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字节</th>
+<th style="text-align:center">编号范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0x0000 - 0x007F</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0x0080 - 0x07FF</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">0x0800 - 0xFFFF</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">0x010000 - 0x10FFFF</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<p>我们来看看 UTF-8 具体是如何存储字符的，如下面的字符</p>
+<blockquote>
+<p>we 发 财 🤑</p>
+</blockquote>
+<p>上面的字符对应的十进制编码如下</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1uxb6j20mo05itav.jpg" alt=""></p>
+<p>其中 20 是空格的编码，可以看到一个英文还是 1 个字节，一个中文用了 3 个字节，而一个 Emoj 用了 4 个字节。它怎么知道每次应该读取多少个字节呢？如下图所示：</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1v67kj20nj0bb78l.jpg" alt=""></p>
+<p>如果一个字节是 0 开头，表示这个字节就表示一个字符，如果是 3 个 1 开头表示这个字符要占 3 个字节，有多少个 1 就表示当前字符占用了多少个字节。这个就是 UTF-8 的存储特点，UTF 规定了每个字符的编号，而 UTF-8 定义了字符应该怎么存储。从 <a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.unicode.org%2F" target="_blank" rel="noopener">Unicode官网</a> 可以查到，“我”的UTF 十六进制编码是  \u6211，如下图所示：</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1w7bsj20n70cpqba.jpg" alt=""></p>
+<p>6211 怎么变成 UTF-8 编码呢？因为 6211 落在下面这个范围：</p>
+<blockquote>
+<p>U+ 0800 ~ U+ FFFF: 1110XXXX 10XXXXXX 10XXXXXX</p>
+</blockquote>
+<p>所以是这么转的：</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyle1vjmsj20k20dpgpj.jpg" alt=""></p>
+<p>“我”的 UTF-8 就是 E6 88 91</p>
+<h4 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h4><p>UTF-16 编码介于 UTF-32 与 UTF-8 之间，同时结合了定长和变长两种编码方法的特点。它的编码规则很简单：基本平面的字符占用 2 个字节，辅助平面的字符占用 4 个字节。<strong>也就是说，UTF-16 的编码长度要么是 2 个字节（U+0000到U+FFFF），要么是 4 个字节（U+010000到U+10FFFF）。</strong> </p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1pbp16noj20jg0apdg2.jpg" alt=""></p>
+<p>但是现在面临一个问题就是：当我们遇到两个字节，怎么看出它本身是一个字符，还是需要跟其他两个字节放在一起解读？然而在基本平面内，从 U+D800 ~ U+DFFF 是一个空段，即这些码点不对应任何字符。因此，这个空段被拿来映射辅助平面的字符。<strong>当我们遇到两个字节，发现它的码点在 U+D800 ~ U+DBFF 之间，就可以断定，紧跟在后面的两个字节的码点，应该在U+DC00 ~ U+DFFF之间，这四个字节必须放在一起解读。</strong></p>
+<p>到此，我们可以看出，UTF-8 的优点在于 1 个英文只要 1 个字节，但是 1 个中文却是 3 个字节，UTF-16 的优点在于编码长度固定，1 个中文只要 2 个字节，但是 1 个英文也要 2 个字节。所以对于英文网页 UTF-8 编码更加有利，而对于中文网页使用 UTF-16 应该更加有利。因为绝大部分的中文都是落在 U+0000 ~ U+FFFF。</p>
+<h3 id="“联通”两字与Windows记事本"><a href="#“联通”两字与Windows记事本" class="headerlink" title="“联通”两字与Windows记事本"></a>“联通”两字与Windows记事本</h3><p>在简体中文 Windows 操作系统中，ANSI 编码代表 GBK 编码；在繁体中文 Windows 操作系统中，ANSI 编码代表 Big5；在日文 Windows 操作系统中，ANSI 编码代表 Shift_JIS 编码。而记事本程序保存非英文字符时的默认编码方案就是 ANSI，即根据 Windows 语言版本选择编码方式，就如上述中文 Windows 操作系统使用 GBK 字符集。保存后再使用记事本程序打开会发现原来保存的“联通”两字现在变成了不知什么鬼的字符，就是乱码了。因为当一个软件打开一个文本时，它要做的第一件事是决定这个文本究竟是使用哪种字符集的哪种编码保存的。软件有三种途径来决定文本的字符集和编码：</p>
+<blockquote>
+<ol>
+<li>文本文件开头的字符集标记</li>
+<li>询问用户采用哪个字符集</li>
+<li>软件自己猜测</li>
+</ol>
+</blockquote>
+<p>结果因为“联通”两字的 GBK 编码看起来更像UTF-8编码，记事本程序就根据 UTF-8 编码规则解码这两个字，从而导致最后的乱码。</p>
+<h3 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h3><p>早期电子邮件的 SMTP（Simple Mail Transfer Protocol） 协议仅限于传送 7 位的 ASCII 码。许多其他非英语国家的文字以及多媒体资源就无法传送，所以说早期的电子邮件就只能传送英文文字。或许是早期电子邮件的诞生的时候，美国人民以为只有他们自己会传送文字以取消传统的电报业务。</p>
+<p>于是后来就提出了通用互联网邮件扩充（MIME）。MIME 并没有改动或取代 SMTP。MIME 的意图是继续使用原来的邮件格式，但增加了邮件主体的结构，并定义了传送非 ASCII 码的编码规则。因此在这种情况下，Base64 就诞生了。</p>
+<p>Base64 可以把原本 ASCII 码的控制字符甚至 ASCII 码之外的字符都转成可打印的 6 bit 字符，也就是说用 6 bit 字符表达了原本 8 bit 字符。我们看看下面的图片：</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fmyjjdg2rrj20ly04xt9l.jpg" alt=""></p>
+<p>像表格中那样，8 Bit$\times$3 的字符串可以每 6 个 bit 分成一组，每一组 bit 对应一个十进制的 index，每一个 index 值又对应了 Base64 的字符。由于 6 bit 的二进制代码共有 64 种不同的值，从 0 到 63。用 A 表示 0 ，用 B 表示 1 ，等等。26 个大写字母排列完毕后，接下去再排 26 个小写字母，再后面是 10 个数字，最后用“+”表示 62，而用“/”表示 63。再用两个连在一起的等号 “==” 和一个等号 “=” 分别表示最后一组的代码只有 8 bit 或 16 bit。</p>
+<h2 id="JavaScript-与编码"><a href="#JavaScript-与编码" class="headerlink" title="JavaScript 与编码"></a>JavaScript 与编码</h2><h3 id="JavaScript使用哪种编码"><a href="#JavaScript使用哪种编码" class="headerlink" title="JavaScript使用哪种编码"></a>JavaScript使用哪种编码</h3><p>JavaScript 语言采用 Unicode 字符集，但是它编码使用的既不是 UTF-16，也不是UTF-8，更不是 UTF-32，而是 UCS-2。他们之间是什么关系呢？我们讲讲一些历史。</p>
+<p>互联网还没出现的年代，曾经有两个团队，不约而同想搞统一字符集。一个是 1988 年成立的Unicode 团队，另一个是 1989 年成立的 UCS 团队。等到他们发现了对方的存在，很快就达成一致：世界上不需要两套统一字符集。1991 年 10 月，两个团队决定合并字符集。也就是说，从今以后只发布一套字符集，就是 Unicode，并且修订此前发布的字符集，UCS 的码点将与 Unicode 完全一致。</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lwmci1lj20jg0apmzc.jpg" alt="UCS与Unicode"></p>
+<p>UCS 的开发进度快于 Unicode，1990 年就公布了第一套编码方法 UCS-2，使用 2 个字节表示已经有码点的字符。（那个时候只有一个平面，就是基本平面，所以 2 个字节就够用了。）UTF-16 编码迟至 1996 年 7 月才公布，明确宣布是 UCS-2 的超集，即基本平面字符沿用 UCS-2 编码，辅助平面字符定义了 4 个字节的表示方法。</p>
+<p><strong>两者的关系简单说，就是 UTF-16 取代了 UCS-2 ，或者说 UCS-2 整合进了 UTF-16。</strong>所以，现在只有 UTF-16，没有 UCS-2。</p>
+<h3 id="JavaScript为什么不使用-UTF-16"><a href="#JavaScript为什么不使用-UTF-16" class="headerlink" title="JavaScript为什么不使用 UTF-16"></a>JavaScript为什么不使用 UTF-16</h3><p>那么，为什么 JavaScript 不选择更高级的 UTF-16，而用了已经被淘汰的 UCS-2 呢？答案很简单：非不想也，是不能也。<strong>因为在 JavaScript 语言出现的时候，还没有 UTF-16 编码。</strong></p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fr1lx1wdehj20jg0apdgb.jpg" alt="JavaScript字符编码历史"></p>
+<h3 id="JavaScript-字符函数的局限"><a href="#JavaScript-字符函数的局限" class="headerlink" title="JavaScript 字符函数的局限"></a>JavaScript 字符函数的局限</h3><p>由于 JavaScript 只能处理 UCS-2 编码，造成所有字符在这门语言中都是 2 个字节，如果是 4 个字节的字符，会当作两个双字节的字符处理。JavaScript 的字符函数都受到这一点的影响，无法返回正确结果。所以当遍历字符串的时，必须对码点做一个判断，然后手动调整。</p>
+<blockquote>
+<ul>
+<li>String.prototype.replace()</li>
+<li>String.prototype.substring()</li>
+<li>String.prototype.slice()</li>
+<li>…</li>
+</ul>
+</blockquote>
+<p>上面的字符函数都只对 2 字节的码点有效。要正确处理 4 字节的码点要手动处理。</p>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><p>JavaScript 的下一个版本 ECMAScript 6（ES6），大幅增强了 Unicode 支持，基本上解决了上面的问题。新增了以下特点：</p>
+<ul>
+<li>ES6能够自动识别 4 字节的码点</li>
+<li>允许直接用码点表示 Unicode 字符</li>
+<li>新增了几个专门处理 4 字节码点的函数</li>
+<li>对正则表达式添加了 4 字节码点的支持</li>
+<li>Unicode 正规化</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://baike.baidu.com/item/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/8446880?fr=aladdin#7" target="_blank" rel="noopener">字符编码|百度百科</a></li>
+<li><a href="https://juejin.im/post/5a06d6546fb9a045076f232a" target="_blank" rel="noopener">文字编码的那些事|掘金</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="noopener">Unicode 与 JavaScript 详解|阮一峰的网络日志</a></li>
+<li>《计算机网络》谢希仁著（第七版）</li>
+<li><a href="https://w.wujunze.com/2017/09/26/%E6%BC%AB%E7%94%BB%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF-base64-%E7%AE%97%E6%B3%95%EF%BC%9F/" target="_blank" rel="noopener">漫画：什么是 Base64 算法|算法爱好者</a></li>
+<li><a href="http://bbs.mydigit.cn/read.php?tid=2308767" target="_blank" rel="noopener">关于记事本无法单独保存“联通”两个字说明</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/理解计算机/" rel="tag"># 理解计算机</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/14/MVC-MVP和MVVM的图示_new/" rel="next" title="MVC,MVP和MVVM的图示">
+                <i class="fa fa-chevron-left"></i> MVC,MVP和MVVM的图示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/31/我的2017_new/" rel="prev" title="我的2017">
+                我的2017 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg"
+               alt="六只鱼" />
+          <p class="site-author-name" itemprop="name">六只鱼</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BarryLiu1995" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/BarryLiu1995/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文字编码"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6587;&#x5B57;&#x7F16;&#x7801;" class="headerlink" title="&#x6587;&#x5B57;&#x7F16;&#x7801;"></a>&#x6587;&#x5B57;&#x7F16;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GB2312"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBK"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GB18030"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#GB18030" class="headerlink" title="GB18030"></a>GB18030</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ANSI"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#ANSI" class="headerlink" title="ANSI"></a>ANSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-32"><span class="nav-number">1.6.1.</span> <span class="nav-text"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-8"><span class="nav-number">1.6.2.</span> <span class="nav-text"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-16"><span class="nav-number">1.6.3.</span> <span class="nav-text"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“联通”两字与Windows记事本"><span class="nav-number">1.7.</span> <span class="nav-text"><a href="#&#x201C;&#x8054;&#x901A;&#x201D;&#x4E24;&#x5B57;&#x4E0E;Windows&#x8BB0;&#x4E8B;&#x672C;" class="headerlink" title="&#x201C;&#x8054;&#x901A;&#x201D;&#x4E24;&#x5B57;&#x4E0E;Windows&#x8BB0;&#x4E8B;&#x672C;"></a>&#x201C;&#x8054;&#x901A;&#x201D;&#x4E24;&#x5B57;&#x4E0E;Windows&#x8BB0;&#x4E8B;&#x672C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Base64"><span class="nav-number">1.8.</span> <span class="nav-text"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-与编码"><span class="nav-number">2.</span> <span class="nav-text"><a href="#JavaScript-&#x4E0E;&#x7F16;&#x7801;" class="headerlink" title="JavaScript &#x4E0E;&#x7F16;&#x7801;"></a>JavaScript &#x4E0E;&#x7F16;&#x7801;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript使用哪种编码"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;" class="headerlink" title="JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;"></a>JavaScript&#x4F7F;&#x7528;&#x54EA;&#x79CD;&#x7F16;&#x7801;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript为什么不使用-UTF-16"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528;-UTF-16" class="headerlink" title="JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; UTF-16"></a>JavaScript&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x4F7F;&#x7528; UTF-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-字符函数的局限"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#JavaScript-&#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;" class="headerlink" title="JavaScript &#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;"></a>JavaScript &#x5B57;&#x7B26;&#x51FD;&#x6570;&#x7684;&#x5C40;&#x9650;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">六只鱼</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

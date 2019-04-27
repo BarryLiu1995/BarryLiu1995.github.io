@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="今天被4399面试官问到了 cookie 的相关知识，之前不是很了解，现在补补…">
+<meta name="keywords" content="Web前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈cookie">
+<meta property="og:url" content="http://barryliu1995.studio/2017/10/11/谈谈cookie_new/index.html">
+<meta property="og:site_name" content="六只鱼的环游记">
+<meta property="og:description" content="今天被4399面试官问到了 cookie 的相关知识，之前不是很了解，现在补补…">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fkemtdmmilj20xc0m8q5i.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeq9lkqsdj20fa061gm0.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeni579juj20it09mwgn.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeod1xtmij20t90d8gnu.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeq0xcrtkj20sh0f2aid.jpg">
+<meta property="og:updated_time" content="2019-04-27T08:16:53.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈cookie">
+<meta name="twitter:description" content="今天被4399面试官问到了 cookie 的相关知识，之前不是很了解，现在补补…">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fkemtdmmilj20xc0m8q5i.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://barryliu1995.studio/2017/10/11/谈谈cookie_new/"/>
+
+
+
+
+
+  <title>谈谈cookie | 六只鱼的环游记</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ceccf121ce6263d67aebf92418b0a2d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">六只鱼的环游记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">电影重度骨灰级爱好者、尤克里里初学者、前端coder</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/10/11/谈谈cookie_new/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="六只鱼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="六只鱼的环游记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">谈谈cookie</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T21:23:03+08:00">
+                2017-10-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T16:16:53+08:00">
+                2019-04-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习总结/" itemprop="url" rel="index">
+                    <span itemprop="name">学习总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天被4399面试官问到了 cookie 的相关知识，之前不是很了解，现在补补…</p>
+<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fkemtdmmilj20xc0m8q5i.jpg" width="600" height="200" align="center/"></p>
+<a id="more"></a>
+<h2 id="什么是cookie"><a href="#什么是cookie" class="headerlink" title="什么是cookie"></a>什么是cookie</h2><p>cookie 译为“小甜饼，具体种类称为酥性甜饼干，这是一种中档配料的产品……”。咦，跑偏了，开个玩笑先，虽然面试过程不爽，但还是得笑对人生（生无可恋）。</p>
+<p>我们知道HTTP是无状态的，也就说同个客户端即使多次向同个服务器发出请求，服务器也做出响应了，但他们始终都是形同陌路的“陌生人”。因此，当你在浏览网站的时候，WEB 服务器会先送一小小资料放在你的计算机上，cookie 会记录如身份识别号码、密码、用户在 Web 站点购物的方式或用户访问该站点的次数等关键信息，所以 cookie 使得基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。打个比喻就像各大网站如 Google、百度、网易等给客户端颁发一个通行证，客户端需要访问网站时带上自己的通行证。这样服务器就能认出这个客户端是哪个老相好了。然而也因为 cookie 将包含但不限于上述的一些重要信息保存在用户浏览器上的小文本文件上，使 cookie 技术成为广大网民和开发人员争论的一个焦点。</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeq9lkqsdj20fa061gm0.jpg" alt=""></p>
+<h2 id="cookie原理"><a href="#cookie原理" class="headerlink" title="cookie原理"></a>cookie原理</h2><p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeni579juj20it09mwgn.jpg" alt=""></p>
+<p>第一次访问网站的时候，浏览器发出请求，服务器响应请求后，会将 cookie 放入到响应请求中，在浏览器第二次发请求的时候，会把 cookie 带过去，服务端会辨别用户身份，当然服务器也可以修改 cookie 内容（后面会谈到这点）。cookie 的产生是通过扩展 HTTP 协议来实现的，服务器通过在 HTTP 响应头中加上一行特殊的指示以提示浏览器按照指示生成相应的 cookie。然而纯粹的客户端脚本如 JavaScript 也可以生成 cookie。而 cookie 的使用是由浏览器按照一定的原则在后台自动发送给服务器的。浏览器检查所有存储的 cookie ，如果某个 cookie 所声明的作用范围（这个作用范围由 cookie 的 path 和 domain 同时决定）大于等于将要请求的资源所在的位置，则把该 cookie 附在请求资源的 HTTP 请求头上发送给服务器。</p>
+<h2 id="cookie的不可跨域名性"><a href="#cookie的不可跨域名性" class="headerlink" title="cookie的不可跨域名性"></a>cookie的不可跨域名性</h2><p>很多网站都会使用 cookie。例如，Google 会向客户端颁发 cookie，Baidu 也会向客户端颁发cookie。那浏览器访问 Google 会不会也携带上 Baidu 颁发的 cookie 呢？或者 Google 能不能修改Baidu 颁发的 cookie 呢？</p>
+<p>答案是否定的。<strong>cookie具有不可跨域名性</strong>。根据 cookie 规范，浏览器访问 Google 只会携带 Google 的 cookie，而不会携带 Baidu 的 cookie。Google 也只能操作 Google 的 cookie，而不能操作 Baidu 的 cookie。</p>
+<p>cookie 在客户端是由浏览器来管理的。浏览器能够保证 Google 只会操作 Google 的 cookie 而不会操作 Baidu的 cookie，从而保证用户的隐私安全。浏览器判断一个网站是否能操作另一个网站 cookie 的依据是域名。Google 与 Baidu 的域名不一样，因此 Google 不能操作 Baidu 的 cookie。</p>
+<p>需要注意的是，虽然网站 images.google.com与网站 www.google.com 同属于Google，但是域名不一样，二者同样不能互相操作彼此的 cookie。</p>
+<p>注意：用户登录网站 www.google.com 之后会发现访问 images.google.com 时登录信息仍然有效，而普通的 cookie 是做不到的。这是因为 Google在后端进行了相关处理。</p>
+<h2 id="cookie属性"><a href="#cookie属性" class="headerlink" title="cookie属性"></a>cookie属性</h2><p>cookie 的属性比较多，我们可以看下下面这张图</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeod1xtmij20t90d8gnu.jpg" alt=""></p>
+<h3 id="name"><a href="#name" class="headerlink" title="name"></a>name</h3><p>这个显而易见，就是代表 cookie 的名字的意思，一个域名下绑定的 cookie ，name 不能相同，相同的 name 的值会被覆盖掉</p>
+<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>这个就是每个 cookie 拥有的一个属性，它表示该属性的值</p>
+<h3 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h3><p>这个是指的域名，这个代表的是，cookie 绑定的域名，如果没有设置，就会自动绑定到执行语句的当前域，还有值得注意的点，统一个域名下的二级域名也是不可以交换使用 cookie 的，比如，你设置  www.baidu.com 和 image.baidu.com ，依旧是不能公用的</p>
+<h3 id="path"><a href="#path" class="headerlink" title="path"></a>path</h3><p>path这个属性默认是<code>/</code>，当你设置成比如<code>/blog</code>的时候，其实它会给 “domain+path” 范围内绑定 cookie</p>
+<h3 id="Expires-Max-Age"><a href="#Expires-Max-Age" class="headerlink" title="Expires/Max-Age"></a>Expires/Max-Age</h3><p>该属性决定 cookie 的有效期，一般浏览器的 cookie 都是默认储存的，当关闭浏览器结束这个会话的时候，这个 cookie 也就会被删除，这就是上图中的—— session (会话储存)。</p>
+<p>如果你想要 cookie 存在一段时间，那么你可以通过设置 Expires 属性为未来的一个时间节点，Expires 这个是代表当前时间的，这个属性已经逐渐被我们下面这个主人公所取代——Max-Age。</p>
+<p>Max-Age，是以秒为单位的，Max-Age 为正数时，cookie 会在 Max-Age 秒之后被删除。在 Max-Age 之前 cookie 是保存到硬盘上，即使关闭浏览器后再次打开，这些 cookie 仍然有效直到超过设定的过期时间。存储在硬盘上的 cookie 可以在不同的浏览器进程间共享，比如两个 IE 窗口。当 Max-Age 为负数时，表示的是临时储存，不会生出 cookie 文件，只会存在浏览器内存中，且只会在打开的浏览器窗口或者子窗口有效，一旦浏览器关闭， cookie 就会消失，当 Max-Age 为 0 时，又会发生什么呢，删除 cookie ，因为cookie 机制本身没有设置删除 cookie ，失效的 cookie 会被浏览器自动从内存中删除，所以，它实现的就是让 cookie 失效。</p>
+<h3 id="secure"><a href="#secure" class="headerlink" title="secure"></a>secure</h3><p>这个属性译为安全，http 不仅是无状态的，还是不安全的协议，容易被劫持。所以当这个属性设置为 true 时，此 cookie 只会在 https 和 ssl 等安全协议下传输。但需要强调一下这个属性并不能对客户端的cookie进行加密，不能保证绝对的安全性</p>
+<h2 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</h2><p>这个属性是面试的时候常考的，如果这个属性设置为 true，就不能通过 JavaScript 脚本来获取 cookie 的值，能有效的防止xss 攻击,看 MDN 的官方文档：</p>
+<blockquote>
+<p>为避免跨域脚本 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>) 攻击，通过JavaScript的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie" target="_blank" rel="noopener">Document.cookie</a> API无法访问有<code>HttpOnly</code> 标记的Cookie，Cookie只需要发送给服务端。如果包含服务端session信息的Cookie不想被客户端Javascript使用，那么就需要使用<code>HttpOnly</code> 标记</p>
+</blockquote>
+<h3 id="关于JavaScript操作cookie"><a href="#关于JavaScript操作cookie" class="headerlink" title="关于JavaScript操作cookie"></a>关于JavaScript操作cookie</h3><p>document.cookie 可以对 cookie 进行读写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie);	<span class="comment">//读取浏览器中的cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">'myname=liuzhiyu;path=/;domain=.baidu.com'</span>;	<span class="comment">//	写入 cookie</span></span><br></pre></td></tr></table></figure>
+<h3 id="服务端如何去设置cookie"><a href="#服务端如何去设置cookie" class="headerlink" title="服务端如何去设置cookie"></a>服务端如何去设置cookie</h3><p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fkeq0xcrtkj20sh0f2aid.jpg" alt=""></p>
+<p>服务端就是通过 setCookie 来设置 cookie 的，注意点，要设置多个 cookie 时，得多写几个 setCookie ，我们还可以从上图看到，请求可以携带 cookie 给后端。</p>
+<h2 id="cookie与session"><a href="#cookie与session" class="headerlink" title="cookie与session"></a>cookie与session</h2><p>本片开头已说过 HTTP 是一个不保存状态的协议。session 是服务器端使用的一种记录客户端状态的机制，不同的是 cookie 保存在客户端浏览器中，而 session 保存在服务器上。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是 session。客户端浏览器再次访问时只需要从该 session 中查找该客户的状态就可以了。如果说 <strong>cookie 机制是通过检查客户身上的“通行证”来确定客户身份的话，那么 session 机制就是通过检查服务器上的“客户明细表”来确认客户身份。session 相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。</strong></p>
+<h3 id="session对浏览器的要求"><a href="#session对浏览器的要求" class="headerlink" title="session对浏览器的要求"></a>session对浏览器的要求</h3><p>虽然 session 保存在服务器中，对客户端是透明的，它的正常运行仍然需要客户端浏览器的支持。这是因为 session 需要使用 cookie 作为识别标志。HTTP 协议是无状态的，session 不能依据 HTTP 连接来判断是否为同一客户，因此服务器向客户端浏览器发送一个名为 JSESSIONID 的 cookie，它的值为该 session 的 id。session 依据该cookie 来识别是否为同一用户。该 cookie 为服务器自动生成的，它的 MaxAge 属性一般为–1，表示仅当前浏览器内有效，并且各浏览器窗口间不共享，关闭浏览器就会失效。</p>
+<h3 id="session中不使用cookie"><a href="#session中不使用cookie" class="headerlink" title="session中不使用cookie"></a>session中不使用cookie</h3><p>URL 地址重写是对客户端不支持 cookie 的解决方案。URL 地址重写的原理是将该用户 session 的 id 信息重写到 URL 地址中。服务器能够解析重写后的 URL 获取 session 的 id。这样即使客户端不支持 cookie，也可以使用 session 来记录用户状态。</p>
+<h3 id="cookie-session-区别"><a href="#cookie-session-区别" class="headerlink" title="cookie session 区别"></a>cookie session 区别</h3><ol>
+<li>cookie 数据存放在客户的浏览器上，session数据放在服务器上</li>
+<li>cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗考虑到安全应当使用 session</li>
+<li>session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用 COOKIE</li>
+<li>单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存20个 cookie。</li>
+</ol>
+<p>鉴于上述区别我们建议</p>
+<ol>
+<li>将登陆信息等重要信息存放为 SESSION</li>
+<li>其他信息如果需要保留，可以放在 COOKIE 中</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/shiyangxt/archive/2008/10/07/1305506.html" target="_blank" rel="noopener">cookie 与 session 的区别详解</a></p>
+<p><a href="https://juejin.im/post/59d1f59bf265da06700b0934" target="_blank" rel="noopener">把cookie聊清楚|稀土掘金</a></p>
+<p><a href="http://blog.csdn.net/fangaoxin/article/details/6952954/" target="_blank" rel="noopener">Cookie/Session机制详解|CSDN</a></p>
+<p>最后，如果本文有任何知识性错误，欢迎各位小哥哥小姐姐提出！</p>
+<hr>
+<blockquote>
+<p>本文作者：刘志宇</p>
+<p>版权声明：本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web前端/" rel="tag"># Web前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/30/我是一个函数_new/" rel="next" title="我是一个函数">
+                <i class="fa fa-chevron-left"></i> 我是一个函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/14/MVC-MVP和MVVM的图示_new/" rel="prev" title="MVC,MVP和MVVM的图示">
+                MVC,MVP和MVVM的图示 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/large/7b6c9535gy1fj67u9az4nj22bs2bse81.jpg"
+               alt="六只鱼" />
+          <p class="site-author-name" itemprop="name">六只鱼</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BarryLiu1995" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/BarryLiu1995/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是cookie"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4EC0;&#x4E48;&#x662F;cookie" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;cookie"></a>&#x4EC0;&#x4E48;&#x662F;cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie原理"><span class="nav-number">2.</span> <span class="nav-text"><a href="#cookie&#x539F;&#x7406;" class="headerlink" title="cookie&#x539F;&#x7406;"></a>cookie&#x539F;&#x7406;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie的不可跨域名性"><span class="nav-number">3.</span> <span class="nav-text"><a href="#cookie&#x7684;&#x4E0D;&#x53EF;&#x8DE8;&#x57DF;&#x540D;&#x6027;" class="headerlink" title="cookie&#x7684;&#x4E0D;&#x53EF;&#x8DE8;&#x57DF;&#x540D;&#x6027;"></a>cookie&#x7684;&#x4E0D;&#x53EF;&#x8DE8;&#x57DF;&#x540D;&#x6027;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie属性"><span class="nav-number">4.</span> <span class="nav-text"><a href="#cookie&#x5C5E;&#x6027;" class="headerlink" title="cookie&#x5C5E;&#x6027;"></a>cookie&#x5C5E;&#x6027;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#name"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#name" class="headerlink" title="name"></a>name</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#value"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#value" class="headerlink" title="value"></a>value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#domain"><span class="nav-number">4.3.</span> <span class="nav-text"><a href="#domain" class="headerlink" title="domain"></a>domain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path"><span class="nav-number">4.4.</span> <span class="nav-text"><a href="#path" class="headerlink" title="path"></a>path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expires-Max-Age"><span class="nav-number">4.5.</span> <span class="nav-text"><a href="#Expires-Max-Age" class="headerlink" title="Expires/Max-Age"></a>Expires/Max-Age</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#secure"><span class="nav-number">4.6.</span> <span class="nav-text"><a href="#secure" class="headerlink" title="secure"></a>secure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HttpOnly"><span class="nav-number">5.</span> <span class="nav-text"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a>HttpOnly</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于JavaScript操作cookie"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#&#x5173;&#x4E8E;JavaScript&#x64CD;&#x4F5C;cookie" class="headerlink" title="&#x5173;&#x4E8E;JavaScript&#x64CD;&#x4F5C;cookie"></a>&#x5173;&#x4E8E;JavaScript&#x64CD;&#x4F5C;cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端如何去设置cookie"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#&#x670D;&#x52A1;&#x7AEF;&#x5982;&#x4F55;&#x53BB;&#x8BBE;&#x7F6E;cookie" class="headerlink" title="&#x670D;&#x52A1;&#x7AEF;&#x5982;&#x4F55;&#x53BB;&#x8BBE;&#x7F6E;cookie"></a>&#x670D;&#x52A1;&#x7AEF;&#x5982;&#x4F55;&#x53BB;&#x8BBE;&#x7F6E;cookie</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie与session"><span class="nav-number">6.</span> <span class="nav-text"><a href="#cookie&#x4E0E;session" class="headerlink" title="cookie&#x4E0E;session"></a>cookie&#x4E0E;session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session对浏览器的要求"><span class="nav-number">6.1.</span> <span class="nav-text"><a href="#session&#x5BF9;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8981;&#x6C42;" class="headerlink" title="session&#x5BF9;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8981;&#x6C42;"></a>session&#x5BF9;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8981;&#x6C42;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session中不使用cookie"><span class="nav-number">6.2.</span> <span class="nav-text"><a href="#session&#x4E2D;&#x4E0D;&#x4F7F;&#x7528;cookie" class="headerlink" title="session&#x4E2D;&#x4E0D;&#x4F7F;&#x7528;cookie"></a>session&#x4E2D;&#x4E0D;&#x4F7F;&#x7528;cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-session-区别"><span class="nav-number">6.3.</span> <span class="nav-text"><a href="#cookie-session-&#x533A;&#x522B;" class="headerlink" title="cookie session &#x533A;&#x522B;"></a>cookie session &#x533A;&#x522B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">六只鱼</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
