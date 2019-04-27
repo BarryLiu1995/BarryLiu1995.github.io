@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Web前端,预处理器," />
+  <meta name="keywords" content="理解计算机,JavaScript," />
 
 
 
@@ -94,48 +94,27 @@
 
 
 
-<meta name="description" content="之前一直以为 Web 前端就是三剑客 JavaScript、CSS、HTML的天下，直到昨晚看见一片微信推送，特别是文章的后面两个章节，让我对前端的概念有了一个更加全面的了解，因此特意转载过来供大家学习">
-<meta name="keywords" content="Web前端,预处理器">
+<meta name="description" content="没有学习前端开发之前，一直以为 JavaScript 跟 Java 有亲缘关系，等了解了 JS 之后才发现原来半毛钱关系都没有。有一次我问一位我的高中同学，他专业是软件工程。我问他“Java 是面向对象语言，C 是面向过程语言，那么 JS 是什么？”。“基于对象”，他的回答让我很郁闷，那基于对象跟面向对象又有什么区别？这不，刚好码农翻身的最新推送解答了我的疑问">
+<meta name="keywords" content="理解计算机,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端大讲座">
-<meta property="og:url" content="http://barryliu1995.studio/2017/09/03/前端大讲座/index.html">
+<meta property="og:title" content="JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？">
+<meta property="og:url" content="http://barryliu1995.studio/2017/07/25/JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象/index.html">
 <meta property="og:site_name" content="六只鱼的环游记">
-<meta property="og:description" content="之前一直以为 Web 前端就是三剑客 JavaScript、CSS、HTML的天下，直到昨晚看见一片微信推送，特别是文章的后面两个章节，让我对前端的概念有了一个更加全面的了解，因此特意转载过来供大家学习">
+<meta property="og:description" content="没有学习前端开发之前，一直以为 JavaScript 跟 Java 有亲缘关系，等了解了 JS 之后才发现原来半毛钱关系都没有。有一次我问一位我的高中同学，他专业是软件工程。我问他“Java 是面向对象语言，C 是面向过程语言，那么 JS 是什么？”。“基于对象”，他的回答让我很郁闷，那基于对象跟面向对象又有什么区别？这不，刚好码农翻身的最新推送解答了我的疑问">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/20190427164142.png">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj690posczj20m60fq41v.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj696lon5cj20n50gfgmv.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj6977w2kdj20n50gggn1.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj697mdxlrj20n50gfmy8.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69821eoaj20n70gejt2.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj698h2piqj20n40gf76o.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj698r0hbpj20n50gfwhu.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69ctmf66j20n40ggn1y.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69ctlpcxj20n40gfwjq.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69cth7ydj20n50ggwit.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69ctgp7oj20n50gegoj.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv3rz1j20n30ggq7r.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv2hndj20n40ggta8.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv3kpij20n30ggwgw.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv47fcj20n50gjjsc.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6t2fnj20n50gfwhf.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6w4vgj20n70ghwhv.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6v6rvj20n50gh7ar.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6xeqsj20n40gg119.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6rnu0j20n70gg419.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6q8j9j20n40gg0v9.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535gy1fj69t6zrxmj20n50gfdiv.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t70pktj20n40ggq5z.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6zx0ij20n40getc4.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69zmwaykj20n40ggn0j.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69zn0jr2j20n50ggmyn.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69zmvclpj20n70gggnp.jpg">
-<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj6a1391w7j20n40gf0ux.jpg">
-<meta property="og:updated_time" content="2019-04-27T08:41:55.781Z">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwhzphly6j20cw05ft9x.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi0tnpisj20fp01kq3h.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi31b6rej20bj07xjt3.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi3i5lirj20gt0f8dif.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi4igkwfj20cv07v0vw.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi5hi3kzj20dl0afn0p.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi63fegej20ig0dzq68.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi7gb2efj20d707bjt8.jpg">
+<meta property="og:updated_time" content="2019-04-27T08:15:38.490Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端大讲座">
-<meta name="twitter:description" content="之前一直以为 Web 前端就是三剑客 JavaScript、CSS、HTML的天下，直到昨晚看见一片微信推送，特别是文章的后面两个章节，让我对前端的概念有了一个更加全面的了解，因此特意转载过来供大家学习">
-<meta name="twitter:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/20190427164142.png">
+<meta name="twitter:title" content="JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？">
+<meta name="twitter:description" content="没有学习前端开发之前，一直以为 JavaScript 跟 Java 有亲缘关系，等了解了 JS 之后才发现原来半毛钱关系都没有。有一次我问一位我的高中同学，他专业是软件工程。我问他“Java 是面向对象语言，C 是面向过程语言，那么 JS 是什么？”。“基于对象”，他的回答让我很郁闷，那基于对象跟面向对象又有什么区别？这不，刚好码农翻身的最新推送解答了我的疑问">
+<meta name="twitter:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwhzphly6j20cw05ft9x.jpg">
 
 
 
@@ -164,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://barryliu1995.studio/2017/09/03/前端大讲座/"/>
+  <link rel="canonical" href="http://barryliu1995.studio/2017/07/25/JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象/"/>
 
 
 
 
 
-  <title>前端大讲座 | 六只鱼的环游记</title>
+  <title>JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？ | 六只鱼的环游记</title>
   
 
 
@@ -357,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/09/03/前端大讲座/">
+    <link itemprop="mainEntityOfPage" href="http://barryliu1995.studio/2017/07/25/JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="六只鱼">
@@ -374,7 +353,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">前端大讲座</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？</h2>
         
 
         <div class="post-meta">
@@ -386,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-03T12:01:58+08:00">
-                2017-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T22:13:12+08:00">
+                2017-07-25
               </time>
             
 
@@ -402,7 +381,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T16:41:55+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T16:15:38+08:00">
                 2019-04-27
               </time>
             
@@ -458,142 +437,82 @@
       
 
       
-        <p>之前一直以为 Web 前端就是三剑客 JavaScript、CSS、HTML的天下，直到昨晚看见一片微信推送，特别是文章的后面两个章节，让我对前端的概念有了一个更加全面的了解，因此特意转载过来供大家学习</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/20190427164142.png" width="600" height="200" align="center/"></p>
+        <p>没有学习前端开发之前，一直以为 JavaScript 跟 Java 有亲缘关系，等了解了 JS 之后才发现原来半毛钱关系都没有。有一次我问一位我的高中同学，他专业是软件工程。我问他“Java 是面向对象语言，C 是面向过程语言，那么 JS 是什么？”。“基于对象”，他的回答让我很郁闷，那基于对象跟面向对象又有什么区别？这不，刚好码农翻身的最新推送解答了我的疑问</p>
 <a id="more"></a>
-<p>本文的分享主要分为以下三个部分</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj690posczj20m60fq41v.jpg" alt="主要内容"></p>
-<p>由于目前计算机专业还没有为 Web 前端技术设立专门的课程，每位同学对前端的了解程度也不一样，今天的讲座会以最浅显的方式来为大家介绍 “前端”，帮助大家建立一个基本的概念。</p>
-<h2 id="前端是什么"><a href="#前端是什么" class="headerlink" title="前端是什么"></a>前端是什么</h2><p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj696lon5cj20n50gfgmv.jpg" alt="前端是什么"></p>
-<p>在回答这个问题之前，我想到了一道面试题：</p>
+<hr>
 <blockquote>
-<p>当我们在浏览器中输入网址并按回车之后，接下来会发生什么？</p>
+<p>来源：码农翻身 微信公众号 </p>
+<p>作者：刘欣</p>
+<p>原文地址：<a href="http://mp.weixin.qq.com/s/l3feZ7NaV1pIJ52K5JCQEw" target="_blank" rel="noopener">码农翻身-JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？</a></p>
 </blockquote>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj6977w2kdj20n50gggn1.jpg" alt=""></p>
-<p>我们来简单地看一看 “网页展现” 的整个过程。</p>
-<p>比如这里有一个用户，它需要访问 <code>abc.com</code> 这个网址。一般来说，当用户输入一个域名时，是在请求一个 HTML 资源。当他完成域名解析之后，他的浏览器会向 <code>abc.com</code> 这个域名所指向的 Web 服务器发出请求。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj697mdxlrj20n50gfmy8.jpg" alt=""></p>
-<p>有时候 Web 服务器直接就可以返回用户的请求了；有时候 Web 服务器还需要向数据库查询一些数据，然后才能把处理结果返回给用户。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69821eoaj20n70gejt2.jpg" alt=""></p>
-<p>当用户的浏览器拿到服务器返回的 HTML 资源之后，就开始解析并显示 HTML 的内容了。</p>
-<p>一般来说，HTML 页面需要 CSS 资源来描述页面的样式。比如浏览器在解析 HTML 时发现了一个 CSS 外链 <code>abc.com/a.css</code>，它就会去请求这个资源。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj698h2piqj20n40gf76o.jpg" alt=""></p>
-<p>HTML 页面往往还需要加载外部的 JS 资源，比如 <code>abc.com/a.js</code>，此时浏览器同样会向服务器请求这个资源。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj698r0hbpj20n50gfwhu.jpg" alt=""></p>
-<p>当所需的资源都加载完成之后，这个页面就可以提供完整的外观和功能了。整个过程差不多就是这个样子了。</p>
-<p>我们看一看这张流程图，可以在中间画一道竖线，把它分成左右两个部分。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69ctmf66j20n40ggn1y.jpg" alt=""></p>
-<p>我们会发现，这道线左侧的事情发生在浏览器端，我们称之为 “前端”；右侧的事情发生在服务器端，称为 “后端”。（“前端” 之所以叫 “前端”，是因为它离用户更近一些。）</p>
-<p>大家都学过后端开发的相关课程，对后端这一块应该都比较熟悉了。那问题来了：在上面这个过程中，后端有哪些局限？</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69ctlpcxj20n40gfwjq.jpg" alt=""></p>
-<ul>
-<li>服务器一旦把资源提供给浏览器之后，便失去对内容的影响。</li>
-<li>服务器无法得知用户在浏览器里做了什么，无法与用户交互。</li>
-</ul>
-<p>这意味着，只有当用户下一次向服务器请求资源时，服务器才有机会再次决定用户看到的内容。那么，用户什么时候再向后端请求资源呢？</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69cth7ydj20n50ggwit.jpg" alt=""></p>
-<p>第一种情况是 “导航动作”。比如用户刷新页面、点击链接、点击浏览器的前进/后退等等。</p>
-<p>第二种情况是用户提交表单。表单是最传统的页面交互方式之一，提交表单时浏览器会向服务器发出新请求——这意味着浏览器会跳转到一个新的地址，服务器会在新页面中显示表单的处理结果。</p>
-<p>还有一种特殊情况，就是服务器在给浏览器返回 HTML 资源时，在页面中插入一个特殊的标记，浏览器看到这个标记就会在一定的时间后自动刷新当前页面或跳转到其它页面，相当于服务器强制用户再次发出请求。可想而知，这种非用户意愿驱动的页面跳转行为并不讨人喜欢，因此已经不常用了。</p>
-<p>在传统网页中，上述几种用户与服务器之间的交互方式也算够用了。不过随着网页形态的不断演进，用户对网页体验提出了更高的要求，很多时候网页不仅仅是一篇静止的文档，而更像是一个应用程序，用户随时可能与之互动。这个时候，前端的价值就体现出来了。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69ctgp7oj20n50gegoj.jpg" alt=""></p>
-<ul>
-<li>用户从停留在当前页面到发起新请求的这段时间内，前端可以控制页面内容。</li>
-<li>当用户停留在当前页面时，前端有能力与用户交互。由于前端的 JS 可以监听用户在浏览器中的各种行为（比如鼠标点击、键盘输入、滚动页面等等），前端就可以针对这些行为作出相应的反馈。</li>
-</ul>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv3rz1j20n30ggq7r.jpg" alt=""></p>
-<p>在前端与用户的交互过程中，有些事情光靠前端就可以做出响应。比如我们在网页上做了一个计算器的功能，当用户输入算式之后，JS 就可以直接计算出结果并显示给用户。整个过程不需要服务器的参与就可以完成。</p>
-<p>但有些事情，光有前端是无法完成的。此时前端就需要交给后端来处理，拿到处理结果之后再交给用户。在这个过程中，前端可以让用户一直停留在当前页面，交互过程具有良好的连续性。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv2hndj20n40ggta8.jpg" alt=""></p>
-<p>那么，前端如何把任务交给后端并拿到后端处理的结果呢？主要有两种方式：Ajax 和 Socket 连接。</p>
-<p>Ajax 是最常见的前后端交互方式。它以 “请求→响应” 的方式来完成前后端的信息传递。传统的表单交互需求几乎都可以由 Ajax 改造为 “原地提交并获取反馈” 的交互方式，不需要跳转页面，从而有效提升用户体验。</p>
-<p>而对于实时性比较高的场景，Socket 连接就是一个更好的选择。它的工作方式是前后端建立一个持续的连接，信息可以随时由前端发向后端，或由后端推送到前端。如果我们要建立一个实时对话的应用，通常就会用到 Socket 连接了。</p>
-<h2 id="前端需要用到哪些技术"><a href="#前端需要用到哪些技术" class="headerlink" title="前端需要用到哪些技术"></a>前端需要用到哪些技术</h2><p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv3kpij20n30ggwgw.jpg" alt=""></p>
-<p>说到前端技术，我们通常都会说到 “三大块”：</p>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JS</li>
-</ul>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69iv47fcj20n50gjjsc.jpg" alt=""></p>
-<p>这是前端最核心的三项技术。</p>
-<p>接下来，我们就会说到 “前端的分层架构”。这个架构的原则就是 “让合适的技术去做合适的事情”。一个网页从逻辑上可以视为这三层的有机结合体：</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6t2fnj20n50gfwhf.jpg" alt=""></p>
-<ul>
-<li><strong>结构层</strong>：这一层的作用是表述一个页面中有哪些信息，以及这些信息之间的关系是什么。这一层在技术上是由 HTML 来实现的。</li>
-<li><strong>表现层</strong>：这一层决定了页面中的信息会以什么样的外观呈现出来。这一层由 CSS 来实现。</li>
-<li><strong>行为层</strong>：这一层控制了页面如何与用户进行交互。在传统的展示型网页中，可能只需要 “结构层” 和 “表现层” 就足以提供完整的功能；而现代网页承载了越来越多的交互，这就推动 “行为层” 的能力不断增强。这一层由 JS 来实现。</li>
-</ul>
-<p>我们通过一个实例来理解这个分层架构。</p>
-<p>比如我是一个百姓网的用户，我打开了 “用户中心” 中的 “我发布的信息” 这个页面</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6w4vgj20n70ghwhv.jpg" alt=""></p>
-<p>这个页面的 HTML 描述了信息以及信息的结构。即使没有 CSS 和 JS 的辅助，这个页面仍然可以呈现出可理解的内容（参见上图）。页面顶部是一些导航元素，接下来的 “显示中的信息” 是一个标题，它又引出了一个列表。这个列表自然就是我在百姓网发布的所有信息了。（除了 “显示中的信息” 以外，页面后半段还有 “已删除的信息”，这里不再赘述。）</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6v6rvj20n50gh7ar.jpg" alt=""></p>
-<p>接下来，我们会在表现层下功夫，通过 CSS 来为页面中的各个元素设定外观。经过这一层的修饰之后，页面中的内容更加美观了；更重要的是，各元素的功能职责也更加直观易懂了（参见上图）。</p>
-<p>这已经是一个挺不错的网页了，但接下来，我们还会通过 JS 来丰富它的功能，提升用户的使用效率。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6xeqsj20n40gg119.jpg" alt=""></p>
-<p>作为信息的发布者，我可能需要修改某条信息的内容，或对它进行 “刷新” 之类的操作。在传统的交互中，我需要在这个列表中点击需要操作的信息，然后在信息的详情页选择合适的操作。</p>
-<p>我们可以把这个流程简化一下：我们在这个列表中为每条信息添加一个操作按钮，当用户点击某条信息的操作按钮时，我们就在页面中弹出一个操作面板，用户可以直接选择想要的操作，减少了中间环节（参见上图）。</p>
-<p>由此可见，结构层、表现层、行为层这三者各有所长，共同构造了一个功能完备、体验良好的网页出来。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6rnu0j20n70gg419.jpg" alt=""></p>
-<p>除了基本的 “三大块” 之外，作为前端工程师，我们还需要掌握以下知识和技能：</p>
-<ul>
-<li><strong>HTTP 相关</strong>：由于前端资源都是浏览器通过网络下载的，因此我们有必要了解相关的网络协议。</li>
-<li><strong>浏览器相关</strong>：前端代码运行在浏览器中，我们需要了解浏览器的各种特性，以及浏览器向我们提供的各种接口。</li>
-<li><strong>前端性能优化</strong>：让网页更快，减少用户的等待，这也是前端工程师面临的重要课题。优化网页的前端性能，需要我们具备上面两项知识，并且掌握性能优化相关的工具和方法。</li>
-<li><strong>图形图像</strong>：网页信息不仅包含文字，还包含图片、视频等多媒体信息。图片作为最常用媒体资源，需要我们掌握与其相关的技能。比如了解各种图片格式适用的场景、基本的图片处理方法等等。</li>
-</ul>
-<h2 id="前端的开发方式是怎样的"><a href="#前端的开发方式是怎样的" class="headerlink" title="前端的开发方式是怎样的"></a>前端的开发方式是怎样的</h2><p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6q8j9j20n40gg0v9.jpg" alt=""></p>
-<p>前面我们已经介绍了前端技术 “三大块”，然而在如今，当我们在编写这三块的代码时，已经不再 “裸写” 了。这意味着我们在开发阶段编写的代码与实际在浏览器环境中运行的代码已经不一样了，详细来说：</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535gy1fj69t6zrxmj20n50gfdiv.jpg" alt=""></p>
-<ul>
-<li>我们通过模板语言来生成 HTML。</li>
-<li>通过 CSS 预处理器来生成 CSS 代码。</li>
-<li>通过 ES6+ 的语法和特性来编写 JS 代码。</li>
-</ul>
-<p>举例来看吧，以下三个例子展示了代码书写方式的演化。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t70pktj20n40ggq5z.jpg" alt=""></p>
-<p>百姓网采用了 Jade 和 Jedi 这两种模板语言。在上图的代码中，我们仅仅使用了模板语言最基本的标记语法，还没有插入使用模板语言的任何逻辑能力。仅此一步，就可以看出模板语言带来的好处。</p>
-<p>原先我们在写 HTML 代码时，会花费大量的精力在 <code>&lt;</code>、<code>/</code>、<code>&gt;</code> 这样的语法噪音上；同时，识别标签的嵌套关系也很费眼。幸运的是，Jade 和 Jedi 这样的现代模板语言把前端工程师解放了出来。它们通过缩进来表达嵌套关系，层级关系一目了然；语法更精练，表现力更强。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69t6zx0ij20n40getc4.jpg" alt=""></p>
-<p>在 CSS 方面，预处理器一方面通过更简洁的语法减轻开发者的书写负担，另一方面通过内置的逻辑能力增强了代码的表现力。举个例子，在使用原生 CSS 来写代码时，不同元素采用的相同颜色只能分散在代码各处；而采用了 CSS 预处理器之后，我们可以把相同意义的颜色通过变量的形式抽象出来，然后在代码各处调用即可。这样不仅便于后期维护，在平时读代码时也更容易理解代码意图。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69zmwaykj20n40ggn0j.jpg" alt=""></p>
-<p>在 JS 方面，我们开始享受 ES6+ 带来的新特征福利。ES（ECMAScript）是定义 JS 这门语言的标准规范，从第六版开始，ES 以每年一版的节奏持续快速地扩展着 JS 语言的能力。</p>
-<p>在以往，如果我们要实现 “在数组中找出符合特定条件的成员” 的需求，往往需要借助 Underscore 这样的工具库，调用它的 <code>_.find()</code> 方法。而在 ES6 中，语言本身就扩展了数组的能力，我们只需要直接调用 <code>Array#find()</code> 接口即可。另外，像箭头函数这样的新语法也可以令代码进一步简化。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69zn0jr2j20n50ggmyn.jpg" alt=""></p>
-<p>在 HTML、CSS、JS 这三大块，我们放弃 “裸写”，采用 “更高级” 语言的目的在于：</p>
-<ul>
-<li>利用高级语言提供的 “逻辑能力” 来增强代码的表现力。</li>
-<li>利用高级语言的 “语法糖” 和 “新特性” 来提升开发效率和舒适度。</li>
-</ul>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj69zmvclpj20n70gggnp.jpg" alt=""></p>
-<p>当然，采用这些更高级的语言也不是完全没有成本的。我们在开发阶段所用的语言已经不是纯粹的 HTML、CSS、JS 了，浏览器无法直接识别和运行。因此，当我们放弃 “裸写”，也就意味着：</p>
-<ul>
-<li>在部署流程中需要设立构建环节，把源码编译到浏览器环境可以运行的目标代码。</li>
-<li>在开发阶段，需要有工具来实时监视并编译有变动的源码，以确保页面上呈现的是我们修改过的最新效果。</li>
-</ul>
-<p>在百姓网，前端架构组已经搭建好了必要的开发环境，开发者们只需要关注开发本身就可以了。</p>
-<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fj6a1391w7j20n40gf0ux.jpg" alt=""></p>
-<p>在企业级的前端开发中，我们还需要了解如下知识点：</p>
-<ul>
-<li><p><strong>模块化</strong>：模块化是最常见的编程实践之一，令我们的代码组织更加清晰、易维护。ES6 为 JS 增加了完善的模块化方案，我们的日常开发也已经迁移到了 ES6 模块规范之下。</p>
-</li>
-<li><p><strong>包管理</strong>：如何将开源社区中的优秀组件为我所用？这就不能不提 “npm” 这个最主流的 JS 包管理器。前端界优秀的开源项目几乎都发布到了 npm 的包仓库，我们日常开发中用到的第三方库也都是由 npm 来管理的。</p>
-<p>打包工具可以把我们写的模块化的源码和第三方包整合到一起，形成页面所需的完整 JS 资源。“包管理器”、“模块化”、“打包工具” 的相互结合，基本上就是日常的 JS 代码组织方式。</p>
-</li>
-<li><p><strong>组件化</strong>：在传统的前端开发中，HTML、CSS、JS 这三块的代码有各自独立的文件，这些文件往往也分散在不同的目录结构中。</p>
-<p>如果页面功能区块的划分足够清晰，开发者就可以用 “组件” 的概念来把页面拆分，整个页面会被视为多个组件的嵌套和组合；同时，开发者也倾向于把每个组件相关的 HTML、CSS、JS 代码整合到同一个目录（或同一个文件）中，便于管理和维护。</p>
-<p>这就是 “组件化” 的开发模式。要实现这样的开发模式，通常需要前端框架和构建工具的配合。</p>
-</li>
-<li><p><strong>单页应用</strong>：HTML5 的 History API 为前端提供了控制浏览器导航行为的能力，配合 Ajax 无刷新更新页面内容的特性，我们可以在一个页面内实现应用的多视图切换，避免页面的频繁跳转，提供类似桌面应用的体验。比如 Gmail 等产品就是典型的单页应用模式，百姓网的大多数后台系统也都是单页应用。</p>
-</li>
-<li><p>其它实用的知识点，就留待大家在工作中慢慢发掘吧。</p>
-</li>
-</ul>
-<blockquote>
-<p>原文地址：<a href="http://mp.weixin.qq.com/s/DSFCm5npz988oDPVUTTxnw" target="_blank" rel="noopener">给不了解前端的同学讲前端</a></p>
-<p>版权归原作者所有</p>
-</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为Java 帝国的未来继承人，Java小王子受到了严格的教育， 不但精通Java语言、Java虚拟机、java类库和框架，还对各种官方的Java规范了如指掌。   </p>
+<p>近日他听说一个叫做Javascript的屌丝逆袭了， 成功地建立了一个独立的王国， 不但成了前端编程之王， 还不断地蚕食Java帝国的领地 ！  </p>
+<p>按照小王子宫廷老师的说法： 想当年， 这家伙只是运行在浏览器中，完完全全是蹭了Java的热度这才发展起来， 现在竟然回过头来要欺负我们， 还有没有天理了？ 是可忍孰不可忍？ ！</p>
+<p>(微信公众号码农翻身注：参见文章《<a href="http://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&amp;mid=2665513059&amp;idx=1&amp;sn=a2eaf97d9e3000d15a33681d1b720463&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Javascript：一个屌丝的逆袭</a>》)</p>
+<p>小王子可不这么认为， 存在必然是合理的，javascrip必有独特之处， 俗话说知己知彼，百战不殆，他觉得有必要去Javascript王国刺探一下，搜集一下情报， 看看这个曾经的浏览器中的面向对象语言是怎么回事， 为什么那么多码农趋之若鹜。</p>
+<h2 id="初步印象"><a href="#初步印象" class="headerlink" title="初步印象"></a>初步印象</h2><p>乔装打扮以后，小王子来到Javascript 王国，这里看起来一派生气勃勃的景象，人们随性而奔放， 不像Java帝国那么严肃而呆板， 让人感觉心情愉悦。</p>
+<p>不过令小王子感到不可思议的是， 这里竟然没有官方提供的类库!   人们干活用的工具五花八门，让人眼花缭乱， 什么AngularJS, React , Backbone，Vue, Ember，JQuery, ……   互相之间还吵来吵去，争来争去，煞是热闹。</p>
+<p>对比这下，Java帝国有着严密的统治，有着官方提供的庞大类库， 还有一统天下的Web框架 SSH/SSM ，再加上各种各样的Java规范， 码农们只需要拿来学习，干活就行。</p>
+<p>没有了选择的烦恼， 但同时也减少了选择的权利， 是好还是坏？  小王子自己也不知道。</p>
+<p>小王子还注意到Javascript王国的人写程序几乎没人使用IDE， 找个趁手的文本编辑器就可以开工， 然后扔到浏览器中去运行测试，真是轻量级啊！  唉， 我们Java帝国还在争论IntelliJ IDEA和Eclipse孰优孰劣,   实在是没有必要啊。</p>
+<h2 id="没有类怎么创建对象"><a href="#没有类怎么创建对象" class="headerlink" title="没有类怎么创建对象"></a>没有类怎么创建对象</h2><p>随着调查的深入，小王子愈发觉得吃惊， 这里竟然没有类的概念！  一个面向对象的语言竟然没有类！ 这和小王子从出生就被灌输的概念可是背道而驰！  </p>
+<p>没有类怎么创建对象 ？ 小时候宫廷老师经常说： 先写一个类， 然后才能从这个类new出一个对象出来 。  </p>
+<p>可是眼前却有着无数的javascript对象， 他们在不断地产生、消亡，一起辛苦地工作，支撑起庞大的、生机勃勃的帝国。</p>
+<p>这些对象是从哪里来的？  小王子百思不得其解， 正值正午时分， 小王子看到前面有一家JSON酒馆，决定先歇歇脚，美美地吃一顿再说。</p>
+<p>小王子要了二斤熟牛肉，三碗酒，正要开始享用， 只听到旁边桌子的一个穿着长袍的人问道：哎，你说的那个对象的原型是什么？　</p>
+<p>另一位戴眼镜的则低声说：嘘，噤声，国王刚颁布命令，原型法是我们帝国的秘密，禁止公开讨论，以防被Java帝国给学了去。</p>
+<p>小王子心中一动， 马上把小二叫来，要来上等酒菜， 送到邻桌，请两位吃酒。 一番酒喝下来， 小王子终于获得了两人的初步信任， 原来他们还是负责审查javscript语言规范的官员。</p>
+<p>小王子问道： “我家世代经商， 走南闯北，去过C++王国，Java帝国， C#帝国， 他们都是号称面向对象的语言， 都有class 和 object的区分， 可是到了咱们javascript王国， 我怎么连一个class 都没有看到啊？ ”</p>
+<p>戴眼镜的官员说： “我们不用class， 那玩意儿太不直观了 ！”</p>
+<p>小王子暗暗称奇， 可是仔细一想， 好像就是这样啊， <strong>想</strong>当初我学习Java的时候， 费了好大的劲才接受了class这个概念，实际上面向对象的系统，不就是对象之间的交互吗？ 要类干什么？</p>
+<p>然后小王子问了一个关键问题： “没有class, 怎么创建对象啊”</p>
+<p>“外乡人， 没那么复杂，你想想什么是对象啊，不就是属性加上方法吗？　你看看我们这就创建一个对象出来 ”  这位官员说着，手指头沾着酒水在桌子上写了起来：<br><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwhzphly6j20cw05ft9x.jpg" alt="创建对象"></p>
+<p>看到没有，这个animal对象定义了一个属性name, 和一个方法 eat , 简单吧？”</p>
+<p>的确是简单又明了，完全不需要class， 一个对象就创建了，小王子面前似乎打开了一扇新的大门。</p>
+<p>“由于对象并不和类关联， 我们可以随意地给这个对象增加属性：” 眼镜官员补充到。</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi0tnpisj20fp01kq3h.jpg" alt="增加对象"></p>
+<p>“还能这么玩？！” 小王子被惊到了，没有类的约束，这些对象也太自由了吧。</p>
+<h2 id="没有类怎么继承"><a href="#没有类怎么继承" class="headerlink" title="没有类怎么继承"></a>没有类怎么继承</h2><p>“那继承怎么实现， 继承可是面向对象的重要概念啊”</p>
+<p>眼镜官员说： “简单啊，继承不就是让两个对象建立关联嘛！  在我们javascript王国，每个对象都有一个特殊的属性叫做<strong>proto</strong>， 你可以用这个属性去关联另外一个对象（这个对象就是所谓的原型了） ， 来我给你画一下”</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi31b6rej20bj07xjt3.jpg" alt="继承"></p>
+<p>这段酒水写成的代码不长，但是却深深地震撼了小王子， 因为其中信息量非常巨大，隐藏了“原型”的秘密， 小王子不由得陷入了深思：</p>
+<p>对象dog 的原型是animal (注意：也是一个对象)，  对象cat的原型也是animal 。</p>
+<p>无论是dog还是cat ，都没有定义eat()方法， 那怎么可以调用呢？</p>
+<p>当eat方法被调用的时候，先在自己的方法列表中寻找， 如果找不到，就去找原型中的方法， 如果原型中找不到， 就去原型的原型中去寻找……   最后找到Object那里， 如果还找不到， 那就是未定义了。</p>
+<p>这里的这几个对象肯定是通过<strong>proto</strong>建立了一个原型链！</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi3i5lirj20gt0f8dif.jpg" alt="原型链"></p>
+<p>嗯， 我师父给我讲JVM虚拟机的时候， 也提到了一个对象在执行方法的时候，需要查找方法的定义，这个查找的次序也是先从本对象所属的类开始， 然后父类， 然后父类的父类…… 直到Object,  思路是一模一样的！</p>
+<p>只不过Java 的方法定义是在class中， 而这个javascript 的方法就在对象里边， 现在我觉得似乎在对象里更加直观一点啊。</p>
+<p>属性和方法应该类似，也是沿着原型链向上查找， 不过这里dog的name属性似乎覆盖了animal的name属性， 还有那个this, 在调用dog.eat()的时候，应该是指向dog这个对象的。</p>
+<p>看来面向对象的理念都是想通的啊。 想着想着，小王子脸上竟然露出了笑容。</p>
+<p>看到小王子像程序卡住一样，不动了，  穿长袍的官员推了小王子一把： 外乡人， 你怎么了？</p>
+<p>小王子意识到自己的失态， 赶紧说： “哦，没啥， 我觉得你们使用的这个’原型‘的办法很精妙啊， 完全不用类就实现了继承。”</p>
+<p>眼镜官员一愣： “外乡人， 看来你悟性不错， 帝国的秘密已经被你给洞察了， 不过很多新来的程序员就不容易体会到这一点， 于是我们就做了一个变通， 让javascript可以像Java那样new 出对象出来。说来惭愧， 这完全是为了迁就那些C++,Java, C#程序员啊 ”</p>
+<h2 id="向Java靠拢"><a href="#向Java靠拢" class="headerlink" title="向Java靠拢"></a>向Java靠拢</h2><p>小王子说：”什么变通办法？ 难道你们也开始使用类了吗？“</p>
+<p>“不不， 我们提供了一个叫做构造函数的东西。还是给你写点儿代码吧 ”  官员说着，又蘸着酒水写了起来：</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi4igkwfj20cv07v0vw.jpg" alt="构造函数"></p>
+<p>小王子说道： “那个function 已经有点 class的感觉了啊,  天呐我竟然看到了this这个关键字， 对了那个Student是你故意写的大写吗？ ”</p>
+<p>“是啊 ， 这样以来看起来就像Java的类了。但是，中间有个问题，你看出来了吗？ ”</p>
+<p>小王子想了一阵：“ 是不是说每个新创建对象都有一个sayHello函数？ 在Java中函数都是定义在class 上的。 如果定义对象上， 那就意味着每个对象都有一份， 太浪费了。”</p>
+<p>“是的，所以我们得提供一种更加高效的办法， 把这个sayHello函数放到另外一个地方去！ ”</p>
+<p>“放到哪里？ ”</p>
+<p>“记得我们刚才说的原型链吗？  当一个对象调用方法的时候，会顺着链向上找，所以我们可以创建一个<strong>原型对象</strong>，其中包含sayHello函数，  让andy, lisa这些从Student创建起来的对象指向这个原型就ok了。”</p>
+<p>“可是你这里只有构造函数Student,  在哪里创建原型对象呢？  怎么把andy,lisa 这些对象的<strong>proto</strong>指向原型对象呢？ 不会让我手工来指定吧。”</p>
+<p>眼镜官员瞪了一眼小王子说： “我们javascript帝国肯定不会这么麻烦程序员的， 我们可以把这个原型对象放到Student.prototype这个属性中（注意，不是<strong>proto</strong>）， 这样一来，每次当你创建andy,lisa这样的对象时， javascript 就会自动的把原型链给建立起来！”</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi5hi3kzj20dl0afn0p.jpg" alt=""></p>
+<p>小王子面露难色：“唉，这理解起来有点难啊。”</p>
+<p>“还是画个图吧， 当你去new Student的时候，javascript会建立这样的关系链：”</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi63fegej20ig0dzq68.jpg" alt="关系链"></p>
+<p>小王子说： “明白了，这个所谓的构造函数Student 其实就是一个幌子啊， 每次去new Student的时候，确实会创建一个对象出来（andy或者lisa) ， 并且把这个对象的原型(<strong>proto</strong>)指向 Student.prototype这个对象，这样一来就能找到sayHello()方法了。”</p>
+<p>眼镜官员回答：“没错，这个地方容易让人混淆的就是<strong>proto</strong>和prototype这两个属性， 唉，我也不知道最早为什么这么干， 实在是不优雅。”</p>
+<p>“是啊，这个构造函数再加上prototype的概念，实在是让人费解， 所以我们商量着提供一点语法糖降低程序员的负担。”   长袍官员附和到。</p>
+<h2 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h2><p>听到语法糖，小王子觉的很亲切， 因为 Java 中也提供了很多方便程序员的语法糖。</p>
+<p>当长袍官员写出javascript的语法糖的时候， 小王子不由得大吃一惊：</p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535gy1fhwi7gb2efj20d707bjt8.jpg" alt=""></p>
+<p>这语法糖已经把javascript变得非常像Java, C#，C++的类了， 看来javascript帝国为了“讨好”程序员， 已经努力的在改变了， 我们java帝国看来得加油啊。</p>
+<p>小王子现在明白了Javascript是一个基于原型实现的面向对象的语言， 根本没有类的概念， 新的方式给小王子的思维观念带来了重大的冲击。  </p>
+<p>在这里待久了，他又了解到javascript强大的函数式编程，越来越喜欢javascript, 都有点乐不思蜀了。</p>
+<p>小王子还会回到Java帝国吗？</p>
 
       
     </div>
@@ -611,9 +530,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Web前端/" rel="tag"># Web前端</a>
+            <a href="/tags/理解计算机/" rel="tag"># 理解计算机</a>
           
-            <a href="/tags/预处理器/" rel="tag"># 预处理器</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -626,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/01/JavaScript-开发进阶：理解-JavaScript-作用域和作用域链/" rel="next" title="JavaScript 开发进阶：理解 JavaScript 作用域和作用域链">
-                <i class="fa fa-chevron-left"></i> JavaScript 开发进阶：理解 JavaScript 作用域和作用域链
+              <a href="/2017/07/21/散列查找-哈希表/" rel="next" title="散列查找(哈希表)基础讲解">
+                <i class="fa fa-chevron-left"></i> 散列查找(哈希表)基础讲解
               </a>
             
           </div>
@@ -636,8 +555,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/12/常用-Git-命令清单/" rel="prev" title="常用 Git 命令清单">
-                常用 Git 命令清单 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/28/大话设计模式之简单工厂模式/" rel="prev" title="大话设计模式之简单工厂模式">
+                大话设计模式之简单工厂模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -819,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端是什么"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="&#x524D;&#x7AEF;&#x662F;&#x4EC0;&#x4E48;"></a>&#x524D;&#x7AEF;&#x662F;&#x4EC0;&#x4E48;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端需要用到哪些技术"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x9700;&#x8981;&#x7528;&#x5230;&#x54EA;&#x4E9B;&#x6280;&#x672F;" class="headerlink" title="&#x524D;&#x7AEF;&#x9700;&#x8981;&#x7528;&#x5230;&#x54EA;&#x4E9B;&#x6280;&#x672F;"></a>&#x524D;&#x7AEF;&#x9700;&#x8981;&#x7528;&#x5230;&#x54EA;&#x4E9B;&#x6280;&#x672F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端的开发方式是怎样的"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;&#x662F;&#x600E;&#x6837;&#x7684;" class="headerlink" title="&#x524D;&#x7AEF;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;&#x662F;&#x600E;&#x6837;&#x7684;"></a>&#x524D;&#x7AEF;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;&#x662F;&#x600E;&#x6837;&#x7684;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初步印象"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x521D;&#x6B65;&#x5370;&#x8C61;" class="headerlink" title="&#x521D;&#x6B65;&#x5370;&#x8C61;"></a>&#x521D;&#x6B65;&#x5370;&#x8C61;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有类怎么创建对象"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x6CA1;&#x6709;&#x7C7B;&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;" class="headerlink" title="&#x6CA1;&#x6709;&#x7C7B;&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;"></a>&#x6CA1;&#x6709;&#x7C7B;&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有类怎么继承"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x6CA1;&#x6709;&#x7C7B;&#x600E;&#x4E48;&#x7EE7;&#x627F;" class="headerlink" title="&#x6CA1;&#x6709;&#x7C7B;&#x600E;&#x4E48;&#x7EE7;&#x627F;"></a>&#x6CA1;&#x6709;&#x7C7B;&#x600E;&#x4E48;&#x7EE7;&#x627F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向Java靠拢"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x5411;Java&#x9760;&#x62E2;" class="headerlink" title="&#x5411;Java&#x9760;&#x62E2;"></a>&#x5411;Java&#x9760;&#x62E2;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法糖"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x8BED;&#x6CD5;&#x7CD6;" class="headerlink" title="&#x8BED;&#x6CD5;&#x7CD6;"></a>&#x8BED;&#x6CD5;&#x7CD6;</span></a></li></ol></div>
             
 
           </div>

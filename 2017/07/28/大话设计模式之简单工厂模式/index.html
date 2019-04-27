@@ -102,14 +102,14 @@
 <meta property="og:site_name" content="六只鱼的环游记">
 <meta property="og:description" content="想起之前学 Android 开发和 Java 开发的时候发现框架的出现能大大提高开发效率。如今学习 Web 前端开发的时候发现前端框架更加丰富。那研究各式各样的框架就成为了挺重要的学习部分，我一位学计算机的高中同学介绍说“框架是设计模式的一次实战应用”。所以这又扯到了设计模式，那什么是设计模式，后面我们将慢慢介绍各种各样有趣的设计模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.club.pchome.net/upload/club/other/2016/1/2/pics_huanliyuan_1451730366_600x0.jpg">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/pics_huanliyuan_1451730366_600x0.jpg">
 <meta property="og:image" content="http://www.nlc.gov.cn/newgtkj/zhsy/201106/W020110628606583158843.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/7b6c9535ly1fhztrcpezxj20wc0ebt93.jpg">
-<meta property="og:updated_time" content="2018-05-06T08:10:02.992Z">
+<meta property="og:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535ly1fhztrcpezxj20wc0ebt93.jpg">
+<meta property="og:updated_time" content="2019-04-27T08:16:07.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大话设计模式之简单工厂模式">
 <meta name="twitter:description" content="想起之前学 Android 开发和 Java 开发的时候发现框架的出现能大大提高开发效率。如今学习 Web 前端开发的时候发现前端框架更加丰富。那研究各式各样的框架就成为了挺重要的学习部分，我一位学计算机的高中同学介绍说“框架是设计模式的一次实战应用”。所以这又扯到了设计模式，那什么是设计模式，后面我们将慢慢介绍各种各样有趣的设计模式">
-<meta name="twitter:image" content="http://img.club.pchome.net/upload/club/other/2016/1/2/pics_huanliyuan_1451730366_600x0.jpg">
+<meta name="twitter:image" content="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/pics_huanliyuan_1451730366_600x0.jpg">
 
 
 
@@ -376,8 +376,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-06T16:10:02+08:00">
-                2018-05-06
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T16:16:07+08:00">
+                2019-04-27
               </time>
             
           </span>
@@ -451,7 +451,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Program&#123;</span><br><span class="line">  static void Main(string[] args)&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">      Console.Write(&quot;请输入数字A：&quot;);</span><br><span class="line">      string strNumA = Console.ReadLine();</span><br><span class="line">      Console.Write(&quot;请选择运算符号（+、-、*、、）：&quot;);</span><br><span class="line">      string strOperation = Console.ReadLine();</span><br><span class="line">      Console.Write(&quot;请输入数字B：&quot;);</span><br><span class="line">      string strNumB = Console.ReadLine();</span><br><span class="line">      string strResult = &quot;&quot;;</span><br><span class="line">      </span><br><span class="line">      switch (strOperation)&#123;</span><br><span class="line">        case &quot;+&quot;:</span><br><span class="line">          strResult = Convert.ToString(Convert.ToDouble(A) + Convert.ToDouble(C));</span><br><span class="line">          break;</span><br><span class="line">        case &quot;-&quot;:</span><br><span class="line">          strResult = Convert.ToString(Convert.ToDouble(A) - Convert.ToDouble(C));</span><br><span class="line">          break;</span><br><span class="line">        case &quot;*&quot;:</span><br><span class="line">          strResult = Convert.ToString(Convert.ToDouble(A) * Convert.ToDouble(C));</span><br><span class="line">          break;</span><br><span class="line">        case &quot;/&quot;:</span><br><span class="line">          if (strNumB != &quot;0&quot;)&#123;</span><br><span class="line">            strResult = Convert.ToString(Convert.ToDouble(A) / Convert.ToDouble(C));</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">            strResult = &quot;除数不能为0&quot;;</span><br><span class="line">          &#125;</span><br><span class="line">          break;</span><br><span class="line">      &#125;</span><br><span class="line">      Console.WriteLine(&quot;结果是：&quot; + strResult);</span><br><span class="line">      Console.ReadLine();</span><br><span class="line">    &#125;catch(Exception ex)&#123;</span><br><span class="line">      Console.WriteLine(&quot;您的输入有错：&quot; + ex.Message);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>大鸟接过小菜写下的代码，摇摇头着说道“目前这代码实现计算器没有问题，但这样写出的代码是否符合出题人的意思呢？”</p>
 <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="活字印刷，面向对象"><a href="#活字印刷，面向对象" class="headerlink" title="活字印刷，面向对象"></a>活字印刷，面向对象</h3><p>大鸟沉寂了一会，突然拍着小菜的肩膀说“你还记得我们古代四大发明之一的活字印刷术吗？”小菜菜点点头。“那你还知道活字印刷术发明之前民间常用的雕版印刷术吗？”这是小菜摇摇头。大鸟说道“雕版印刷术就是印书的时候，先用一把刷子蘸了墨，在雕好的板上刷一下，接着，用白纸覆在板上，另外拿一把干净的刷子在纸背上轻轻刷一下，把纸拿下来，这样一页书就印好了。那如果万一这时发现文章写的不对，需要改，那就只能为了一处的错误而去重新雕刻整块印刷板。而活字印刷术的出现就刚刚好解决了这个问题，只需把文章中的字体一个个分别雕刻出来，等后面印刷成页的时候进行排版就行了，如果需要更改，就只需要在排版的时候更改顺序。同时雕刻的单个字体还可以重复使用，还可以根据情况对文章增删内容。这样岂不是比之前方便多了！”</p>
-<p><img src="http://img.club.pchome.net/upload/club/other/2016/1/2/pics_huanliyuan_1451730366_600x0.jpg" alt="活字印刷术"></p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/pics_huanliyuan_1451730366_600x0.jpg" alt="活字印刷术"></p>
 <p><img src="http://www.nlc.gov.cn/newgtkj/zhsy/201106/W020110628606583158843.jpg" alt="雕版印刷术"></p>
 <p>大鸟接着说道“开发程序也应该如此——可维护、可复用、可扩展。而在活字印刷术出现之前，要修改，必须重刻，要加字，必须重刻，要重新排列，必须重刻，印完一页后，此版已无任何可再利用价值。其实雕版印刷术的问题就在于所有的字都刻在同一版面上，按计算机专业的概念来理解，就是耦合度太高。而利用封装、继承、多态把程序的耦合度降低，将使程序更加灵活，容易修改，并且易于复用。”</p>
 <h3 id="业务的封装"><a href="#业务的封装" class="headerlink" title="业务的封装"></a>业务的封装</h3><p>大鸟：“讲了那么多，你觉得之前那道题目你有什么想法吗？”</p>
@@ -484,7 +484,7 @@
 <p>大鸟：“现在就是比较完整的计算器程序了。复用性，可维护性，可扩展性都不错。如果某一天需要更改加法运算，我们只需要更改 Add 类。增加其他各种运算，比如取对数，正弦余弦，就只要增加相对应的运算类即可。同时还要记得去工厂做一下”备注“-在工厂类 switch 增加对应的分支。是不是很不错啊。“</p>
 <p>小菜：”厉害了我的哥，我服。看来我还是 too young too naive!“</p>
 <p>大鸟：“就你嘴能，来我们最后看看这几个类的结构图总结一下。”</p>
-<p><img src="http://ww1.sinaimg.cn/large/7b6c9535ly1fhztrcpezxj20wc0ebt93.jpg" alt="简单工厂模式 计算器"></p>
+<p><img src="https://picbed-1253377077.cos.ap-guangzhou.myqcloud.com/7b6c9535ly1fhztrcpezxj20wc0ebt93.jpg" alt="简单工厂模式 计算器"></p>
 <blockquote>
 <p>本文作者：刘志宇</p>
 <p>版权声明：本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</p>
@@ -521,7 +521,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/25/JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？/" rel="next" title="JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？">
+              <a href="/2017/07/25/JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象/" rel="next" title="JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？">
                 <i class="fa fa-chevron-left"></i> JavaScript王国的一次旅行，一个没有类的世界怎么玩转面向对象？
               </a>
             
@@ -633,7 +633,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
