@@ -470,7 +470,6 @@
 <p>注意看第二个参数<code>mode</code>，它是一个字符指针，通常可以为读(r)，写(w)，追加(a)或者读写(r+, w+, a+)，仅指定这些参数时，文件将被当成是文本文件来操作，即<code>Text Mode</code>，而如果在这些参数之外再指定一个额外的<code>b</code>时，文件便会被当成是二进制文件，即<code>Binary Mode</code>。这两种模式的区别在哪里呢？这里稍稍有些复杂，因为它们在不同的平台上表现不同。</p>
 <h3 id="Windows-平台"><a href="#Windows-平台" class="headerlink" title="Windows 平台"></a>Windows 平台</h3><p>对于 Windows 平台，因为其使用<code>CRLF</code>来表示<code>EOL</code>，故对于<code>Text Mode</code>需要做一定的转换才能够与 C 语言保持一致。接下来的两个图可以给出最为直观的描述。</p>
 <p>先看二者对于读操作的区别：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -492,10 +491,8 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><code>Text Mode</code>下，C 语言会尝试去“理解”这些回车与换行，它会知道<code>LF</code>和<code>CRLF</code>都可能是<code>EOL</code>，所以不管文件中是<code>LF</code>还是<code>CRLF</code>，被读进内存时都会变成<code>LF</code>。而<code>Binary Mode</code>下，C 语言不会做任何的“理解”，所以这些字符在文件中什么样，读到内存中依然那样。</p>
 <p>接下来是写操作的区别：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -517,7 +514,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><code>Text Mode</code>下，内存中的每一个<code>LF</code>写入文件中时都会变为<code>CRLF</code>，当然，如果不幸内存中为<code>CRLF</code>，以此种模式写入到文件中时就会变成<code>CRCRLF</code>（<strong>注意</strong>：这里不是<code>CRLF</code>。原因我想大概是如果你认为内存中的数据是文本，那么它一定是以<code>LF</code>作为<code>EOL</code>，<code>CR</code>也一定是你有意而为之，是个有意义的字符，所以它并不会处理。）。而<code>Binary Mode</code>下，内存中的内容会被原封不动的写到文件中。</p>
 <p>所以为了保证一致性，一定需要注意配套使用读和写，即<strong>读和写采用同一种模式打开文件</strong>。</p>
 <h3 id="Linux-和-Mac-OS-X-平台"><a href="#Linux-和-Mac-OS-X-平台" class="headerlink" title="Linux 和 Mac OS X 平台"></a>Linux 和 Mac OS X 平台</h3><p>因为 Linux 和 Mac OS X 平台与 C 语言对待<code>EOL</code>的方式完全一致，所以<code>Text Mode</code>和<code>Binary Mode</code>在这些平台下没有任何区别，可以参考<code>fopen</code>的<a href="http://man7.org/linux/man-pages/man3/fopen.3.html" target="_blank" rel="noopener">man page</a>。实际上，所有遵循 POSIX 的平台都忽略了<code>b</code>这个参数。</p>
